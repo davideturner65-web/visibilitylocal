@@ -24,12 +24,6 @@ const schema = {
         name: "Visibility Local",
         telephone: "(501) 554-2183",
         email: "info@visibilitylocal.com",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Little Rock",
-          addressRegion: "AR",
-          addressCountry: "US",
-        },
       },
       areaServed: { "@type": "Country", name: "United States" },
       serviceType: "Local SEO",

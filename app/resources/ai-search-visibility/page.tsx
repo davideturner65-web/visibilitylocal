@@ -214,7 +214,7 @@ export default function AISearchVisibilityPage() {
               </h2>
               <div className="space-y-4">
                 <p className="font-sans text-base text-ink-2 leading-relaxed">
-                  AI tools are, at their core, question-answering machines. They look for content that directly answers questions. The format they prefer is the same format your clients ask in: "Who is the best health insurance agent in Little Rock?" or "What is the difference between an independent agent and a captive agent?"
+                  AI tools are, at their core, question-answering machines. They look for content that directly answers questions. The format they prefer is the same format your clients ask in: "Who is the best health insurance agent in [city]?" or "What is the difference between an independent agent and a captive agent?"
                 </p>
                 <p className="font-sans text-base text-ink-2 leading-relaxed">
                   Write content that explicitly answers those questions. Not a general article about insurance that tangentially relates. A direct answer to a specific question, followed by enough context to demonstrate genuine expertise. The question should appear verbatim or near-verbatim in your content. The answer should be complete enough to stand alone.

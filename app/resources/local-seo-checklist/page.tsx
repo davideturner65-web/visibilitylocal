@@ -224,7 +224,7 @@ const sections = [
         n: 21,
         title: "Title tags include city and primary service term",
         detail:
-          "A page titled 'Services' is invisible. A page titled 'Health Insurance Agent in Little Rock, AR' is specific. Title tags are one of the most direct on-page local signals. Every service page and location page should include city and service in the title.",
+          "A page titled 'Services' is invisible. A page titled 'Health Insurance Agent in Nashville, TN' is specific. Title tags are one of the most direct on-page local signals. Every service page and location page should include city and service in the title.",
       },
       {
         n: 22,
@@ -284,7 +284,7 @@ const sections = [
         n: 30,
         title: "At least one piece of content per quarter that demonstrates genuine subject matter expertise",
         detail:
-          "Blog posts or guides that show you know your industry deeply build topical authority over time. An insurance agent writing about the specific health insurance options available to small business owners in Arkansas is more authoritative than one publishing generic tips from press releases.",
+          "Blog posts or guides that show you know your industry deeply build topical authority over time. An insurance agent writing about the specific health insurance options available to small business owners in their state is more authoritative than one publishing generic tips from press releases.",
       },
       {
         n: 31,

@@ -203,7 +203,7 @@ export default function InsuranceAgentGBPPage() {
                   Your GBP description allows 750 characters. The first 160 appear in search results before the "more" link. Use those first 160 characters to communicate the one thing that most differentiates an independent agent from a captive agent or a national insurance website: you represent multiple carriers and can shop the market on behalf of your client.
                 </p>
                 <p className="font-sans text-base text-ink-2 leading-relaxed">
-                  Example first 160 characters: "Independent insurance agent in Little Rock representing 12 carriers. I shop health, life, Medicare, and auto coverage across companies to find you the best rate."
+                  Example first 160 characters: "Independent insurance agent representing 12 carriers. I shop health, life, Medicare, and auto coverage across companies to find you the best rate."
                 </p>
                 <p className="font-sans text-base text-ink-2 leading-relaxed">
                   In the remaining 590 characters, include: the specific geographic area you serve, how long you have been in business (if 5+ years), any specializations (Medicare, ACA, small business), and a direct statement about the consultation process. Do not use generic phrases like "comprehensive coverage solutions" or "all your insurance needs." These are content-free phrases that tell the reader nothing specific.
@@ -308,24 +308,6 @@ export default function InsuranceAgentGBPPage() {
                     </div>
                   ))}
                 </div>
-              </div>
-            </div>
-
-            <div className="mb-14">
-              <div className="divider-gold" />
-              <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
-                Proof this works: Hillcrest Life and Health
-              </h2>
-              <div className="space-y-4">
-                <p className="font-sans text-base text-ink-2 leading-relaxed">
-                  Hillcrest Life and Health is an independent insurance agency in Little Rock, Arkansas. The market includes competition from captive agents for national carriers (State Farm, Allstate, Farmers) plus national insurance directory websites that target local searches. Independent agents in this market start at a structural disadvantage: lower brand recognition, smaller marketing budgets, and no parent company maintaining their digital presence.
-                </p>
-                <p className="font-sans text-base text-ink-2 leading-relaxed">
-                  The GBP optimization work for Hillcrest followed exactly the approach described in this guide: correct primary category selection, complete service entries for each product line, description written for the independent agent value proposition, seeded Q&A, headshot and office photos, and a consistent weekly posting cadence focused on enrollment deadlines and product-specific questions.
-                </p>
-                <p className="font-sans text-base text-ink-2 leading-relaxed">
-                  The result: Hillcrest now holds top local map pack positions for health insurance keywords in their market. They appear in searches where competing listings include State Farm and national health insurance directories. The work was not technically complex. It was thorough, consistent, and done correctly from the start. That combination, in a market where most competitors are doing none of it well, is sufficient to rank.
-                </p>
               </div>
             </div>
 

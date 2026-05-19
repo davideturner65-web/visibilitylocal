@@ -24,12 +24,6 @@ const schema = {
         name: "Visibility Local",
         telephone: "(501) 554-2183",
         email: "info@visibilitylocal.com",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Little Rock",
-          addressRegion: "AR",
-          addressCountry: "US",
-        },
       },
       areaServed: { "@type": "Country", name: "United States" },
       serviceType: "Local SEO",
@@ -299,27 +293,6 @@ export default function InsuranceAgentsPage() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Case reference */}
-      <section className="bg-ink py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <p className="section-label text-gold">Client Result</p>
-          <h2 className="font-serif text-3xl text-paper mt-4 mb-6">
-            Hillcrest Life and Health, Little Rock, AR
-          </h2>
-          <p className="font-sans text-paper/80 text-lg leading-relaxed max-w-3xl">
-            Hillcrest Life and Health is an independent health insurance agency
-            competing in a market dominated by national carriers and ACA
-            marketplace comparison sites. The work: GBP category correction from
-            an incorrect default, citation cleanup across 40+ directories
-            anchored to the state DOI listing, and a monthly posting cadence.
-            The result: top local map pack positions for health insurance
-            keywords in Little Rock, consistent new client inquiries from search,
-            and visibility in AI tools for "independent health insurance agent
-            Little Rock" queries.
-          </p>
         </div>
       </section>
 

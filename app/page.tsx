@@ -20,12 +20,6 @@ const schema = {
       telephone: "(501) 554-2183",
       email: "info@visibilitylocal.com",
       founder: { "@type": "Person", name: "David Turner" },
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Little Rock",
-        addressRegion: "AR",
-        addressCountry: "US",
-      },
       areaServed: { "@type": "Country", name: "United States" },
       priceRange: "$$",
       sameAs: ["https://visibilitylocal.com"],
@@ -51,10 +45,10 @@ const schema = {
         },
         {
           "@type": "Question",
-          name: "Do you work with businesses outside Arkansas?",
+          name: "Do you work with businesses nationwide?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Visibility Local is based in Little Rock but works with professionals nationwide. Local SEO and AI search visibility are not geography-constrained on our end. If your market is open, we can work together.",
+            text: "Yes. Visibility Local works with independent professionals nationwide. Local SEO and AI search visibility are not geography-constrained on our end. If your market is open, we can work together.",
           },
         },
         {
@@ -138,8 +132,8 @@ const faqs = [
     a: "Two things. First, we work with one client per market, so we're never splitting attention between you and a direct competitor. Second, there are no account managers or junior staff. David Turner handles every client directly. The person you talk to is the person doing the work.",
   },
   {
-    q: "Do you work with businesses outside Arkansas?",
-    a: "Yes. Visibility Local is based in Little Rock but works with professionals nationwide. Local SEO and AI search visibility are not geography-constrained on our end. If your market is open, we can work together.",
+    q: "Do you work with businesses nationwide?",
+    a: "Yes. Visibility Local works with independent professionals nationwide. Local SEO and AI search visibility are not geography-constrained on our end. If your market is open, we can work together.",
   },
   {
     q: "What does 'one client per market' mean?",
@@ -172,7 +166,7 @@ export default function HomePage() {
               Your clients are using Google Maps, ChatGPT, and Perplexity to find professionals before they ever visit a website. Visibility Local builds your presence across all three surfaces. Exclusively. One client per market.
             </p>
             <p className="font-sans text-base text-ink-3 leading-relaxed mb-8 max-w-xl">
-              Based in Little Rock. Working with independent professionals nationwide. If your market is open, there&apos;s a window.
+              Working with independent professionals nationwide. If your market is open, there&apos;s a window.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact" className="btn-primary text-base px-7 py-3.5">
@@ -200,7 +194,7 @@ export default function HomePage() {
             </div>
             <div>
               <p className="font-serif text-3xl text-gold">Nationwide</p>
-              <p className="font-sans text-sm text-ink-4 mt-1">Based in Little Rock, AR. Open markets everywhere.</p>
+              <p className="font-sans text-sm text-ink-4 mt-1">Open markets across the country.</p>
             </div>
           </div>
         </div>
@@ -301,64 +295,6 @@ export default function HomePage() {
                 </p>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PROOF / ABOUT STRIP */}
-      <section className="bg-teal text-paper">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-xs font-sans font-semibold uppercase tracking-widest text-gold-light mb-4">
-                Proof it works
-              </p>
-              <h2 className="font-serif text-3xl lg:text-4xl text-paper mb-4">
-                Hillcrest Life and Health, Little Rock
-              </h2>
-              <p className="font-sans text-base text-paper leading-relaxed mb-4" style={{ opacity: 0.85 }}>
-                An independent health insurance agency in a market dominated by captive agents and national carriers. After GBP optimization, citation cleanup, and a consistent content strategy, they now rank in the top positions of local map pack results for competitive insurance keywords in the Little Rock area.
-              </p>
-              <p className="font-sans text-sm leading-relaxed" style={{ color: 'rgba(247,244,238,0.6)' }}>
-                This is what the work actually looks like. Not projections. Not theoretical. A real independent agent winning local search in a difficult, competitive market.
-              </p>
-            </div>
-            <div className="bg-white/10 rounded-sm p-8 border border-white/20">
-              <div className="space-y-5">
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-gold-light mt-2 shrink-0" />
-                  <p className="font-sans text-sm text-paper leading-relaxed" style={{ opacity: 0.85 }}>
-                    Ranking in the top 3 map pack for &ldquo;health insurance Little Rock&rdquo; and related terms
-                  </p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-gold-light mt-2 shrink-0" />
-                  <p className="font-sans text-sm text-paper leading-relaxed" style={{ opacity: 0.85 }}>
-                    GBP profile corrected from default category to &ldquo;Insurance Agency&rdquo; with proper service attributes
-                  </p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-gold-light mt-2 shrink-0" />
-                  <p className="font-sans text-sm text-paper leading-relaxed" style={{ opacity: 0.85 }}>
-                    Citation profile cleaned up across 40+ directories with consistent NAP data
-                  </p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-gold-light mt-2 shrink-0" />
-                  <p className="font-sans text-sm text-paper leading-relaxed" style={{ opacity: 0.85 }}>
-                    Monthly GBP posts keeping the listing active in Google&apos;s freshness signals
-                  </p>
-                </div>
-              </div>
-              <div className="mt-6 pt-5 border-t border-white/20">
-                <Link href="/industries/insurance-agents" className="font-sans text-sm text-gold-light hover:text-paper transition-colors flex items-center gap-2">
-                  See the full insurance agent strategy
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </section>

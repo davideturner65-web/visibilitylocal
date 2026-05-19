@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About David Turner | Visibility Local",
   description:
-    "David Turner is a local SEO and AI search visibility consultant based in Little Rock, AR. Direct work, one client per market, no agency overhead.",
+    "David Turner is a local SEO and AI search visibility consultant. Direct work, one client per market, no agency overhead.",
   alternates: { canonical: "https://visibilitylocal.com/about" },
 };
 
@@ -18,12 +18,6 @@ const schema = {
       url: "https://visibilitylocal.com/about",
       email: "info@visibilitylocal.com",
       telephone: "(501) 554-2183",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Little Rock",
-        addressRegion: "AR",
-        addressCountry: "US",
-      },
       worksFor: {
         "@type": "ProfessionalService",
         name: "Visibility Local",
@@ -39,12 +33,6 @@ const schema = {
       telephone: "(501) 554-2183",
       email: "info@visibilitylocal.com",
       founder: { "@type": "Person", name: "David Turner" },
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Little Rock",
-        addressRegion: "AR",
-        addressCountry: "US",
-      },
       areaServed: { "@type": "Country", name: "United States" },
     },
   ],
@@ -67,7 +55,7 @@ export default function AboutPage() {
               David Turner
             </h1>
             <p className="font-sans text-xl text-ink-2 leading-relaxed mb-4">
-              Local SEO and AI search visibility consultant. Based in Little Rock, Arkansas. Working directly with independent professionals nationwide.
+              Local SEO and AI search visibility consultant. Working directly with independent professionals nationwide.
             </p>
             <p className="font-sans text-base text-ink-3 leading-relaxed">
               No agency overhead. No junior staff. One client per market.
@@ -111,7 +99,7 @@ export default function AboutPage() {
               </div>
               <div className="bg-paper border border-paper-3 rounded-sm p-6">
                 <p className="font-serif text-3xl text-gold mb-1">Nationwide</p>
-                <p className="font-sans text-sm text-ink-3">Based in Little Rock. Open markets across the country. Local SEO doesn&apos;t require being in the same city.</p>
+                <p className="font-sans text-sm text-ink-3">Serving clients nationwide. Local SEO doesn&apos;t require being in the same city.</p>
               </div>
             </div>
           </div>
@@ -155,56 +143,6 @@ export default function AboutPage() {
                   <h3 className="font-serif text-xl text-ink mb-2">Scope, deliverables, timeline — upfront</h3>
                   <p className="font-sans text-sm text-ink-2 leading-relaxed">
                     Every engagement starts with a clear scope. What gets done, what the deliverables look like, and when to expect results. No vague monthly retainers where you&apos;re paying for effort rather than outcomes.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PROOF OF WORK */}
-      <section className="bg-ink text-paper">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="section-label mb-4 text-gold">Proof of Work</p>
-              <div className="divider-gold" />
-              <h2 className="font-serif text-4xl text-paper mt-6 mb-5">
-                Hillcrest Life and Health
-              </h2>
-              <div className="space-y-4">
-                <p className="font-sans text-base text-paper leading-relaxed opacity-80">
-                  Hillcrest Life and Health is an independent insurance agency in Little Rock. Independent agents run against a significant structural disadvantage in local search. The national carriers and captive-agent networks have large content budgets, well-established domain authority, and IT teams maintaining their digital presence.
-                </p>
-                <p className="font-sans text-base text-paper leading-relaxed opacity-80">
-                  Despite that, Hillcrest now ranks in top local positions for health insurance keywords in their market. They show up in the map pack for searches where the competition includes State Farm, Blue Cross, and national insurance directories. The work was foundational: GBP category optimization, citation cleanup, review system, and local content with genuine subject matter depth.
-                </p>
-                <p className="font-sans text-base text-paper leading-relaxed opacity-80">
-                  The lesson isn&apos;t that smaller players can always outrank national brands. The lesson is that most national brands ignore local SEO hygiene because they&apos;re managing hundreds of locations. That gap is real and, in most markets, still exploitable.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-ink-2 border border-ink-3 rounded-sm p-8">
-              <p className="font-sans text-xs text-ink-4 uppercase tracking-wide mb-6">Result snapshot</p>
-              <div className="space-y-5">
-                <div className="border-b border-ink-3 pb-5">
-                  <p className="font-serif text-2xl text-gold mb-1">Map pack rankings</p>
-                  <p className="font-sans text-sm text-ink-4 leading-relaxed">
-                    Top local positions for health insurance keywords in Little Rock, competing against national carriers with established authority.
-                  </p>
-                </div>
-                <div className="border-b border-ink-3 pb-5">
-                  <p className="font-serif text-2xl text-gold mb-1">Citation cleanup</p>
-                  <p className="font-sans text-sm text-ink-4 leading-relaxed">
-                    Inconsistent NAP data across directories corrected and rebuilt. Eliminated the conflicting signals that were suppressing map pack visibility.
-                  </p>
-                </div>
-                <div>
-                  <p className="font-serif text-2xl text-gold mb-1">GBP optimization</p>
-                  <p className="font-sans text-sm text-ink-4 leading-relaxed">
-                    Category selection, service areas, attributes, and posting cadence aligned to what Google rewards in the insurance vertical.
                   </p>
                 </div>
               </div>

@@ -61,7 +61,7 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
-                Little Rock, Arkansas
+                Serving businesses nationwide
               </p>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Visibility Local. All rights reserved.
           </p>
           <p className="text-xs text-ink-3">
-            Little Rock, AR &mdash; Serving businesses nationwide
+            Serving independent professionals nationwide
           </p>
           <div className="flex gap-4 text-xs text-ink-3">
             <Link href="/about" className="hover:text-ink-4 transition-colors">About</Link>
