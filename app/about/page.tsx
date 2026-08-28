@@ -132,7 +132,7 @@ export default function AboutPage() {
                 <div className="pb-6">
                   <h3 className="font-serif text-xl text-ink mb-2">One client per market, per industry</h3>
                   <p className="font-sans text-sm text-ink-2 leading-relaxed">
-                    Visibility Local takes one insurance agent per city. One mortgage broker per metro. If your market is open, you have exclusive local SEO representation. That policy exists because the work requires full commitment to one side of each competitive landscape, not because it makes a better marketing headline.
+                    Visibility Local takes one insurance agent per city. One mortgage broker per metro. If your market is open, you have exclusive local SEO representation. That policy exists because the work only makes sense when I am on one side of a competitive matchup, not because it makes a better headline.
                   </p>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export default function AboutPage() {
               <div className="flex gap-6 items-start">
                 <div className="w-px bg-paper-3 self-stretch shrink-0" />
                 <div>
-                  <h3 className="font-serif text-xl text-ink mb-2">Scope, deliverables, timeline — upfront</h3>
+                  <h3 className="font-serif text-xl text-ink mb-2">Scope, deliverables and timeline, upfront</h3>
                   <p className="font-sans text-sm text-ink-2 leading-relaxed">
                     Every engagement starts with a clear scope. What gets done, what the deliverables look like, and when to expect results. No vague monthly retainers where you&apos;re paying for effort rather than outcomes.
                   </p>

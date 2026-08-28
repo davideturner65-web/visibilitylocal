@@ -98,8 +98,8 @@ export default function MortgageBrokersPage() {
               Independent mortgage brokers win on proximity, speed, and
               personalization. Clients already know this. The problem is they
               can't find you to confirm it. Local search is where that discovery
-              happens, and right now most independent brokers are invisible in
-              the searches they should dominate.
+              happens, and most independent brokers are missing from the
+              searches they should be winning.
             </p>
           </div>
         </div>

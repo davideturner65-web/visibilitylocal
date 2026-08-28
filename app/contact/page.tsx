@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Free Local SEO Audit | Visibility Local",
   description:
-    "Request a free local SEO and Google Business Profile audit. One client per market — check if your spot is available.",
+    "Request a local SEO and Google Business Profile review. One client per market, so check whether yours is open.",
   alternates: { canonical: "https://visibilitylocal.com/contact" },
 };
 

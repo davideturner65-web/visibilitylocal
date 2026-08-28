@@ -48,7 +48,7 @@ const schema = {
           name: "What is the most important schema type for a local business?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "LocalBusiness (or its relevant subtype) is the most important schema type for establishing your entity with Google and AI tools. It confirms your name, address, phone, hours, and service area in machine-readable format. After LocalBusiness, FAQPage is the highest-leverage schema type specifically for AI search visibility, because it structures your answers in the exact format AI tools prefer for citation.",
+            text: "LocalBusiness (or its relevant subtype) is the most important schema type for establishing your entity with Google and AI tools. It confirms your name, address, phone, hours, and service area in machine-readable format. After LocalBusiness, FAQPage does the most for AI search visibility, because it puts your answers in the shape these tools prefer to cite.",
           },
         },
         {
@@ -75,7 +75,7 @@ const faqs = [
   },
   {
     q: "What is the most important schema type for a local business?",
-    a: "LocalBusiness (or its relevant subtype) is the most important schema type for establishing your entity with Google and AI tools. It confirms your name, address, phone, hours, and service area in machine-readable format. After LocalBusiness, FAQPage is the highest-leverage schema type specifically for AI search visibility, because it structures your answers in the exact format AI tools prefer for citation.",
+    a: "LocalBusiness (or its relevant subtype) is the most important schema type for establishing your entity with Google and AI tools. It confirms your name, address, phone, hours, and service area in machine-readable format. After LocalBusiness, FAQPage does the most for AI search visibility, because it puts your answers in the shape these tools prefer to cite.",
   },
   {
     q: "How do I test if my schema markup is working?",
@@ -179,7 +179,7 @@ const schemaTypes = [
   },
   {
     type: "FAQPage",
-    priority: "High leverage for AI",
+    priority: "Matters most for AI",
     use: "Any page with Q&A content. The single most direct schema type for AI search citation. Structures your answers for machine extraction.",
     required: ["mainEntity (array of Question/Answer pairs)"],
     subtypes: "N/A. Always use FAQPage as the parent type with Question and acceptedAnswer markup inside.",

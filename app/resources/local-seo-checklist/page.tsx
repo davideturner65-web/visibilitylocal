@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "40-Point Local SEO Checklist for 2025 | Visibility Local",
+  title: "40-Point Local SEO Checklist for 2026 | Visibility Local",
   description:
-    "The 40 local SEO factors that actually drive map pack rankings and local search visibility in 2025. Audit your business against this list.",
+    "The 40 local SEO factors that actually drive map pack rankings and local search visibility in 2026. Audit your business against this list.",
   alternates: { canonical: "https://visibilitylocal.com/resources/local-seo-checklist" },
 };
 
@@ -13,7 +13,7 @@ const schema = {
   "@graph": [
     {
       "@type": "Article",
-      headline: "40-Point Local SEO Checklist for 2025",
+      headline: "40-Point Local SEO Checklist for 2026",
       author: { "@type": "Person", name: "David Turner" },
       publisher: {
         "@type": "Organization",
@@ -22,7 +22,7 @@ const schema = {
       },
       url: "https://visibilitylocal.com/resources/local-seo-checklist",
       description:
-        "The 40 local SEO factors that actually drive map pack rankings and local search visibility in 2025. Audit your business against this list.",
+        "The 40 local SEO factors that actually drive map pack rankings and local search visibility in 2026. Audit your business against this list.",
     },
     {
       "@type": "FAQPage",
@@ -344,7 +344,7 @@ const sections = [
         n: 38,
         title: "FAQPage schema markup present on pages with Q&A content",
         detail:
-          "FAQPage schema is the highest-leverage schema type for AI search visibility. When your FAQ content is structured in schema, AI tools can parse and cite your answers directly. Most local businesses have Q&A content on their websites with no FAQPage schema.",
+          "FAQPage schema is the one that matters most for AI search visibility. When your FAQ content is structured in schema, AI tools can parse and cite your answers directly. Most local businesses have Q&A content on their websites with no FAQPage schema.",
       },
       {
         n: 39,

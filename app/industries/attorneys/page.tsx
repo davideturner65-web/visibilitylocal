@@ -247,7 +247,7 @@ export default function AttorneysPage() {
                 a direct expansion of the search surfaces your listing is
                 eligible to appear on. Most firms have a primary category and
                 nothing else. Adding the right secondary categories is one of the
-                highest-leverage quick wins in legal local SEO.
+                fastest wins available in legal local SEO.
               </p>
             </div>
             <div className="bg-paper p-8 border-l-4 border-gold">

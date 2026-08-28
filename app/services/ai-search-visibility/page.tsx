@@ -56,7 +56,7 @@ const schema = {
           name: "How long does it take to appear in AI recommendations?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Faster than most people expect, and slower than most people hope. Structured data improvements can start appearing in AI tools within weeks once pages are indexed. Entity establishment through directories and citations takes one to three months to build the signal strength that triggers consistent recommendations. Content-driven citations often appear within 30 to 60 days of publication. The compounding effect builds over six to twelve months.",
+            text: "I do not know, and neither does anyone who tells you they do. The mechanics have schedules: schema gets validated and indexed, entity data across directories takes one to three months to agree, and content has to exist before it can be cited. Those steps I will commit to. When a specific model starts recommending you depends on retraining cycles and retrieval behaviour that no agency has visibility into. Treat a promised date as a reason to walk away from that vendor.",
           },
         },
       ],
@@ -121,7 +121,7 @@ const faqs = [
   },
   {
     q: "How long does it take to appear in AI recommendations?",
-    a: "Faster than most people expect, and slower than most people hope. Structured data improvements can start appearing in AI tools within weeks once pages are indexed. Entity establishment through directories and citations takes one to three months to build the signal strength that triggers consistent recommendations. Content-driven citations often appear within 30 to 60 days of publication. The compounding effect builds over six to twelve months.",
+    a: "I do not know, and neither does anyone who tells you they do. The mechanics have schedules: schema gets validated and indexed, entity data across directories takes one to three months to agree, and content has to exist before it can be cited. Those steps I will commit to. When a specific model starts recommending you depends on retraining cycles and retrieval behaviour that no agency has visibility into. Treat a promised date as a reason to walk away from that vendor.",
   },
 ];
 

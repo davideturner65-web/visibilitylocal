@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Google Business Profile Setup Guide 2025 | Visibility Local",
+  title: "Google Business Profile Setup Guide 2026 | Visibility Local",
   description:
     "Complete step-by-step guide to setting up and optimizing your Google Business Profile. Categories, photos, posts, Q&A, and everything that affects your map pack ranking.",
   alternates: { canonical: "https://visibilitylocal.com/resources/google-business-profile-setup" },
@@ -13,7 +13,7 @@ const schema = {
   "@graph": [
     {
       "@type": "Article",
-      headline: "Google Business Profile Setup Guide 2025",
+      headline: "Google Business Profile Setup Guide 2026",
       author: { "@type": "Person", name: "David Turner" },
       publisher: {
         "@type": "Organization",

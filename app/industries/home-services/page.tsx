@@ -98,10 +98,9 @@ export default function HomeServicesPage() {
               The practical problem for most home services businesses is that
               the same search intent that makes this category so valuable also
               makes the competition consistent and relentless. The businesses
-              that dominate local home services searches have correct GBP
-              categories, strong review counts, service area pages for every
-              city they cover, and explicit emergency and same-day service
-              content. Those elements together are what gets your number called
+              that win local home services searches have correct GBP categories,
+              strong review counts, a page for every city they actually cover,
+              and explicit emergency and same-day language where it applies. Those elements together are what gets your number called
               at 11pm instead of someone else's.
             </p>
           </div>

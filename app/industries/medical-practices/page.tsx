@@ -260,10 +260,9 @@ export default function MedicalPracticesPage() {
                 Surgeon," "Family Practice Physician" each surface in different
                 search results. Using the correct specialty category is the
                 difference between appearing for specialty searches and being
-                absent from them. This is often the single highest-leverage
-                change in a medical practice GBP optimization because it
-                immediately opens specialty search surfaces that generic
-                categories cannot access.
+                absent from them. This is usually the single biggest change
+                available in a medical practice GBP, because it opens specialty
+                search surfaces that a generic category cannot reach.
               </p>
             </div>
             <div className="bg-paper p-8 border-l-4 border-gold">

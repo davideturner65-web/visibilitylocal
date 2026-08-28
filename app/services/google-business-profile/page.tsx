@@ -56,7 +56,7 @@ const schema = {
           name: "What is the difference between GBP optimization and local SEO?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "GBP optimization works on your Google Business Profile specifically, affecting your map pack and knowledge panel ranking. Local SEO is broader and includes your website's on-page signals, citation consistency across directories, link signals from local sources, and content strategy. GBP optimization is one component of a full local SEO program, but it is often the highest-leverage starting point because the profile is already there and most businesses have it set up wrong.",
+            text: "GBP optimization works on your Google Business Profile specifically, affecting your map pack and knowledge panel ranking. Local SEO is broader and includes your website's on-page signals, citation consistency across directories, link signals from local sources, and content strategy. GBP optimization is one part of a full local SEO program, and it is usually the right place to start, because the profile already exists and most agents have it set up wrong.",
           },
         },
       ],
@@ -121,7 +121,7 @@ const faqs = [
   },
   {
     q: "What is the difference between GBP optimization and local SEO?",
-    a: "GBP optimization works on your Google Business Profile specifically, affecting your map pack and knowledge panel ranking. Local SEO is broader and includes your website's on-page signals, citation consistency across directories, link signals from local sources, and content strategy. GBP optimization is one component of a full local SEO program, but it is often the highest-leverage starting point because the profile is already there and most businesses have it set up wrong.",
+    a: "GBP optimization works on your Google Business Profile specifically, affecting your map pack and knowledge panel ranking. Local SEO is broader and includes your website's on-page signals, citation consistency across directories, link signals from local sources, and content strategy. GBP optimization is one part of a full local SEO program, and it is usually the right place to start, because the profile already exists and most agents have it set up wrong.",
   },
 ];
 

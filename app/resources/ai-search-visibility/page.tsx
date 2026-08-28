@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "How to Get Recommended by ChatGPT, Perplexity, and Google AI | Visibility Local",
   description:
-    "A practical guide to getting your local business recommended by AI search tools in 2025. GEO, AEO, and AI citation strategy for small businesses.",
+    "A practical guide to getting your local business recommended by AI search tools in 2026. GEO, AEO, and AI citation strategy for small businesses.",
   alternates: { canonical: "https://visibilitylocal.com/resources/ai-search-visibility" },
 };
 
@@ -22,7 +22,7 @@ const schema = {
       },
       url: "https://visibilitylocal.com/resources/ai-search-visibility",
       description:
-        "A practical guide to getting your local business recommended by AI search tools in 2025. GEO, AEO, and AI citation strategy for small businesses.",
+        "A practical guide to getting your local business recommended by AI search tools in 2026. GEO, AEO, and AI citation strategy for small businesses.",
     },
     {
       "@type": "FAQPage",
@@ -181,7 +181,7 @@ export default function AISearchVisibilityPage() {
                   AI tools work with entities. An entity is a distinct, real-world thing with clear attributes. Your business is an entity. Your goal is to make sure that entity is confirmed, accurately, across enough authoritative sources that AI tools recognize it with confidence.
                 </p>
                 <p className="font-sans text-base text-ink-2 leading-relaxed">
-                  Minimum entity confirmation footprint for a local business in 2025: Google Business Profile (verified), Apple Maps (claimed), Bing Places (verified), Yelp (claimed and complete), Facebook Business page (accurate NAP), BBB listing (accurate), LinkedIn company page (if applicable), and at minimum two industry-specific directories appropriate to your profession. That is roughly 8 to 10 sources. More is better, but these 8 to 10 form the base that AI tools expect to find.
+                  Minimum entity confirmation footprint for a local business in 2026: Google Business Profile (verified), Apple Maps (claimed), Bing Places (verified), Yelp (claimed and complete), Facebook Business page (accurate NAP), BBB listing (accurate), LinkedIn company page (if applicable), and at minimum two industry-specific directories appropriate to your profession. That is roughly 8 to 10 sources. More is better, but these 8 to 10 form the base that AI tools expect to find.
                 </p>
                 <p className="font-sans text-base text-ink-2 leading-relaxed">
                   Inconsistency across these sources undermines entity confidence. If your Yelp listing has your old phone number, your GBP has your current number, and your Facebook page has no phone number at all, AI tools see three slightly different versions of your entity and are less confident in any of them. Consistency is not just an SEO best practice. It is the data quality standard that AI tools require to recommend you with confidence.
@@ -246,17 +246,17 @@ export default function AISearchVisibilityPage() {
             <div className="mb-14">
               <div className="divider-gold" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
-                Timeline: how fast can AI visibility build?
+                Timeline: what can be promised and what cannot
               </h2>
               <div className="space-y-4">
                 <p className="font-sans text-base text-ink-2 leading-relaxed">
-                  Faster than traditional SEO, in many cases. Schema markup changes can be indexed and recognized by AI tools within weeks of implementation. A Bing Places listing that is verified and complete can start affecting ChatGPT recommendations within a month. Citation cleanup, where you correct inconsistent data across existing listings, can show effects within 6 to 8 weeks as the corrected information propagates.
+                  The honest answer splits in two. The technical work runs on a schedule you can hold someone to: schema can be validated and submitted the week it is written, a Bing Places listing can be verified in days, and citation corrections move through the major directories over roughly six to eight weeks. Those are mechanical steps with observable completion, and you should expect dates for them.
                 </p>
                 <p className="font-sans text-base text-ink-2 leading-relaxed">
-                  Content authority takes longer. A FAQ page published today will not be a trusted source for AI tools immediately. Authority builds as the page ages, gets indexed, and is confirmed by other sources. But the foundational work, schema, Bing Places, citation consistency, can meaningfully improve your AI search visibility within 60 to 90 days of implementation.
+                  When a model actually starts naming you is a different question, and nobody selling this service can answer it. Retraining schedules are not published. Retrieval behaviour changes without announcement. A vendor who tells you that you will be appearing in ChatGPT by a particular month is describing something they can neither see nor control, and that is worth knowing about them before you sign anything.
                 </p>
                 <p className="font-sans text-base text-ink-2 leading-relaxed">
-                  The larger point about timing: most local businesses have not started this work yet. The window where these actions provide a significant competitive advantage is open now. It will narrow as more businesses and their agencies discover it. The businesses doing this work in 2025 are building a position that will be harder to displace in 2026 and beyond.
+                  What is true about timing is narrower than the pitch you usually hear. Most independent agents have not started any of this, so the advantage on offer comes from being early to work almost nobody in your market is doing. That advantage shrinks as it stops being unusual, which is an argument for starting rather than a deadline someone invented to rush you.
                 </p>
               </div>
             </div>

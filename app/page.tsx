@@ -64,7 +64,7 @@ const schema = {
           name: "How long does it take to see results in local SEO?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Google Business Profile improvements -- category corrections, citation cleanup, review velocity -- often show movement in 30 to 60 days. Organic content rankings typically take 90 to 180 days. AI search visibility builds faster than most people expect once your structured data and content authority are in place, sometimes within weeks.",
+            text: "Google Business Profile work usually shows movement in 30 to 60 days, because it corrects things Google already measures: your primary category, citation consistency, review velocity. Organic content rankings take 90 to 180 days. For AI search I will not give you a date. Nobody outside OpenAI and Google can see when a model starts naming you, and any vendor quoting you a timeline for it is guessing. What I commit to is the work itself: the schema ships, the entity data agrees across the web, and the content is written to be citable.",
           },
         },
       ],
@@ -75,13 +75,13 @@ const schema = {
 const services = [
   {
     title: "Google Business Profile",
-    desc: "Your GBP is the single highest-leverage asset in local search. Most businesses have it set up wrong. Category selection, service areas, photos, and posting cadence all affect whether you rank.",
+    desc: "Your Google Business Profile does more for local ranking than your website does, and most agents have it set up wrong. Category selection, service areas, photos, and posting cadence all feed it.",
     href: "/services/google-business-profile",
     icon: "M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7",
   },
   {
     title: "Local SEO",
-    desc: "Citations, on-page signals, internal linking, and content strategy -- the unglamorous work that determines whether you show up in the map pack when clients search for what you do.",
+    desc: "Citations, on-page signals, internal linking, and content strategy. The unglamorous work that decides whether you show up in the map pack when someone searches for what you do.",
     href: "/services/local-seo",
     icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
   },
@@ -141,7 +141,7 @@ const faqs = [
   },
   {
     q: "How long does it take to see results?",
-    a: "GBP improvements often show movement in 30 to 60 days. Organic content rankings take 90 to 180 days. AI search visibility builds faster than most expect once your structured data and content authority are in place, sometimes within weeks.",
+    a: "Google Business Profile work usually shows movement in 30 to 60 days, because it corrects things Google already measures: your primary category, citation consistency, review velocity. Organic content rankings take 90 to 180 days. For AI search I will not give you a date. Nobody outside the model vendors can see when a system starts naming you, and anyone quoting a timeline for it is guessing. What I commit to is the work: the schema ships, the entity data agrees across the web, and the content is written to be citable. Then we watch what the tools actually say about your market.",
   },
 ];
 
@@ -235,7 +235,7 @@ export default function HomePage() {
               </div>
               <h3 className="font-serif text-xl text-ink mb-2">AI tools are sending referrals</h3>
               <p className="font-sans text-sm text-ink-2 leading-relaxed">
-                When someone asks ChatGPT &ldquo;who is the best independent insurance agent in Denver,&rdquo; they get names back. Those names are already optimized for AI citation. Businesses that set this up now have a head start that compounds.
+                When someone asks ChatGPT "who is the best independent insurance agent in Chattanooga," it answers with names. Somebody is on that list already, and it is rarely the agent with the best carriers. It is the one whose data the model could actually read.
               </p>
             </div>
 
@@ -358,7 +358,7 @@ export default function HomePage() {
               <div className="divider-gold" />
               <h3 className="font-serif text-2xl text-ink mb-3">Built for AI search</h3>
               <p className="font-sans text-sm text-ink-2 leading-relaxed">
-                Traditional SEO agencies are still optimizing for 2020. The local search landscape in 2025 includes AI Overviews, ChatGPT recommendations, and Perplexity citations. We build for where clients are looking now, not where they were looking five years ago.
+                Most agencies still sell the same ten blue links they were selling a decade ago. Local search now runs through AI Overviews, ChatGPT recommendations, and Perplexity citations as well as the map pack, and those surfaces read structured data rather than keyword density. The work is different, so the deliverables are different.
               </p>
             </div>
           </div>
@@ -387,7 +387,7 @@ export default function HomePage() {
                 Complete GBP Setup and Optimization Guide
               </h3>
               <p className="font-sans text-sm text-ink-2 leading-relaxed">
-                Every field, every setting, every signal Google uses to rank your listing. Step-by-step from creation to map pack domination.
+                Every field, every setting, every signal Google uses to rank your listing. Step by step, from creating the profile to holding a map pack position.
               </p>
             </Link>
 
@@ -407,7 +407,7 @@ export default function HomePage() {
                 40-Point Local SEO Checklist
               </h3>
               <p className="font-sans text-sm text-ink-2 leading-relaxed">
-                Every item that matters for local search rankings in 2025. Not the padded 100-point versions. The 40 that actually drive results.
+                Every item that moves local rankings, current for 2026. Not the padded 100-point versions. The 40 that actually change what happens.
               </p>
             </Link>
           </div>

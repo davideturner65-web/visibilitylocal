@@ -79,7 +79,7 @@ const deliverables = [
   },
   {
     title: "Platform strategy",
-    desc: "Google is the priority, but Yelp, Facebook, and industry directories (Avvo, Healthgrades, Avvo) also matter. We identify which secondary platforms are highest-leverage for your industry.",
+    desc: "Google is the priority, but Yelp, Facebook, and industry directories (Avvo, Healthgrades, Avvo) also matter. We work out which secondary platforms actually matter in your industry.",
   },
   {
     title: "Review monitoring",
