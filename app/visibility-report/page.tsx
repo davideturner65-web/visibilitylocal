@@ -1,0 +1,257 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "The Visibility Report, $297 | Visibility Local",
+  description:
+    "A full diagnostic of how your agency turns up when someone in your town goes looking for an insurance agent. Google Business Profile, map pack, citations, website, and what AI tools say. Written report plus a 30-minute call.",
+  alternates: { canonical: "https://visibilitylocal.com/visibility-report" },
+};
+
+// Stripe Payment Link. Replace with the live link before launch; the placeholder is
+// deliberately obvious so it cannot ship unnoticed.
+const STRIPE_PAYMENT_LINK = "REPLACE_WITH_STRIPE_PAYMENT_LINK";
+const isPaymentLinkLive = !STRIPE_PAYMENT_LINK.startsWith("REPLACE_");
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      name: "The Visibility Report",
+      serviceType: "Local search diagnostic for independent insurance agents",
+      provider: {
+        "@type": "LocalBusiness",
+        name: "Visibility Local",
+        url: "https://visibilitylocal.com",
+      },
+      areaServed: { "@type": "Country", name: "United States" },
+      description:
+        "A written diagnostic of how an independent insurance agency appears across Google Business Profile, the local map pack, citation directories, its own website, and AI search tools, plus a 30-minute walkthrough call.",
+      url: "https://visibilitylocal.com/visibility-report",
+      offers: {
+        "@type": "Offer",
+        price: "297",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        url: "https://visibilitylocal.com/visibility-report",
+        category: "Local SEO audit",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What do I actually receive?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A written report covering five areas: your Google Business Profile, your position in the map pack for the searches that matter in your market, your citation data across the directories that carry weight for insurance, your website, and what ChatGPT and Perplexity say when asked for an agent in your city. Then a 30-minute call to go through it. You keep the report either way.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is the $297 credited if I hire you?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. The full $297 comes off your setup cost if we go on to work together. If we do not, you keep the report and owe nothing further.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Why does this cost money when other agencies audit for free?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Because a free audit is a sales call with a PDF attached, and both sides know it. Charging for the diagnostic means the work is the product rather than the bait, which means it can honestly conclude that you do not need me. That conclusion is worth more than a free report that never reaches it.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How long does it take?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The report is with you within five business days of purchase, and the call is booked at your convenience after that.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
+const included = [
+  {
+    title: "Google Business Profile",
+    body: "Every field, checked against what actually affects ranking. Primary and secondary categories, service areas, hours, attributes, photo set, post cadence, and the Q&A section that most agents have never opened. You get the specific category you should be in and why, not a note that says optimize your GBP.",
+  },
+  {
+    title: "Map pack position, by search",
+    body: "Where you rank for the searches that matter in your market, checked from several points around your city rather than from wherever I happen to be sitting. Proximity moves local results, so a single ranking number is close to meaningless. You see who is holding the three-pack and how far outside it you are.",
+  },
+  {
+    title: "Citation and NAP audit",
+    body: "Your name, address, and phone as they appear across the directories that carry weight for insurance, including your state Department of Insurance licensee record, which is usually your most authoritative citation and is very often wrong. Every mismatch listed, with what it should say.",
+  },
+  {
+    title: "Website review",
+    body: "Whether your site is a template shared with hundreds of other agents, who owns the domain, whether it has schema, and whether it says anything a search engine could distinguish from the next agency. If your FMO owns the registration, that is in the report in plain terms.",
+  },
+  {
+    title: "What the AI tools say about your market",
+    body: "The actual answers ChatGPT and Perplexity give when asked for an insurance agent in your city, transcribed. Who they name, what they cite, and what those sources have that you do not.",
+  },
+  {
+    title: "A 30-minute call",
+    body: "We go through it together and you can ask what any of it means. If the answer is that you should fix three things yourself and call me in a year, that is what I will tell you.",
+  },
+];
+
+export default function VisibilityReportPage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
+      {/* Hero */}
+      <section className="bg-paper py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <p className="section-label">The Visibility Report</p>
+          <h1 className="font-serif text-5xl lg:text-6xl text-ink mt-4 mb-6 leading-tight">
+            What your town actually sees when it goes looking for an agent
+          </h1>
+          <div className="space-y-5 text-ink-2 font-sans text-lg max-w-3xl">
+            <p>
+              You know what your agency looks like from the inside. This is what it looks like from the outside, to somebody in your city who has decided they want an independent agent and is about to pick one.
+            </p>
+            <p>
+              Five areas, written up properly, plus a call to walk through it. Three hundred dollars, near enough, and it comes straight off your setup if you decide to work with me afterwards.
+            </p>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center gap-5">
+            <p className="font-serif text-5xl text-ink">
+              $297
+            </p>
+            <div>
+              {isPaymentLinkLive ? (
+                <a href={STRIPE_PAYMENT_LINK} className="btn-primary text-base px-8 py-4 inline-block">
+                  Buy the report
+                </a>
+              ) : (
+                <span
+                  className="inline-block px-8 py-4 text-base font-sans font-semibold rounded-sm"
+                  style={{ background: "#b91c1c", color: "#fff" }}
+                >
+                  PLACEHOLDER: Stripe payment link not yet configured
+                </span>
+              )}
+              <p className="font-sans text-sm text-ink-3 mt-2">
+                Credited in full toward setup if you hire me.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider-gold" />
+
+      {/* What's included */}
+      <section className="bg-paper-2 py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <p className="section-label">What is in it</p>
+          <h2 className="font-serif text-4xl text-ink mt-4 mb-12">Five areas and a conversation</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {included.map((item) => (
+              <div key={item.title} className="bg-paper p-8 border border-paper-3">
+                <h3 className="font-serif text-xl text-ink mb-4">{item.title}</h3>
+                <p className="font-sans text-ink-2 text-base leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sample excerpt */}
+      <section className="bg-paper py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <p className="section-label">A sample</p>
+          <h2 className="font-serif text-4xl text-ink mt-4 mb-8">An excerpt from a real report</h2>
+
+          {/* PLACEHOLDER: swap for a real redacted excerpt before launch. Styled to fail
+              loudly rather than read as finished copy. */}
+          <div
+            className="border-2 border-dashed rounded-sm p-8"
+            style={{ borderColor: "#b91c1c", background: "rgba(185,28,28,0.04)" }}
+          >
+            <p className="font-sans text-sm font-semibold mb-3" style={{ color: "#b91c1c" }}>
+              PLACEHOLDER, DO NOT PUBLISH: replace with a redacted excerpt from a real report
+            </p>
+            <p className="font-sans text-base text-ink-2 leading-relaxed">
+              Use two or three pages from an actual client report with the agency name and
+              address removed. The GBP category finding and the AI transcript are the two most
+              persuasive sections, so lead with those. A screenshot of the map pack grid carries
+              more weight than a paragraph describing it.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider-gold" />
+
+      {/* Why it costs money */}
+      <section className="bg-paper-2 py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="section-label">Why this is not free</p>
+          <h2 className="font-serif text-4xl text-ink mt-4 mb-6">
+            Because a free audit is a sales call with a PDF attached
+          </h2>
+          <div className="space-y-5 font-sans text-base text-ink-2 leading-relaxed">
+            <p>
+              Every agency in this business offers a free audit. You have probably sat through
+              two. They follow the same shape: a handful of findings, a lot of red on a slide,
+              and a proposal at the end. The findings are real enough. The problem is that the
+              audit exists to produce the proposal, so it can never arrive at the conclusion
+              that you are fine.
+            </p>
+            <p>
+              Charging for the diagnostic changes what it is allowed to say. If your listing is
+              in good shape and your citations are clean, the report says so and you have spent
+              three hundred dollars to stop worrying about it. That is a real outcome and worth
+              the money. It is also an outcome a free audit structurally cannot reach.
+            </p>
+            <p>
+              The credit exists because I would rather you buy the diagnosis than the pitch. If
+              the report leads to work, the $297 comes off the setup and you have effectively
+              paid nothing for it.
+            </p>
+          </div>
+
+          <div className="mt-10">
+            {isPaymentLinkLive ? (
+              <a href={STRIPE_PAYMENT_LINK} className="btn-primary text-base px-8 py-4 inline-block">
+                Buy the report, $297
+              </a>
+            ) : (
+              <span
+                className="inline-block px-8 py-4 text-base font-sans font-semibold rounded-sm"
+                style={{ background: "#b91c1c", color: "#fff" }}
+              >
+                PLACEHOLDER: Stripe payment link not yet configured
+              </span>
+            )}
+          </div>
+
+          <p className="font-sans text-sm text-ink-3 mt-6">
+            Not ready to spend anything?{" "}
+            <Link href="/scorecard" className="text-gold hover:underline">
+              Grade your own listing in ten minutes
+            </Link>{" "}
+            with the free scorecard, or{" "}
+            <Link href="/industries/insurance-agents" className="text-gold hover:underline">
+              read what usually goes wrong
+            </Link>{" "}
+            first.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}

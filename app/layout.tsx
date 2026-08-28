@@ -21,11 +21,11 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Visibility Local | Local SEO & AI Search Visibility for Small Businesses",
+    default: "Visibility Local | Local SEO for Independent Insurance Agents",
     template: "%s | Visibility Local",
   },
   description:
-    "Local SEO and AI search visibility for small business professionals. One client per market. Get found on Google Maps, ChatGPT, and Perplexity.",
+    "Local SEO and AI search visibility for independent insurance agents. One agent per market, nationwide. Get found in the map pack, in ChatGPT, and in Google.",
   metadataBase: new URL("https://visibilitylocal.com"),
   alternates: { canonical: "https://visibilitylocal.com" },
   openGraph: {

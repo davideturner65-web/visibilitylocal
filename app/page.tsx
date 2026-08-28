@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Visibility Local | Local SEO & AI Search Visibility for Small Businesses",
+  title: "Local SEO for Independent Insurance Agents | Visibility Local",
   description:
-    "Local SEO and AI search visibility for independent professionals nationwide. One client per market. Get found on Google Maps, ChatGPT, and Perplexity.",
+    "Local SEO and AI search visibility for independent insurance agents. One agent per market, nationwide. Get found in the map pack, in ChatGPT, and in Google.",
   alternates: { canonical: "https://visibilitylocal.com" },
 };
 
@@ -48,7 +48,7 @@ const schema = {
           name: "Do you work with businesses nationwide?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. Visibility Local works with independent professionals nationwide. Local SEO and AI search visibility are not geography-constrained on our end. If your market is open, we can work together.",
+            text: "Yes. The work is not geography-constrained on my end, so the market I am in has no bearing on the market you are in. The only limit is the one-per-market policy: if I already represent an agent in your city, I will tell you rather than take you both.",
           },
         },
         {
@@ -133,7 +133,7 @@ const faqs = [
   },
   {
     q: "Do you work with businesses nationwide?",
-    a: "Yes. Visibility Local works with independent professionals nationwide. Local SEO and AI search visibility are not geography-constrained on our end. If your market is open, we can work together.",
+    a: "Yes. The work is not geography-constrained on my end, so the market I am in has no bearing on the market you are in. The only limit is the one-per-market policy: if I already represent an agent in your city, I will tell you rather than take you both.",
   },
   {
     q: "What does 'one client per market' mean?",
@@ -157,23 +157,23 @@ export default function HomePage() {
       <section className="bg-paper border-b border-paper-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="max-w-3xl">
-            <p className="section-label mb-5">Local SEO + AI Search Visibility</p>
+            <p className="section-label mb-5">Local SEO for independent insurance agents</p>
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-ink leading-tight mb-6">
-              Local search changed.<br />
-              <span className="italic text-gold">Most businesses haven&apos;t.</span>
+              They went looking for an agent.<br />
+              <span className="italic text-gold">They found the captive down the street.</span>
             </h1>
             <p className="font-sans text-lg text-ink-2 leading-relaxed mb-4 max-w-2xl">
-              Your clients are using Google Maps, ChatGPT, and Perplexity to find professionals before they ever visit a website. Visibility Local builds your presence across all three surfaces. Exclusively. One client per market.
+              Every month, people in your town search for an insurance agent with nobody particular in mind. They read a few names off a map and call one. The agent they call usually does not have better carriers or better advice. He is just the one who turned up.
             </p>
             <p className="font-sans text-base text-ink-3 leading-relaxed mb-8 max-w-xl">
-              Working with independent professionals nationwide. If your market is open, there&apos;s a window.
+              I work with independent insurance agents, nationwide, one agent per market. Not because exclusivity sounds good in a pitch, but because I cannot run the same playbook for two agents fighting over the same map pack.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary text-base px-7 py-3.5">
-                Get a Free Audit
+              <Link href="/visibility-report" className="btn-primary text-base px-7 py-3.5">
+                Get Your Visibility Report
               </Link>
-              <Link href="/services/local-seo" className="btn-secondary text-base px-7 py-3.5">
-                See How It Works
+              <Link href="/industries/insurance-agents" className="btn-secondary text-base px-7 py-3.5">
+                Why agents specifically
               </Link>
             </div>
           </div>
@@ -185,16 +185,16 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             <div>
-              <p className="font-serif text-3xl text-gold">1 per market</p>
-              <p className="font-sans text-sm text-ink-4 mt-1">Exclusive territory. No competitor conflicts.</p>
+              <p className="font-serif text-3xl text-gold">One per market</p>
+              <p className="font-sans text-sm text-ink-4 mt-1">Your competitor cannot hire me.</p>
             </div>
             <div>
-              <p className="font-serif text-3xl text-gold">3 surfaces</p>
-              <p className="font-sans text-sm text-ink-4 mt-1">Google Maps, AI tools, and organic search.</p>
+              <p className="font-serif text-3xl text-gold">Three surfaces</p>
+              <p className="font-sans text-sm text-ink-4 mt-1">The map pack, AI assistants, organic search.</p>
             </div>
             <div>
-              <p className="font-serif text-3xl text-gold">Nationwide</p>
-              <p className="font-sans text-sm text-ink-4 mt-1">Open markets across the country.</p>
+              <p className="font-serif text-3xl text-gold">Agents only</p>
+              <p className="font-sans text-sm text-ink-4 mt-1">The specialty, not one vertical on a list of eight.</p>
             </div>
           </div>
         </div>
@@ -302,29 +302,60 @@ export default function HomePage() {
       {/* INDUSTRIES */}
       <section className="bg-paper-2 border-b border-paper-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-2xl mb-12">
-            <p className="section-label mb-4">Who we work with</p>
+          <div className="max-w-2xl mb-10">
+            <p className="section-label mb-4">Who this is for</p>
             <h2 className="font-serif text-4xl lg:text-5xl text-ink mb-4">
-              Independent professionals in high-trust markets.
+              Independent insurance agents.
             </h2>
             <p className="font-sans text-base text-ink-2 leading-relaxed">
-              These industries share a common problem: the client decision happens locally, trust is the primary factor, and the right search presence can generate referrals that compound for years.
+              You are competing against captive agents with a national brand and a corporate marketing budget behind them, on a search results page where none of that shows. What shows is who set their listing up properly.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {industries.map((ind) => (
-              <Link
-                key={ind.href}
-                href={ind.href}
-                className="group bg-paper border border-paper-3 rounded-sm p-5 hover:border-gold transition-colors duration-200"
-              >
-                <h3 className="font-serif text-lg text-ink mb-1.5 group-hover:text-gold transition-colors duration-200">
-                  {ind.label}
-                </h3>
-                <p className="font-sans text-xs text-ink-3 leading-relaxed">{ind.note}</p>
-              </Link>
-            ))}
+          {/* Insurance agents is the practice, so it gets the full-width treatment rather
+              than sitting as one tile among eight. */}
+          <Link
+            href="/industries/insurance-agents"
+            className="group block bg-ink rounded-sm p-8 lg:p-10 mb-10 hover:bg-ink-2 transition-colors duration-200"
+          >
+            <div className="max-w-3xl">
+              <p className="section-label mb-3" style={{ color: "#c8922a" }}>
+                The specialty
+              </p>
+              <h3 className="font-serif text-3xl lg:text-4xl text-paper mb-4 group-hover:text-gold transition-colors duration-200">
+                Local SEO for independent agents
+              </h3>
+              <p className="font-sans text-base leading-relaxed mb-5" style={{ color: "rgba(247,244,238,0.72)" }}>
+                Four problems show up in nearly every independent agency I look at. The FMO handed you a template site that is identical to four hundred other agents. Your Google listing is set to a category somebody picked at random. Your pipeline runs on referrals, which works right up until it does not. And your Medicare and ACA seasons compress most of the year&apos;s revenue into a few weeks, which is exactly when being invisible costs the most.
+              </p>
+              <span className="font-sans text-sm font-medium text-gold">
+                What that looks like fixed &rarr;
+              </span>
+            </div>
+          </Link>
+
+          <div className="max-w-2xl mb-6">
+            <h3 className="font-serif text-2xl text-ink mb-2">The same system works elsewhere</h3>
+            <p className="font-sans text-sm text-ink-2 leading-relaxed">
+              The mechanics are not specific to insurance. If you are an independent professional in one of these fields and your market is open, the work is the same.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {industries
+              .filter((ind) => ind.href !== "/industries/insurance-agents")
+              .map((ind) => (
+                <Link
+                  key={ind.href}
+                  href={ind.href}
+                  className="group bg-paper border border-paper-3 rounded-sm px-4 py-3.5 hover:border-gold transition-colors duration-200"
+                >
+                  <h4 className="font-sans text-sm font-medium text-ink group-hover:text-gold transition-colors duration-200">
+                    {ind.label}
+                  </h4>
+                  <p className="font-sans text-xs text-ink-3 leading-relaxed mt-0.5">{ind.note}</p>
+                </Link>
+              ))}
           </div>
         </div>
       </section>
@@ -439,16 +470,21 @@ export default function HomePage() {
       <section className="bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="section-label mb-4" style={{ color: '#c8922a' }}>Your market may already be taken</p>
+            <p className="section-label mb-4" style={{ color: '#c8922a' }}>Start with the diagnosis</p>
             <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
-              Find out if your spot is open.
+              Find out what your town actually sees.
             </h2>
             <p className="font-sans text-base leading-relaxed mb-8" style={{ color: 'rgba(247,244,238,0.7)' }}>
-              A free audit takes 20 minutes. You&apos;ll find out where you stand on Google Maps, what your GBP is missing, and whether your market is still available. No pitch, no obligation. If it&apos;s not a fit, we&apos;ll say so.
+              The Visibility Report is a full diagnostic of how your agency turns up when somebody goes looking for an agent: your Google listing, the map pack, your citation data, your site, and what the AI tools say when asked for an agent in your city. Written report, plus a call to walk through it. If the honest answer is that you do not need me, that is what the call will say.
             </p>
-            <Link href="/contact" className="btn-primary text-base px-8 py-4">
-              Get a Free Audit
-            </Link>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">
+                Get Your Visibility Report
+              </Link>
+              <Link href="/scorecard" className="btn-secondary text-base px-8 py-4">
+                Or grade your own listing, free
+              </Link>
+            </div>
           </div>
         </div>
       </section>

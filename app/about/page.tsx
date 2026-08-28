@@ -132,7 +132,7 @@ export default function AboutPage() {
                 <div className="pb-6">
                   <h3 className="font-serif text-xl text-ink mb-2">One client per market, per industry</h3>
                   <p className="font-sans text-sm text-ink-2 leading-relaxed">
-                    Visibility Local takes one insurance agent per city. One mortgage broker per metro. If your market is open, you have exclusive local SEO representation. That policy exists because the work only makes sense when I am on one side of a competitive matchup, not because it makes a better headline.
+                    One insurance agent per city. One mortgage broker per metro. Once I take you on, I will not sell the same work to the agent across town for as long as you are a client. That policy exists because the work only makes sense when I am on one side of a competitive matchup, not because it makes a better headline.
                   </p>
                 </div>
               </div>
@@ -189,17 +189,17 @@ export default function AboutPage() {
       <section className="bg-paper border-b border-paper-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="section-label mb-4">Check Availability</p>
+            <p className="section-label mb-4">Where to start</p>
             <div className="divider-gold" />
             <h2 className="font-serif text-4xl lg:text-5xl text-ink mt-6 mb-5">
-              Is your market available?
+              Start with the diagnosis.
             </h2>
             <p className="font-sans text-base text-ink-2 leading-relaxed mb-8">
-              Visibility Local works with one client per market. If your city and industry are open, a free audit is the right first step. It takes about 20 minutes, covers your GBP, citations, and current map pack position, and gives you a real picture of where you stand before any commitment is made.
+              One agent per market, and once I take yours your competitor cannot hire me. The sensible first step is the Visibility Report: a written diagnostic of your listing, your citations, your map pack position and what the AI tools say about your city. It costs $297 and comes off your setup if we go on to work together.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary text-base px-7 py-3.5">
-                Request a Free Audit
+              <Link href="/visibility-report" className="btn-primary text-base px-7 py-3.5">
+                Get Your Visibility Report
               </Link>
               <Link href="/industries/insurance-agents" className="btn-secondary text-base px-7 py-3.5">
                 Insurance Agent SEO

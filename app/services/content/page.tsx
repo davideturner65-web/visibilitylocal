@@ -278,14 +278,19 @@ export default function ContentPage() {
               One client per market
             </p>
             <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
-              Check if your market is available.
+              Find out what your town actually sees.
             </h2>
             <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(247,244,238,0.7)" }}>
-              A free audit includes an assessment of your current content coverage, which queries you are missing, and what it would take to rank in your market. No pitch if it is not a fit.
+              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need me, the call will say so.
             </p>
-            <Link href="/contact" className="btn-primary text-base px-8 py-4">
-              Check if your market is available
-            </Link>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">
+                Get Your Visibility Report
+              </Link>
+              <Link href="/scorecard" className="btn-secondary text-base px-8 py-4">
+                Or grade your own listing, free
+              </Link>
+            </div>
           </div>
         </div>
       </section>

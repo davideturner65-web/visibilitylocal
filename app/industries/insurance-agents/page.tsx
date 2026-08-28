@@ -107,6 +107,72 @@ export default function InsuranceAgentsPage() {
 
       <div className="divider-gold" />
 
+      {/* What the business actually looks like. The technical problems come after; these are
+          the four things that show up in nearly every independent agency. */}
+      <section className="bg-ink py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="section-label" style={{ color: "#c8922a" }}>
+            What I see in almost every agency
+          </p>
+          <h2 className="font-serif text-4xl text-paper mt-4 mb-10">
+            Four things costing you business that have nothing to do with your carriers
+          </h2>
+
+          <div className="space-y-10">
+            <div>
+              <h3 className="font-serif text-2xl text-paper mb-3">Your FMO gave you a website that hurts you</h3>
+              <div className="space-y-4 font-sans text-base leading-relaxed" style={{ color: "rgba(247,244,238,0.72)" }}>
+                <p>
+                  This one genuinely irritates me. Your FMO or IMO handed you a site as a benefit of contracting. It has the same structure, the same page titles, and very close to the same body copy as every other agent who took the same deal. Sometimes hundreds of them. Your name and headshot were swapped in and that is the extent of what makes it yours.
+                </p>
+                <p>
+                  Google is very good at spotting that. When four hundred pages say nearly the same thing, it picks one to show and treats the rest as redundant. You are not being outranked by a better agent. You are being filtered as a duplicate.
+                </p>
+                <p>
+                  The second problem is worse and quieter. On a lot of these arrangements you do not own the domain. Every link earned, every month of age, every bit of authority accrues to an asset you cannot take with you. Change FMOs and you start from nothing. Ask who the registrant is. If the answer is not you, that is the first thing to fix, ahead of anything on this page.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-serif text-2xl text-paper mb-3">Referrals are your best business and your worst pipeline</h3>
+              <div className="space-y-4 font-sans text-base leading-relaxed" style={{ color: "rgba(247,244,238,0.72)" }}>
+                <p>
+                  Referred clients close faster, price-shop less, and stay longer. Nothing here argues against that. The trouble is that you cannot turn referrals up in a month when you need production, and you cannot make them arrive during the eight weeks when writing business actually matters.
+                </p>
+                <p>
+                  Search is the channel you can influence on purpose. Someone typing "independent insurance agent near me" has already decided they do not want a captive. That is a self-qualifying search, and the only question is whether you are one of the three names on the map.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-serif text-2xl text-paper mb-3">Your year is compressed into about ten weeks</h3>
+              <div className="space-y-4 font-sans text-base leading-relaxed" style={{ color: "rgba(247,244,238,0.72)" }}>
+                <p>
+                  Medicare Annual Enrollment runs October 15 to December 7. ACA Open Enrollment runs November 1 to January 15. If you write either line, a large share of your year lands inside that window.
+                </p>
+                <p>
+                  Now put that against how search works. Google Business Profile corrections move in 30 to 60 days. Content rankings take 90 to 180. Do the arithmetic backwards from October 15 and the work has to be underway by roughly June to be paying you in the fall. Agents call me in late September every year, and by then the honest answer is that we are building for next season.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-serif text-2xl text-paper mb-3">You are probably targeting the wrong line</h3>
+              <div className="space-y-4 font-sans text-base leading-relaxed" style={{ color: "rgba(247,244,238,0.72)" }}>
+                <p>
+                  Most agents who ask about SEO want to rank for home and auto. I would steer you off it. Those terms are saturated by carriers with national ad budgets, aggregators, and lead sellers who can pay more for a click than the policy is worth to you. You can spend a year there and place tenth.
+                </p>
+                <p>
+                  Medicare, ACA, final expense, and small commercial behave differently. The searches are more specific, the intent is higher, the national brands compete less directly for them, and the client relationship is worth considerably more over its life. That is where an independent can actually take ground.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Challenge section */}
       <section className="bg-paper-2 py-20 px-6">
         <div className="max-w-5xl mx-auto">

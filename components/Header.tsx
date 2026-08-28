@@ -95,8 +95,16 @@ export default function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Link href="/contact" className="btn-primary text-sm px-5 py-2.5">
-              Free Audit
+            {/* The specialty sits at the top level rather than inside the Industries
+                dropdown, because it is the practice rather than one vertical of eight. */}
+            <Link
+              href="/industries/insurance-agents"
+              className="px-3 py-2 text-sm font-sans font-medium text-ink hover:text-gold transition-colors rounded"
+            >
+              For Insurance Agents
+            </Link>
+            <Link href="/visibility-report" className="btn-primary text-sm px-5 py-2.5">
+              Visibility Report
             </Link>
           </div>
 
@@ -123,6 +131,14 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden bg-paper border-t border-paper-3 px-4 pb-6 pt-2">
           <div className="space-y-1">
+            <Link
+              href="/industries/insurance-agents"
+              className="block py-2.5 text-base font-sans font-semibold text-ink hover:text-gold"
+              onClick={() => setMobileOpen(false)}
+            >
+              For Insurance Agents
+            </Link>
+
             <p className="section-label pt-3 pb-1">Services</p>
             {services.map((s) => (
               <Link
@@ -152,9 +168,12 @@ export default function Header() {
               <Link href="/about" className="block py-2 text-sm font-sans font-medium text-ink-2 hover:text-ink" onClick={() => setMobileOpen(false)}>About</Link>
             </div>
 
-            <div className="pt-4">
-              <Link href="/contact" className="btn-primary w-full text-center" onClick={() => setMobileOpen(false)}>
-                Free Audit
+            <div className="pt-4 space-y-2">
+              <Link href="/visibility-report" className="btn-primary w-full text-center block" onClick={() => setMobileOpen(false)}>
+                Visibility Report
+              </Link>
+              <Link href="/scorecard" className="btn-secondary w-full text-center block" onClick={() => setMobileOpen(false)}>
+                Free Scorecard
               </Link>
             </div>
           </div>

@@ -65,16 +65,16 @@ export default function ContactPage() {
       <section className="bg-paper border-b border-paper-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="max-w-2xl">
-            <p className="section-label mb-5">Free Audit Request</p>
+            <p className="section-label mb-5">Get in touch</p>
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-ink leading-tight mb-6">
-              Your market may already<br />
-              <span className="italic text-gold">be taken.</span>
+              Ask me something<br />
+              <span className="italic text-gold">before you spend anything.</span>
             </h1>
             <p className="font-sans text-lg text-ink-2 leading-relaxed mb-4">
-              A free audit takes about 20 minutes. We look at your Google Business Profile, citation profile, and current map pack visibility. If your market is open and it looks like a fit, we'll talk about what working together looks like.
+              If you want the full diagnostic, that is the Visibility Report and you can buy it without talking to me first. This form is for everything else: whether your market is taken, whether your situation is one I can actually help with, or whether the thing you read on this site applies to you.
             </p>
             <p className="font-sans text-base text-ink-3 leading-relaxed">
-              No pitch deck. No proposal theater.
+              I answer these myself, usually within a day. No pitch deck, no proposal theater.
             </p>
           </div>
 
@@ -83,7 +83,7 @@ export default function ContactPage() {
             <div className="w-2 h-2 rounded-full bg-gold mt-1.5 shrink-0" />
             <p className="font-sans text-sm text-ink-2 leading-relaxed">
               <span className="font-semibold text-ink">Visibility Local works with one client per market.</span>{" "}
-              Check availability while your market is open.
+              Once I take your market, your competitor cannot hire me. Ask and I will tell you straight whether yours is spoken for.
             </p>
           </div>
         </div>
@@ -254,11 +254,11 @@ export default function ContactPage() {
                 </div>
 
                 <button type="submit" className="btn-primary text-base px-8 py-3.5 w-full sm:w-auto">
-                  Request Free Audit
+                  Send it
                 </button>
 
                 <p className="font-sans text-xs text-ink-4 leading-relaxed">
-                  By submitting this form you agree to be contacted about your audit request. No spam. No list adds without permission.
+                  By submitting this form you agree to be contacted about your enquiry. No spam, and I will not add you to a list without asking.
                 </p>
               </form>
             </div>
