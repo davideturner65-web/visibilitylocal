@@ -10,6 +10,25 @@ export const metadata: Metadata = {
   },
 };
 
+const faqs = [
+              {
+                q: "Should I have separate GBP listings for each city I serve?",
+                a: "No. Google prohibits multiple listings for the same business without a physical presence at each address. The correct setup is a single GBP listing configured as a service area business, with your service area set to include all cities you cover. For local search visibility in each city, you build dedicated service area pages on your website. The GBP listing establishes your entity. The website pages capture city-specific searches.",
+              },
+              {
+                q: "What is the difference between a service area business and a storefront on Google?",
+                a: "A storefront GBP listing shows your physical address and ranks primarily near that address. A service area business listing hides your address and specifies the geographic areas you serve. Home services businesses that travel to the customer's location, and that don't have a customer-facing office, typically set up as service area businesses. Both can rank well in local search with proper configuration.",
+              },
+              {
+                q: "How do service area pages help with local rankings?",
+                a: "'Plumbing services Austin' and 'plumbing services Cedar Park' are different search results pages. Without a Cedar Park page, you will not rank for Cedar Park searches regardless of how well-optimized your homepage is. Each city needs its own page with unique content covering your services in that city, relevant local context, and a locally specific call to action. Generic pages that swap only the city name don't rank and don't convert.",
+              },
+              {
+                q: "How do Google Local Services Ads work alongside GBP?",
+                a: "Google Local Services Ads appear above the organic map pack for many home services searches and operate on a pay-per-lead model. The Google Guaranteed badge that comes with LSA verification is a trust signal. LSA and GBP are separate systems but both appear for the same searches. A business with both an active LSA campaign and a well-optimized GBP listing can occupy two separate positions on the same results page, which compounds click share and trust signals simultaneously.",
+              },
+            ];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -27,43 +46,18 @@ const schema = {
       },
       areaServed: { "@type": "Country", name: "United States" },
       serviceType: "Local SEO",
+      audience: {
+        "@type": "Audience",
+        audienceType: "Home services contractors",
+      },
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Should I have separate GBP listings for each city I serve?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "You cannot create multiple GBP listings for the same business at different cities without a physical location in each city. Google's guidelines prohibit listing a business at an address where it doesn't have a real presence. The correct approach for home services businesses serving multiple cities from a single location is a single GBP listing set up as a service area business, with the service area configured to include all cities you serve. For local search visibility in each of those cities, you build dedicated service area pages on your website.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What is the difference between a service area business and a storefront on Google?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "A storefront GBP listing shows your physical address and appears in searches near that address. A service area business GBP listing hides your address (appropriate if you work from home or a non-customer-facing location) and instead specifies the geographic areas you serve. Home services businesses that travel to the customer's location typically set up as service area businesses. The local search visibility mechanics are similar for both, but the configuration and ranking dynamics differ. We set up whichever structure is correct for your business.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do service area pages help with local rankings?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Service area pages give Google a location-specific page to rank for city-level searches that your homepage cannot target. 'Plumbing services Austin' and 'plumbing services Cedar Park' are different SERPs. Without a Cedar Park page, you will not rank for Cedar Park searches regardless of how good your homepage is. Each service area page should have unique content covering your services in that specific city, local landmarks and neighborhoods as context, and a locally relevant call to action. Generic pages that just swap the city name rank poorly and don't convert.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do Google Local Services Ads work alongside GBP?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Google Local Services Ads (LSA) appear above the organic map pack for many home services searches and are pay-per-lead rather than pay-per-click. The Google Guaranteed badge that comes with LSA verification is a significant trust signal. LSA and GBP are separate systems but both appear for the same searches. A home services business with both an active LSA campaign and a well-optimized GBP listing can occupy two different positions on the same results page. They complement each other and should be pursued in parallel.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -312,24 +306,7 @@ export default function HomeServicesPage() {
             Common questions from home services businesses
           </h2>
           <div className="space-y-8">
-            {[
-              {
-                q: "Should I have separate GBP listings for each city I serve?",
-                a: "No. Google prohibits multiple listings for the same business without a physical presence at each address. The correct setup is a single GBP listing configured as a service area business, with your service area set to include all cities you cover. For local search visibility in each city, you build dedicated service area pages on your website. The GBP listing establishes your entity. The website pages capture city-specific searches.",
-              },
-              {
-                q: "What is the difference between a service area business and a storefront on Google?",
-                a: "A storefront GBP listing shows your physical address and ranks primarily near that address. A service area business listing hides your address and specifies the geographic areas you serve. Home services businesses that travel to the customer's location, and that don't have a customer-facing office, typically set up as service area businesses. Both can rank well in local search with proper configuration.",
-              },
-              {
-                q: "How do service area pages help with local rankings?",
-                a: "'Plumbing services Austin' and 'plumbing services Cedar Park' are different search results pages. Without a Cedar Park page, you will not rank for Cedar Park searches regardless of how well-optimized your homepage is. Each city needs its own page with unique content covering your services in that city, relevant local context, and a locally specific call to action. Generic pages that swap only the city name don't rank and don't convert.",
-              },
-              {
-                q: "How do Google Local Services Ads work alongside GBP?",
-                a: "Google Local Services Ads appear above the organic map pack for many home services searches and operate on a pay-per-lead model. The Google Guaranteed badge that comes with LSA verification is a trust signal. LSA and GBP are separate systems but both appear for the same searches. A business with both an active LSA campaign and a well-optimized GBP listing can occupy two separate positions on the same results page, which compounds click share and trust signals simultaneously.",
-              },
-            ].map((faq, i) => (
+            {faqs.map((faq, i) => (
               <div key={i} className="border-b border-paper-3 pb-8">
                 <h3 className="font-serif text-xl text-ink mb-4">{faq.q}</h3>
                 <p className="font-sans text-ink-2 text-base leading-relaxed">

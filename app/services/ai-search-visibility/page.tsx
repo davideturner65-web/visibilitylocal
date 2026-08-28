@@ -8,6 +8,25 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://visibilitylocal.com/services/ai-search-visibility" },
 };
 
+const faqs = [
+  {
+    q: "What is GEO (Generative Engine Optimization)?",
+    a: "Generative Engine Optimization is the practice of structuring your web presence so that AI tools like ChatGPT, Perplexity, and Google AI Overviews will cite or recommend your business when users ask relevant questions. It combines traditional SEO signals with structured data, entity establishment across authoritative directories, and content written to answer specific questions explicitly.",
+  },
+  {
+    q: "How do AI tools decide which businesses to recommend?",
+    a: "Each tool draws from different sources. ChatGPT uses Bing's web index and its training data. Perplexity performs live web searches and cites sources directly. Google AI Overviews pull from Google's index with preference for structured, authoritative pages. All three share a common pattern: they prefer businesses with consistent entity data across multiple authoritative sources, structured markup that makes the information parseable, and content that answers specific questions clearly.",
+  },
+  {
+    q: "How is AI search visibility different from regular SEO?",
+    a: "Traditional SEO optimizes for ranked lists of blue links. AI search visibility optimizes for recommendation and citation in conversational answers. The signals that matter are similar but weighted differently: structured data becomes critical because AI tools need parseable information, entity consistency across the web builds the trust signal that triggers recommendations, and direct question-and-answer content gives AI tools something specific to cite.",
+  },
+  {
+    q: "How long does it take to appear in AI recommendations?",
+    a: "I do not know, and neither does anyone who tells you they do. The mechanics have schedules: schema gets validated and indexed, entity data across directories takes one to three months to agree, and content has to exist before it can be cited. Those steps I will commit to. When a specific model starts recommending you depends on retraining cycles and retrieval behaviour that no agency has visibility into. Treat a promised date as a reason to walk away from that vendor.",
+  },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -26,40 +45,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "What is GEO (Generative Engine Optimization)?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Generative Engine Optimization is the practice of structuring your web presence so that AI tools like ChatGPT, Perplexity, and Google AI Overviews will cite or recommend your business when users ask relevant questions. It combines traditional SEO signals with structured data, entity establishment across authoritative directories, and content written to answer specific questions explicitly.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do AI tools decide which businesses to recommend?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Each tool draws from different sources. ChatGPT uses Bing's web index and its training data. Perplexity performs live web searches and cites sources directly. Google AI Overviews pull from Google's index with preference for structured, authoritative pages. All three share a common pattern: they prefer businesses with consistent entity data across multiple authoritative sources, structured markup that makes the information parseable, and content that answers specific questions clearly.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How is AI search visibility different from regular SEO?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Traditional SEO optimizes for ranked lists of blue links. AI search visibility optimizes for recommendation and citation in conversational answers. The signals that matter are similar but weighted differently: structured data becomes critical because AI tools need parseable information, entity consistency across the web builds the trust signal that triggers recommendations, and direct question-and-answer content gives AI tools something specific to cite.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How long does it take to appear in AI recommendations?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "I do not know, and neither does anyone who tells you they do. The mechanics have schedules: schema gets validated and indexed, entity data across directories takes one to three months to agree, and content has to exist before it can be cited. Those steps I will commit to. When a specific model starts recommending you depends on retraining cycles and retrieval behaviour that no agency has visibility into. Treat a promised date as a reason to walk away from that vendor.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -106,24 +96,6 @@ const whyMatters = [
   },
 ];
 
-const faqs = [
-  {
-    q: "What is GEO (Generative Engine Optimization)?",
-    a: "Generative Engine Optimization is the practice of structuring your web presence so that AI tools like ChatGPT, Perplexity, and Google AI Overviews will cite or recommend your business when users ask relevant questions. It combines traditional SEO signals with structured data, entity establishment across authoritative directories, and content written to answer specific questions explicitly.",
-  },
-  {
-    q: "How do AI tools decide which businesses to recommend?",
-    a: "Each tool draws from different sources. ChatGPT uses Bing's web index and its training data. Perplexity performs live web searches and cites sources directly. Google AI Overviews pull from Google's index with preference for structured, authoritative pages. All three share a common pattern: they prefer businesses with consistent entity data across multiple authoritative sources, structured markup that makes the information parseable, and content that answers specific questions clearly.",
-  },
-  {
-    q: "How is AI search visibility different from regular SEO?",
-    a: "Traditional SEO optimizes for ranked lists of blue links. AI search visibility optimizes for recommendation and citation in conversational answers. The signals that matter are similar but weighted differently: structured data becomes critical because AI tools need parseable information, entity consistency across the web builds the trust signal that triggers recommendations, and direct question-and-answer content gives AI tools something specific to cite.",
-  },
-  {
-    q: "How long does it take to appear in AI recommendations?",
-    a: "I do not know, and neither does anyone who tells you they do. The mechanics have schedules: schema gets validated and indexed, entity data across directories takes one to three months to agree, and content has to exist before it can be cited. Those steps I will commit to. When a specific model starts recommending you depends on retraining cycles and retrieval behaviour that no agency has visibility into. Treat a promised date as a reason to walk away from that vendor.",
-  },
-];
 
 const relatedServices = [
   { label: "Local SEO", href: "/services/local-seo" },

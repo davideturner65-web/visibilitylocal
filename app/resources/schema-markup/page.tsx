@@ -8,62 +8,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://visibilitylocal.com/resources/schema-markup" },
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      headline: "Schema Markup for Local Businesses: Complete Guide",
-      author: { "@type": "Person", name: "David Turner" },
-      publisher: {
-        "@type": "Organization",
-        name: "Visibility Local",
-        url: "https://visibilitylocal.com",
-      },
-      url: "https://visibilitylocal.com/resources/schema-markup",
-      description:
-        "How to implement schema markup for local business SEO and AI search visibility. LocalBusiness, Service, FAQPage, and Person schema for independent professionals.",
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Does schema markup directly improve my Google ranking?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Schema markup does not directly add ranking points in Google's algorithm the way links or content quality do. What it does is make your content and entity data more legible to Google's crawlers and AI systems. This legibility has practical ranking effects: better entity recognition, eligibility for rich results that increase CTR, and improved AI search citation. Think of schema as removing ambiguity rather than adding authority.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What is JSON-LD and how do I add it to my website?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "JSON-LD (JavaScript Object Notation for Linked Data) is the format Google recommends for schema markup. It is a block of structured JSON code added inside a script tag in your page's head or body HTML. In Next.js, this is typically added as a script tag with type='application/ld+json' and dangerouslySetInnerHTML containing your JSON schema object. In WordPress, plugins like Yoast SEO or RankMath handle some schema automatically, but manual JSON-LD blocks give you more control.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What is the most important schema type for a local business?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "LocalBusiness (or its relevant subtype) is the most important schema type for establishing your entity with Google and AI tools. It confirms your name, address, phone, hours, and service area in machine-readable format. After LocalBusiness, FAQPage does the most for AI search visibility, because it puts your answers in the shape these tools prefer to cite.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do I test if my schema markup is working?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Use Google's Rich Results Test (search.google.com/test/rich-results) to test any URL for schema markup. It shows which schema types were found, what data was extracted, and any errors or warnings. For a general schema validity check, use the Schema.org Markup Validator (validator.schema.org). Test your key pages, your homepage, your primary service page, and any pages with FAQ content, after adding or changing schema.",
-          },
-        },
-      ],
-    },
-  ],
-};
-
 const faqs = [
   {
     q: "Does schema markup directly improve my Google ranking?",
@@ -82,6 +26,36 @@ const faqs = [
     a: "Use Google's Rich Results Test (search.google.com/test/rich-results) to test any URL for schema markup. It shows which schema types were found, what data was extracted, and any errors or warnings. For a general schema validity check, use the Schema.org Markup Validator (validator.schema.org). Test your key pages, your homepage, your primary service page, and any pages with FAQ content, after adding or changing schema.",
   },
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "Schema Markup for Local Businesses: Complete Guide",
+      datePublished: "2026-01-15",
+      dateModified: "2026-08-28",
+      author: { "@type": "Person", name: "David Turner" },
+      publisher: {
+        "@type": "Organization",
+        name: "Visibility Local",
+        url: "https://visibilitylocal.com",
+      },
+      url: "https://visibilitylocal.com/resources/schema-markup",
+      description:
+        "How to implement schema markup for local business SEO and AI search visibility. LocalBusiness, Service, FAQPage, and Person schema for independent professionals.",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
+
 
 const localBusinessExample = `{
   "@context": "https://schema.org",

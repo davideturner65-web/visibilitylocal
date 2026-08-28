@@ -8,62 +8,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://visibilitylocal.com/resources/insurance-agent-gbp" },
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      headline: "Google Business Profile for Insurance Agents: Complete Setup Guide",
-      author: { "@type": "Person", name: "David Turner" },
-      publisher: {
-        "@type": "Organization",
-        name: "Visibility Local",
-        url: "https://visibilitylocal.com",
-      },
-      url: "https://visibilitylocal.com/resources/insurance-agent-gbp",
-      description:
-        "How to set up and optimize Google Business Profile for independent insurance agents. Category selection, attributes, and tactics for competing in local insurance searches.",
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "What GBP category should an independent insurance agent use?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Independent agents who sell multiple product lines should use 'Insurance Agency' as their primary category. This category has the broadest search footprint and matches how most clients search for an agent. 'Life Insurance Agency,' 'Health Insurance Agency,' and 'Auto Insurance Agency' are appropriate as secondary categories for agents who specialize in or want to emphasize those lines. 'Insurance Broker' has a different search footprint and a different meaning to consumers in many markets. 'Insurance Company' is incorrect for agents and limits visibility.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do independent agents compete with State Farm in local search?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "State Farm captive agents have large parent-company infrastructure behind them, but they also have GBP listings managed by agents who often do not know how to optimize them. The independent agent advantage is specificity: you can list all of your carriers, your specific service lines, and your local market knowledge in a way that a captive agent promoting one company cannot. Focus on GBP completeness, consistent review velocity, and FAQ content that highlights the independent agent value proposition. The map pack does not favor national brands automatically.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What should I post to my insurance agency GBP?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Seasonal and deadline-driven content performs best for insurance agencies. ACA open enrollment (October through December), Medicare open enrollment (October 15 through December 7), tax season reminders about HSA contributions, and state-specific open enrollment dates are all high-value posting topics. Avoid generic insurance tips. Post about actual deadlines, actual rate changes, and actual decisions your clients need to make. This type of content demonstrates genuine subject matter expertise and attracts high-intent searchers.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do insurance clients find local agents online?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The most common search patterns are 'insurance agent near me,' '[city] health insurance agent,' 'independent insurance agent [city],' and specific product searches like 'Medicare supplement insurance [city]' or 'ACA marketplace plans [city].' The term 'independent insurance agent' is an active search query used by clients who specifically want someone who represents multiple carriers. Including 'independent' in your GBP description and services section captures that traffic directly.",
-          },
-        },
-      ],
-    },
-  ],
-};
-
 const faqs = [
   {
     q: "What GBP category should an independent insurance agent use?",
@@ -82,6 +26,36 @@ const faqs = [
     a: "The most common search patterns are 'insurance agent near me,' '[city] health insurance agent,' 'independent insurance agent [city],' and specific product searches like 'Medicare supplement insurance [city]' or 'ACA marketplace plans [city].' The term 'independent insurance agent' is an active search query used by clients who specifically want someone who represents multiple carriers. Including 'independent' in your GBP description and services section captures that traffic directly.",
   },
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "Google Business Profile for Insurance Agents: Complete Setup Guide",
+      datePublished: "2026-01-15",
+      dateModified: "2026-08-28",
+      author: { "@type": "Person", name: "David Turner" },
+      publisher: {
+        "@type": "Organization",
+        name: "Visibility Local",
+        url: "https://visibilitylocal.com",
+      },
+      url: "https://visibilitylocal.com/resources/insurance-agent-gbp",
+      description:
+        "How to set up and optimize Google Business Profile for independent insurance agents. Category selection, attributes, and tactics for competing in local insurance searches.",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
+
 
 const qaSeeds = [
   {

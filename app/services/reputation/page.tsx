@@ -8,6 +8,25 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://visibilitylocal.com/services/reputation" },
 };
 
+const faqs = [
+  {
+    q: "How many reviews do I need to rank in the map pack?",
+    a: "There is no fixed number. Google weights review velocity and recency more than total count. A business receiving 2 to 3 reviews per month consistently will often outrank one with 80 reviews from three years ago and none since. Getting 10 reviews and stopping is worse than getting 2 per month indefinitely.",
+  },
+  {
+    q: "Is it against Google's rules to ask clients for reviews?",
+    a: "No. Google explicitly allows businesses to ask clients for reviews. What Google prohibits is incentivizing reviews with discounts or gifts, and review gating. Asking satisfied clients to share their experience is fully within the rules.",
+  },
+  {
+    q: "How should I respond to a negative review?",
+    a: "Respond quickly, professionally, and without specifics. Acknowledge the concern, apologize for a poor experience, and invite them to contact you directly to resolve it. Do not get defensive. A well-handled negative response often reads as more trustworthy than a business with nothing but 5-star reviews.",
+  },
+  {
+    q: "Do reviews on Yelp and Facebook help my Google ranking?",
+    a: "Google is the priority. But Yelp, Facebook, and industry-specific platforms also appear in search results for your business name and contribute to overall entity authority signals. A strong review profile across multiple platforms reinforces your credibility to both Google and AI search tools.",
+  },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -26,40 +45,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "How many reviews do I need to rank in the map pack?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "There is no fixed number. Google weights review velocity and recency more than total count. A business receiving 2 to 3 reviews per month consistently will often outrank one with 80 reviews from three years ago and none since. Getting 10 reviews and stopping is worse than getting 2 per month indefinitely.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Is it against Google's rules to ask clients for reviews?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "No. Google explicitly allows businesses to ask clients for reviews. What Google prohibits is incentivizing reviews with discounts or gifts, and review gating (only sending review requests to clients you believe will leave positive reviews). Asking satisfied clients to share their experience is fully within the rules.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How should I respond to a negative review?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Respond quickly, professionally, and without specifics. Acknowledge the concern, apologize for a poor experience, and invite them to contact you directly to resolve it. Do not get defensive. Do not include details that could confirm the reviewer as a client (important for HIPAA-regulated businesses). A well-handled negative response often reads as more trustworthy than a business with nothing but 5-star reviews.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Do reviews on Yelp and Facebook help my Google ranking?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Google is the priority and where most local ranking impact is felt. But Yelp, Facebook, and industry-specific platforms (Avvo for attorneys, Healthgrades for medical) feed into your overall authority signals and appear in search results for your business name. A strong review profile across multiple platforms contributes to the entity authority that affects both Google rankings and AI search recommendations.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -91,24 +81,6 @@ const deliverables = [
   },
 ];
 
-const faqs = [
-  {
-    q: "How many reviews do I need to rank in the map pack?",
-    a: "There is no fixed number. Google weights review velocity and recency more than total count. A business receiving 2 to 3 reviews per month consistently will often outrank one with 80 reviews from three years ago and none since. Getting 10 reviews and stopping is worse than getting 2 per month indefinitely.",
-  },
-  {
-    q: "Is it against Google's rules to ask clients for reviews?",
-    a: "No. Google explicitly allows businesses to ask clients for reviews. What Google prohibits is incentivizing reviews with discounts or gifts, and review gating. Asking satisfied clients to share their experience is fully within the rules.",
-  },
-  {
-    q: "How should I respond to a negative review?",
-    a: "Respond quickly, professionally, and without specifics. Acknowledge the concern, apologize for a poor experience, and invite them to contact you directly to resolve it. Do not get defensive. A well-handled negative response often reads as more trustworthy than a business with nothing but 5-star reviews.",
-  },
-  {
-    q: "Do reviews on Yelp and Facebook help my Google ranking?",
-    a: "Google is the priority. But Yelp, Facebook, and industry-specific platforms also appear in search results for your business name and contribute to overall entity authority signals. A strong review profile across multiple platforms reinforces your credibility to both Google and AI search tools.",
-  },
-];
 
 const relatedServices = [
   { label: "Google Business Profile", href: "/services/google-business-profile" },

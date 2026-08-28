@@ -8,6 +8,29 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://visibilitylocal.com" },
 };
 
+const faqs = [
+  {
+    q: "What is AI search visibility?",
+    a: "AI search visibility refers to how prominently your business appears when someone asks ChatGPT, Perplexity, or Google AI Overviews for a local recommendation. These tools pull from structured business data, authoritative content, and trusted citations. Without deliberate optimization, most local businesses are invisible to AI-generated recommendations.",
+  },
+  {
+    q: "How is Visibility Local different from a regular SEO agency?",
+    a: "Two things. First, we work with one client per market, so we're never splitting attention between you and a direct competitor. Second, there are no account managers or junior staff. David Turner handles every client directly. The person you talk to is the person doing the work.",
+  },
+  {
+    q: "Do you work with businesses nationwide?",
+    a: "Yes. The work is not geography-constrained on my end, so the market I am in has no bearing on the market you are in. The only limit is the one-per-market policy: if I already represent an agent in your city, I will tell you rather than take you both.",
+  },
+  {
+    q: "What does 'one client per market' mean?",
+    a: "It means we don't take a second insurance agent in Phoenix, a second mortgage broker in Austin, or a second CPA in Nashville while you're a client. You get exclusive local SEO representation in your market. We don't work both sides of the same competitive matchup.",
+  },
+  {
+    q: "How long does it take to see results?",
+    a: "Google Business Profile work usually shows movement in 30 to 60 days, because it corrects things Google already measures: your primary category, citation consistency, review velocity. Organic content rankings take 90 to 180 days. For AI search I will not give you a date. Nobody outside the model vendors can see when a system starts naming you, and anyone quoting a timeline for it is guessing. What I commit to is the work: the schema ships, the entity data agrees across the web, and the content is written to be citable. Then we watch what the tools actually say about your market.",
+  },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -26,48 +49,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "What is AI search visibility?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "AI search visibility refers to how prominently your business appears when someone asks ChatGPT, Perplexity, Google AI Overviews, or similar tools for a local recommendation. These tools pull from structured business data, authoritative content, and trusted citations. Without deliberate optimization, most local businesses are invisible to AI-generated recommendations.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How is Visibility Local different from a regular SEO agency?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Two things. First, we work with one client per market, so we're never splitting our attention between you and a direct competitor. Second, there are no account managers or junior staff. David Turner handles every client directly. That means the person you talk to is the person doing the work.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Do you work with businesses nationwide?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. The work is not geography-constrained on my end, so the market I am in has no bearing on the market you are in. The only limit is the one-per-market policy: if I already represent an agent in your city, I will tell you rather than take you both.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What does one client per market mean?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "It means we don't take a second insurance agent in Phoenix, a second mortgage broker in Austin, or a second CPA in Nashville while you're a client. You get exclusive local SEO representation in your market. We don't work both sides of the same competitive matchup.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How long does it take to see results in local SEO?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Google Business Profile work usually shows movement in 30 to 60 days, because it corrects things Google already measures: your primary category, citation consistency, review velocity. Organic content rankings take 90 to 180 days. For AI search I will not give you a date. Nobody outside OpenAI and Google can see when a model starts naming you, and any vendor quoting you a timeline for it is guessing. What I commit to is the work itself: the schema ships, the entity data agrees across the web, and the content is written to be citable.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -122,28 +108,6 @@ const industries = [
   { label: "Home Services", href: "/industries/home-services", note: "Service area pages that rank" },
 ];
 
-const faqs = [
-  {
-    q: "What is AI search visibility?",
-    a: "AI search visibility refers to how prominently your business appears when someone asks ChatGPT, Perplexity, or Google AI Overviews for a local recommendation. These tools pull from structured business data, authoritative content, and trusted citations. Without deliberate optimization, most local businesses are invisible to AI-generated recommendations.",
-  },
-  {
-    q: "How is Visibility Local different from a regular SEO agency?",
-    a: "Two things. First, we work with one client per market, so we're never splitting attention between you and a direct competitor. Second, there are no account managers or junior staff. David Turner handles every client directly. The person you talk to is the person doing the work.",
-  },
-  {
-    q: "Do you work with businesses nationwide?",
-    a: "Yes. The work is not geography-constrained on my end, so the market I am in has no bearing on the market you are in. The only limit is the one-per-market policy: if I already represent an agent in your city, I will tell you rather than take you both.",
-  },
-  {
-    q: "What does 'one client per market' mean?",
-    a: "It means we don't take a second insurance agent in Phoenix, a second mortgage broker in Austin, or a second CPA in Nashville while you're a client. You get exclusive local SEO representation in your market. We don't work both sides of the same competitive matchup.",
-  },
-  {
-    q: "How long does it take to see results?",
-    a: "Google Business Profile work usually shows movement in 30 to 60 days, because it corrects things Google already measures: your primary category, citation consistency, review velocity. Organic content rankings take 90 to 180 days. For AI search I will not give you a date. Nobody outside the model vendors can see when a system starts naming you, and anyone quoting a timeline for it is guessing. What I commit to is the work: the schema ships, the entity data agrees across the web, and the content is written to be citable. Then we watch what the tools actually say about your market.",
-  },
-];
 
 export default function HomePage() {
   return (

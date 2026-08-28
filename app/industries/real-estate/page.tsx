@@ -10,6 +10,25 @@ export const metadata: Metadata = {
   },
 };
 
+const faqs = [
+              {
+                q: "Should a real estate agent have a Google Business Profile?",
+                a: "Yes. Agents working from a brokerage office can claim the office address. Agents working from home should set up a service area GBP without displaying a home address. Either way, a GBP listing is a critical local search asset. Without one, you're entirely dependent on Zillow and Realtor.com for local discovery, which means no direct ranking control and no independent search presence.",
+              },
+              {
+                q: "How do neighborhood-specific pages help with local SEO?",
+                a: "Buyers search by neighborhood, school district, and zip code before they search for an agent. A neighborhood page captures that early research search and introduces you before the agent selection phase. City-level pages cannot rank for these specific searches. Each neighborhood page also builds topical authority that signals genuine local market knowledge, which supports your broader real estate SEO.",
+              },
+              {
+                q: "What local search keywords should a real estate agent target?",
+                a: "The most valuable clusters are: neighborhood-specific buyer searches ('homes for sale in [neighborhood]'), agent-type searches ('buyer's agent [city],' 'listing agent [city]'), and transaction-type searches ('first-time home buyer agent [city],' 'luxury homes [city]'). Each represents a different buyer type and stage, and each needs its own dedicated content to rank effectively.",
+              },
+              {
+                q: "How is real estate local SEO different from other industries?",
+                a: "Real estate local SEO is uniquely hyperlocal. Buyers search at neighborhood and school district level of specificity that no other industry demands. It's also review-intensive in proportion to the stakes of the transaction. And the referral ecosystem, mortgage brokers, attorneys, inspectors, creates parallel local search visibility opportunities that most agents never pursue systematically.",
+              },
+            ];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -27,43 +46,18 @@ const schema = {
       },
       areaServed: { "@type": "Country", name: "United States" },
       serviceType: "Local SEO",
+      audience: {
+        "@type": "Audience",
+        audienceType: "Real estate agents and brokerages",
+      },
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Should a real estate agent have a Google Business Profile?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, with some nuance. Agents who operate from a brokerage office can claim the office address as their GBP location. Agents who work from home should set up a service area GBP without displaying a home address. Either way, the GBP listing is a critical local search asset because it's often the first result a buyer or seller sees when searching for a local agent. Without it, you're entirely dependent on Zillow and Realtor.com for local discovery.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do neighborhood-specific pages help with local SEO?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Buyers search by neighborhood, school district, and zip code long before they search for an agent. A page targeting 'homes for sale in [neighborhood name]' captures that early research search and introduces you before the buyer has chosen an agent. City-level pages cannot rank for these neighborhood searches because the search intent is too specific. Each neighborhood page also builds topical authority that supports your broader real estate SEO, signaling to Google that you have genuine local market knowledge.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What local search keywords should a real estate agent target?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The most valuable keyword clusters are: neighborhood-specific buyer searches ('homes for sale in [neighborhood]'), agent-type searches ('real estate agent [city],' 'buyer's agent [city],' 'listing agent [city]'), and transaction-type searches ('first-time home buyer agent [city],' 'luxury homes [city]'). Each represents a different buyer type and stage. Trying to rank for all of them with a single page is ineffective. Dedicated pages for the highest-value clusters is the right approach.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How is real estate local SEO different from other industries?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Real estate local SEO is uniquely hyperlocal. Buyers search at a neighborhood and school district level of specificity that no other industry demands. It's also review-heavy in a way that reflects the stakes of the transaction. A buyer evaluating a $400,000 purchase will read every review before choosing an agent. And real estate involves a referral ecosystem, mortgage brokers, attorneys, inspectors, title companies, that creates parallel local search visibility opportunities that most agents never pursue.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -304,24 +298,7 @@ export default function RealEstatePage() {
             Common questions from real estate agents
           </h2>
           <div className="space-y-8">
-            {[
-              {
-                q: "Should a real estate agent have a Google Business Profile?",
-                a: "Yes. Agents working from a brokerage office can claim the office address. Agents working from home should set up a service area GBP without displaying a home address. Either way, a GBP listing is a critical local search asset. Without one, you're entirely dependent on Zillow and Realtor.com for local discovery, which means no direct ranking control and no independent search presence.",
-              },
-              {
-                q: "How do neighborhood-specific pages help with local SEO?",
-                a: "Buyers search by neighborhood, school district, and zip code before they search for an agent. A neighborhood page captures that early research search and introduces you before the agent selection phase. City-level pages cannot rank for these specific searches. Each neighborhood page also builds topical authority that signals genuine local market knowledge, which supports your broader real estate SEO.",
-              },
-              {
-                q: "What local search keywords should a real estate agent target?",
-                a: "The most valuable clusters are: neighborhood-specific buyer searches ('homes for sale in [neighborhood]'), agent-type searches ('buyer's agent [city],' 'listing agent [city]'), and transaction-type searches ('first-time home buyer agent [city],' 'luxury homes [city]'). Each represents a different buyer type and stage, and each needs its own dedicated content to rank effectively.",
-              },
-              {
-                q: "How is real estate local SEO different from other industries?",
-                a: "Real estate local SEO is uniquely hyperlocal. Buyers search at neighborhood and school district level of specificity that no other industry demands. It's also review-intensive in proportion to the stakes of the transaction. And the referral ecosystem, mortgage brokers, attorneys, inspectors, creates parallel local search visibility opportunities that most agents never pursue systematically.",
-              },
-            ].map((faq, i) => (
+            {faqs.map((faq, i) => (
               <div key={i} className="border-b border-paper-3 pb-8">
                 <h3 className="font-serif text-xl text-ink mb-4">{faq.q}</h3>
                 <p className="font-sans text-ink-2 text-base leading-relaxed">

@@ -8,6 +8,25 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://visibilitylocal.com/services/local-seo" },
 };
 
+const faqs = [
+  {
+    q: "What are Google's local ranking factors?",
+    a: "Google has confirmed three primary local ranking factors: proximity (how close you are to the searcher), prominence (how well-known and authoritative your business is across the web), and relevance (how well your profile and content match the search query). Proximity is the one you cannot control. Prominence and relevance are where the work happens.",
+  },
+  {
+    q: "How is local SEO different from regular SEO?",
+    a: "Local SEO targets a specific geographic market and aims for map pack placement alongside organic rankings. The signals that matter are different: NAP consistency across directories, GBP optimization, local link signals, and city-specific content. National SEO agencies often apply the wrong framework to local clients. They optimize for domain authority and backlink profiles when the actual ranking gap is a miscategorized GBP and 40 inconsistent directory listings.",
+  },
+  {
+    q: "Do I need a website to rank in local search?",
+    a: "No, but you are severely limiting yourself without one. A well-optimized Google Business Profile can rank in the map pack without a website. But without location-specific landing pages, you cannot compete for organic results below the map pack, and you have no content for AI tools to cite. The GBP alone is a floor, not a ceiling.",
+  },
+  {
+    q: "How do I know if my local SEO is working?",
+    a: "Three metrics tell the real story: GBP Insights (specifically direction requests, phone calls, and website clicks), rank tracking for map pack positions on your target keywords, and organic traffic from city-plus-service search queries. Vanity metrics like total impressions can look great while the actual lead-generating queries are not moving. We track what drives calls, not what looks good in a report.",
+  },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -26,40 +45,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "What are Google's local ranking factors?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Google has confirmed three primary local ranking factors: proximity (how close you are to the searcher), prominence (how well-known and authoritative your business is across the web), and relevance (how well your profile and content match the search query). Proximity is the one you cannot control. Prominence and relevance are where the work happens.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How is local SEO different from regular SEO?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Local SEO targets a specific geographic market and aims for map pack placement alongside organic rankings. The signals that matter are different: NAP consistency across directories, GBP optimization, local link signals, and city-specific content. National SEO agencies often apply the wrong framework to local clients. They optimize for domain authority and backlink profiles when the actual ranking gap is a miscategorized GBP and 40 inconsistent directory listings.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Do I need a website to rank in local search?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "No, but you are severely limiting yourself without one. A well-optimized Google Business Profile can rank in the map pack without a website. But without location-specific landing pages, you cannot compete for organic results below the map pack, and you have no content for AI tools to cite. The GBP alone is a floor, not a ceiling.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do I know if my local SEO is working?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Three metrics tell the real story: GBP Insights (specifically direction requests, phone calls, and website clicks), rank tracking for map pack positions on your target keywords, and organic traffic from city-plus-service search queries. Vanity metrics like total impressions can look great while the actual lead-generating queries are not moving. We track what drives calls, not what looks good in a report.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -106,24 +96,6 @@ const whyMatters = [
   },
 ];
 
-const faqs = [
-  {
-    q: "What are Google's local ranking factors?",
-    a: "Google has confirmed three primary local ranking factors: proximity (how close you are to the searcher), prominence (how well-known and authoritative your business is across the web), and relevance (how well your profile and content match the search query). Proximity is the one you cannot control. Prominence and relevance are where the work happens.",
-  },
-  {
-    q: "How is local SEO different from regular SEO?",
-    a: "Local SEO targets a specific geographic market and aims for map pack placement alongside organic rankings. The signals that matter are different: NAP consistency across directories, GBP optimization, local link signals, and city-specific content. National SEO agencies often apply the wrong framework to local clients. They optimize for domain authority and backlink profiles when the actual ranking gap is a miscategorized GBP and 40 inconsistent directory listings.",
-  },
-  {
-    q: "Do I need a website to rank in local search?",
-    a: "No, but you are severely limiting yourself without one. A well-optimized Google Business Profile can rank in the map pack without a website. But without location-specific landing pages, you cannot compete for organic results below the map pack, and you have no content for AI tools to cite. The GBP alone is a floor, not a ceiling.",
-  },
-  {
-    q: "How do I know if my local SEO is working?",
-    a: "Three metrics tell the real story: GBP Insights (specifically direction requests, phone calls, and website clicks), rank tracking for map pack positions on your target keywords, and organic traffic from city-plus-service search queries. Vanity metrics like total impressions can look great while the actual lead-generating queries are not moving. We track what drives calls, not what looks good in a report.",
-  },
-];
 
 const relatedServices = [
   { label: "Google Business Profile Optimization", href: "/services/google-business-profile" },

@@ -5,8 +5,13 @@ const BASE_URL = "https://visibilitylocal.com";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
+  // /research and /results/hillcrest-life-and-health are deliberately absent: both are
+  // noindex until they have content, and listing a noindex page contradicts the sitemap.
   const staticPages = [
     { url: BASE_URL, priority: 1.0, changeFrequency: "weekly" as const },
+    { url: `${BASE_URL}/visibility-report`, priority: 0.95, changeFrequency: "monthly" as const },
+    { url: `${BASE_URL}/scorecard`, priority: 0.9, changeFrequency: "monthly" as const },
+    { url: `${BASE_URL}/offer`, priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${BASE_URL}/contact`, priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${BASE_URL}/about`, priority: 0.7, changeFrequency: "monthly" as const },
     { url: `${BASE_URL}/resources`, priority: 0.8, changeFrequency: "weekly" as const },

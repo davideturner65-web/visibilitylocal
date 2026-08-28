@@ -10,6 +10,25 @@ export const metadata: Metadata = {
   },
 };
 
+const faqs = [
+              {
+                q: "How can a mortgage broker compete with big banks in local search?",
+                a: "Proximity and personalization are where independent brokers win. Bank branch GBP listings are managed regionally across hundreds of locations and are often generic. Your single, actively managed listing can outrank a bank branch when it has the correct category, a strong review count, consistent citations, and regular posting activity. The search intent also often already favors you. Someone searching 'mortgage broker near me' is specifically looking for a broker, not a bank.",
+              },
+              {
+                q: "What GBP category should a mortgage broker use?",
+                a: "The correct primary category is 'Mortgage Broker.' Not 'Bank,' not 'Financial Institution,' and not 'Loan Agency.' This matters because 'Mortgage Broker' as a category surfaces in different search results and specifically captures searchers looking for a broker rather than a bank product. Secondary categories like 'Mortgage Lender' can expand coverage appropriately.",
+              },
+              {
+                q: "How do realtors find mortgage brokers online?",
+                a: "Realtors search locally when looking for brokers to refer clients to, and they evaluate based on GBP reviews, closing timeline signals, and professional directory presence. Visibility in searches like 'mortgage broker [city]' captures both consumer and realtor traffic. A GBP listing and website that specifically address realtor partnerships, pre-approval speed, and communication practices position you in those professional searches.",
+              },
+              {
+                q: "Should I target purchase loans and refinances differently in local SEO?",
+                a: "Yes. 'First-time home buyer [city]' and 'refinance rates [city]' represent different stages of the decision process, different keyword sets, and different conversion paths. Each needs its own dedicated page with content addressing the specific questions, timelines, and concerns for that buyer situation. A single homepage attempting to serve both loses efficiency in both directions.",
+              },
+            ];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -28,43 +47,18 @@ const schema = {
       },
       areaServed: { "@type": "Country", name: "United States" },
       serviceType: "Local SEO",
+      audience: {
+        "@type": "Audience",
+        audienceType: "Independent mortgage brokers",
+      },
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "How can a mortgage broker compete with big banks in local search?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Proximity and personalization are where independent brokers win. Chase and Wells Fargo have enormous national GBP footprints but their individual branch listings are often generic and impersonal. An independent broker with a fully optimized GBP listing, accurate NMLS number displayed, strong review count, and consistent citations can rank above a bank branch for local mortgage searches. Banks also can't respond to 'broker near me' queries with the same relevance that an actual broker can. The key is that the search intent often already favors you.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What GBP category should a mortgage broker use?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The correct primary category is 'Mortgage Broker.' Not 'Bank,' not 'Financial Institution,' and not 'Loan Agency.' This distinction is critical because 'Mortgage Broker' surfaces in different search results than bank-related categories and specifically captures the searchers who want a broker rather than a bank. Secondary categories like 'Mortgage Lender' can expand coverage, but 'Mortgage Broker' as primary is non-negotiable for an independent broker.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do realtors find mortgage brokers online?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Realtors search locally when looking for brokers to refer their clients to, and they pay attention to GBP reviews, response time signals, and professional directory presence. Being visible in searches like 'mortgage broker [city]' and 'local mortgage broker' captures both consumer and realtor traffic. Building a specific page or GBP service entry that mentions realtor partnerships, combined with active engagement on platforms realtors use, creates referral visibility as a parallel channel to direct client acquisition.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Should I target purchase loans and refinances differently in local SEO?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. 'Mortgage broker near me' captures general intent but 'first-time home buyer [city]' and 'refinance rates [city]' represent completely different stages of the decision process. First-time buyer searches convert slower but at a higher lifetime value. Refinance searches are often rate-driven and convert faster. Each keyword cluster needs its own content, its own page, and its own conversion path. Treating them identically loses efficiency in both directions.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -299,24 +293,7 @@ export default function MortgageBrokersPage() {
             Common questions from mortgage brokers
           </h2>
           <div className="space-y-8">
-            {[
-              {
-                q: "How can a mortgage broker compete with big banks in local search?",
-                a: "Proximity and personalization are where independent brokers win. Bank branch GBP listings are managed regionally across hundreds of locations and are often generic. Your single, actively managed listing can outrank a bank branch when it has the correct category, a strong review count, consistent citations, and regular posting activity. The search intent also often already favors you. Someone searching 'mortgage broker near me' is specifically looking for a broker, not a bank.",
-              },
-              {
-                q: "What GBP category should a mortgage broker use?",
-                a: "The correct primary category is 'Mortgage Broker.' Not 'Bank,' not 'Financial Institution,' and not 'Loan Agency.' This matters because 'Mortgage Broker' as a category surfaces in different search results and specifically captures searchers looking for a broker rather than a bank product. Secondary categories like 'Mortgage Lender' can expand coverage appropriately.",
-              },
-              {
-                q: "How do realtors find mortgage brokers online?",
-                a: "Realtors search locally when looking for brokers to refer clients to, and they evaluate based on GBP reviews, closing timeline signals, and professional directory presence. Visibility in searches like 'mortgage broker [city]' captures both consumer and realtor traffic. A GBP listing and website that specifically address realtor partnerships, pre-approval speed, and communication practices position you in those professional searches.",
-              },
-              {
-                q: "Should I target purchase loans and refinances differently in local SEO?",
-                a: "Yes. 'First-time home buyer [city]' and 'refinance rates [city]' represent different stages of the decision process, different keyword sets, and different conversion paths. Each needs its own dedicated page with content addressing the specific questions, timelines, and concerns for that buyer situation. A single homepage attempting to serve both loses efficiency in both directions.",
-              },
-            ].map((faq, i) => (
+            {faqs.map((faq, i) => (
               <div key={i} className="border-b border-paper-3 pb-8">
                 <h3 className="font-serif text-xl text-ink mb-4">{faq.q}</h3>
                 <p className="font-sans text-ink-2 text-base leading-relaxed">

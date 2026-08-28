@@ -8,62 +8,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://visibilitylocal.com/resources/citation-building" },
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      headline: "Citation Building for Local SEO: Tier-by-Tier Guide",
-      author: { "@type": "Person", name: "David Turner" },
-      publisher: {
-        "@type": "Organization",
-        name: "Visibility Local",
-        url: "https://visibilitylocal.com",
-      },
-      url: "https://visibilitylocal.com/resources/citation-building",
-      description:
-        "How to build and clean up local business citations for better map pack rankings. Tier-by-tier guide to the directories that actually matter.",
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "How do I find all the places my business is listed online?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Use a citation audit tool like Whitespark's Citation Finder or BrightLocal's Citation Tracker. Input your business name, address, and phone number and the tool will pull existing listings across hundreds of directories. You can also search Google for your exact business name in quotes and your phone number in quotes to surface listings manually. Most established businesses find 30 to 80 existing listings, many with incorrect information.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What happens if I have duplicate listings in a directory?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Duplicate listings split authority and create conflicting data signals. Google sees two versions of your business at the same or different addresses and is less confident about which one is accurate. In Yelp and Google specifically, duplicate listings can also suppress each other's ranking. The fix is to claim both listings (if you can), merge or remove the duplicate, and verify the correct listing. Some directories have a formal duplicate suppression request process.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Should I pay for citation services like Yext or Moz Local?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "For the most important directories, no. Claim and manage GBP, Apple Maps, Bing Places, Yelp, Facebook, and BBB yourself. These listings require your direct ownership for ongoing management. For broad secondary citation distribution, Yext and Moz Local can accelerate the build-out, but be aware that if you cancel the subscription, the data they manage often reverts. The listings you own and manage directly are more stable long-term.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How long does it take for citation cleanup to affect rankings?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Citation data propagates through the web at different speeds depending on the directory. Changes to major directories like Yelp and Bing Places can be picked up within weeks. Changes to aggregator sources like Foursquare and Neustar can take 60 to 90 days to propagate downstream to the hundreds of smaller directories that pull from them. Map pack ranking improvement from citation cleanup typically appears within 6 to 12 weeks of completing the major directory corrections.",
-          },
-        },
-      ],
-    },
-  ],
-};
-
 const faqs = [
   {
     q: "How do I find all the places my business is listed online?",
@@ -82,6 +26,36 @@ const faqs = [
     a: "Citation data propagates through the web at different speeds depending on the directory. Changes to major directories like Yelp and Bing Places can be picked up within weeks. Changes to aggregator sources like Foursquare and Neustar can take 60 to 90 days to propagate downstream to the hundreds of smaller directories that pull from them. Map pack ranking improvement from citation cleanup typically appears within 6 to 12 weeks of completing the major directory corrections.",
   },
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "Citation Building for Local SEO: Tier-by-Tier Guide",
+      datePublished: "2026-01-15",
+      dateModified: "2026-08-28",
+      author: { "@type": "Person", name: "David Turner" },
+      publisher: {
+        "@type": "Organization",
+        name: "Visibility Local",
+        url: "https://visibilitylocal.com",
+      },
+      url: "https://visibilitylocal.com/resources/citation-building",
+      description:
+        "How to build and clean up local business citations for better map pack rankings. Tier-by-tier guide to the directories that actually matter.",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
+
 
 const tier1 = [
   { name: "Google Business Profile", note: "The most important citation source. Verified listing required." },

@@ -36,7 +36,9 @@ const CHAR_ISSUES = [
   [/\s--\s|\w--\w/g, 'stray double hyphen'],
   [/\S {2,}\S/g, 'double space'],
   [/\S\s+[,.;:?!](?:\s|$)/g, 'space before punctuation'],
-  [/[\u{1F300}-\u{1FAFF}\u{2190}-\u{21FF}\u{2600}-\u{27BF}\u{FE0F}]/gu, 'emoji'],
+  // Emoji planes and dingbats. The basic arrows block (U+2190 to U+21FF) is deliberately
+  // excluded: a right arrow on a link is typography, not decoration.
+  [/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}]/gu, 'emoji'],
   [/\bquiet(?:ly)?\b/gi, '"quiet" as a weight-adder (review each)'],
 ]
 

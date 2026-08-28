@@ -10,6 +10,25 @@ export const metadata: Metadata = {
   },
 };
 
+const faqs = [
+              {
+                q: "Can law firms use Google Business Profile?",
+                a: "Yes. GBP is a standard business directory tool with no legal advertising restrictions beyond standard attorney advertising rules in your state. A fully optimized GBP listing with correct categories, complete services list, professional photos, and active posting cadence is one of the most effective local marketing investments a law firm can make.",
+              },
+              {
+                q: "What GBP category should an attorney use?",
+                a: "Solo practitioners should use 'Lawyer' as primary. Firms with multiple attorneys should use 'Law Firm.' Practice area secondary categories like 'Personal Injury Attorney,' 'Estate Planning Attorney,' and 'Family Law Attorney' should be added to expand the search surfaces your listing appears on. Each secondary category connects your listing to practice area searches that the primary category alone won't capture.",
+              },
+              {
+                q: "Which legal directories matter most for local SEO?",
+                a: "Tier 1 legal citation sources are Avvo, Martindale-Hubbell, FindLaw, and Justia. These rank independently in search results and carry significant authority. Your state bar directory is the single most authoritative citation source available, followed by local and specialty bar association directories. Many attorneys have incomplete profiles on all of these.",
+              },
+              {
+                q: "How do I get client reviews without violating bar association rules?",
+                a: "ABA Model Rule 7.2 permits satisfied clients to leave voluntary reviews. You can ask clients to share their experience and provide a direct link to your Google review page, without offering anything of value in exchange and without making specific outcome promises. The bar restriction applies to misleading comparative claims, not to clients voluntarily sharing their honest experience. We structure review generation for attorneys within these parameters.",
+              },
+            ];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -27,43 +46,18 @@ const schema = {
       },
       areaServed: { "@type": "Country", name: "United States" },
       serviceType: "Local SEO",
+      audience: {
+        "@type": "Audience",
+        audienceType: "Attorneys and law firms",
+      },
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Can law firms use Google Business Profile?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. Google Business Profile is a standard business directory tool with no legal advertising restrictions beyond those that apply to all attorney advertising in your state. Law firms can and should have a fully optimized GBP listing with correct categories, complete services list, professional photos, and an active posting cadence. A well-managed GBP is often the difference between appearing in the local map pack and being invisible in it.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What GBP category should an attorney use?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Solo practitioners should use 'Lawyer' as the primary GBP category. Law firms with multiple attorneys should use 'Law Firm.' Practice area categories should be added as secondary categories: 'Personal Injury Attorney,' 'Estate Planning Attorney,' 'Family Law Attorney,' and so on. Each secondary category expands the search surfaces your listing appears on and connects your listing to practice area searches that the primary 'Law Firm' category alone won't capture.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Which legal directories matter most for local SEO?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The Tier 1 legal citation sources are Avvo, Martindale-Hubbell, FindLaw, and Justia. These directories rank independently in search results and carry significant authority with Google. Beyond those, your state bar directory is the most authoritative single citation source available to you, followed by local and specialty bar association directories. Many attorneys have incomplete profiles on all of these, which means they're missing both citation authority and independent directory traffic.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do I get client reviews without violating bar association rules?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "ABA Model Rule 7.2 permits satisfied clients to leave voluntary reviews on their own initiative. You can ask clients to share their experience and provide them a direct link to your Google review page, as long as you're not offering anything of value in exchange and you're not making specific promises about outcomes. The bar restriction is on endorsements and testimonials that make misleading comparative claims, not on clients voluntarily sharing their honest experience. We structure review generation for attorneys within these parameters.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -309,24 +303,7 @@ export default function AttorneysPage() {
             Common questions from attorneys and law firms
           </h2>
           <div className="space-y-8">
-            {[
-              {
-                q: "Can law firms use Google Business Profile?",
-                a: "Yes. GBP is a standard business directory tool with no legal advertising restrictions beyond standard attorney advertising rules in your state. A fully optimized GBP listing with correct categories, complete services list, professional photos, and active posting cadence is one of the most effective local marketing investments a law firm can make.",
-              },
-              {
-                q: "What GBP category should an attorney use?",
-                a: "Solo practitioners should use 'Lawyer' as primary. Firms with multiple attorneys should use 'Law Firm.' Practice area secondary categories like 'Personal Injury Attorney,' 'Estate Planning Attorney,' and 'Family Law Attorney' should be added to expand the search surfaces your listing appears on. Each secondary category connects your listing to practice area searches that the primary category alone won't capture.",
-              },
-              {
-                q: "Which legal directories matter most for local SEO?",
-                a: "Tier 1 legal citation sources are Avvo, Martindale-Hubbell, FindLaw, and Justia. These rank independently in search results and carry significant authority. Your state bar directory is the single most authoritative citation source available, followed by local and specialty bar association directories. Many attorneys have incomplete profiles on all of these.",
-              },
-              {
-                q: "How do I get client reviews without violating bar association rules?",
-                a: "ABA Model Rule 7.2 permits satisfied clients to leave voluntary reviews. You can ask clients to share their experience and provide a direct link to your Google review page, without offering anything of value in exchange and without making specific outcome promises. The bar restriction applies to misleading comparative claims, not to clients voluntarily sharing their honest experience. We structure review generation for attorneys within these parameters.",
-              },
-            ].map((faq, i) => (
+            {faqs.map((faq, i) => (
               <div key={i} className="border-b border-paper-3 pb-8">
                 <h3 className="font-serif text-xl text-ink mb-4">{faq.q}</h3>
                 <p className="font-sans text-ink-2 text-base leading-relaxed">

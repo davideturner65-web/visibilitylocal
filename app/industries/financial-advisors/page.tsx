@@ -10,6 +10,25 @@ export const metadata: Metadata = {
   },
 };
 
+const faqs = [
+              {
+                q: "Can financial advisors legally use Google Business Profile?",
+                a: "Yes. GBP is a business directory listing, not investment advertising subject to testimonial rules. A fully optimized GBP with categories, hours, photos, services, and description is permissible. Posts can describe services and explain concepts without triggering performance claim restrictions.",
+              },
+              {
+                q: "Are there compliance issues with financial advisor SEO?",
+                a: "The compliance considerations are narrower than most advisors assume. The primary restrictions are around testimonials and performance claims. GBP optimization, citation building, FAQ content, schema markup, and educational local content are all fully permissible. We do not write testimonial-style content or make specific return claims. Every tactic has been considered against standard RIA and broker-dealer compliance concerns.",
+              },
+              {
+                q: "What is the best GBP category for a financial advisor?",
+                a: "The best primary category is typically 'Financial Planner' or 'Financial Consultant' depending on how your practice presents. Secondary categories like 'Investment Service,' 'Retirement Planning Service,' and 'Wealth Management Service' expand the search surfaces your listing appears on. We audit your current categories and reconfigure based on your target searches and client types.",
+              },
+              {
+                q: "How do clients find financial advisors online before reaching out?",
+                a: "Most clients research extensively before contacting an advisor. That process involves a local search, review reading on Google, a FINRA BrokerCheck visit, and a website review. The process spans days or weeks. Local search is where the list of candidates is built. The subsequent touchpoints determine who gets the meeting. Being present and credible across all of those surfaces, not just in search rankings, is what converts a search impression into an introduction call.",
+              },
+            ];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -28,43 +47,18 @@ const schema = {
       },
       areaServed: { "@type": "Country", name: "United States" },
       serviceType: "Local SEO",
+      audience: {
+        "@type": "Audience",
+        audienceType: "Financial advisors and RIAs",
+      },
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Can financial advisors legally use Google Business Profile?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. Google Business Profile is a business directory listing, not a form of investment advertising subject to testimonial rules. Financial advisors can and should have a fully optimized GBP listing. The categories, hours, photos, services list, and business description are all permissible. Posts can describe services, explain concepts, and promote educational content without triggering testimonial or performance claim rules.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Are there compliance issues with financial advisor SEO?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The compliance considerations for SEO are narrower than many advisors assume. The primary restrictions are around testimonials and performance claims. GBP optimization, citation building, FAQ content, schema markup, and educational local content can all be done without touching either. We do not write testimonial-style content or make specific performance or return claims. Every tactic we use has been considered against the standard compliance concerns for RIAs and broker-dealers.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What is the best GBP category for a financial advisor?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The best primary GBP category is typically 'Financial Planner' or 'Financial Consultant,' depending on how your practice presents itself. Secondary categories like 'Investment Service,' 'Retirement Planning Service,' and 'Wealth Management Service' expand the search surfaces your listing appears on. The right combination depends on which services you lead with and which client types you're prioritizing. We audit your current categories and reconfigure them based on your target searches.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do clients find financial advisors online before reaching out?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Most clients research extensively before initiating contact with a financial advisor. That research typically involves a local search, review reading on Google and Yelp, a visit to FINRA BrokerCheck, and a visit to the advisor's website. The research phase can span days or weeks. Local search is where the list of candidates is built, and the other touchpoints determine who gets the first meeting. Being present and credible across all of those surfaces, not just in search rankings, is what converts a search impression into an introduction meeting.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -304,24 +298,7 @@ export default function FinancialAdvisorsPage() {
             Common questions from financial advisors
           </h2>
           <div className="space-y-8">
-            {[
-              {
-                q: "Can financial advisors legally use Google Business Profile?",
-                a: "Yes. GBP is a business directory listing, not investment advertising subject to testimonial rules. A fully optimized GBP with categories, hours, photos, services, and description is permissible. Posts can describe services and explain concepts without triggering performance claim restrictions.",
-              },
-              {
-                q: "Are there compliance issues with financial advisor SEO?",
-                a: "The compliance considerations are narrower than most advisors assume. The primary restrictions are around testimonials and performance claims. GBP optimization, citation building, FAQ content, schema markup, and educational local content are all fully permissible. We do not write testimonial-style content or make specific return claims. Every tactic has been considered against standard RIA and broker-dealer compliance concerns.",
-              },
-              {
-                q: "What is the best GBP category for a financial advisor?",
-                a: "The best primary category is typically 'Financial Planner' or 'Financial Consultant' depending on how your practice presents. Secondary categories like 'Investment Service,' 'Retirement Planning Service,' and 'Wealth Management Service' expand the search surfaces your listing appears on. We audit your current categories and reconfigure based on your target searches and client types.",
-              },
-              {
-                q: "How do clients find financial advisors online before reaching out?",
-                a: "Most clients research extensively before contacting an advisor. That process involves a local search, review reading on Google, a FINRA BrokerCheck visit, and a website review. The process spans days or weeks. Local search is where the list of candidates is built. The subsequent touchpoints determine who gets the meeting. Being present and credible across all of those surfaces, not just in search rankings, is what converts a search impression into an introduction call.",
-              },
-            ].map((faq, i) => (
+            {faqs.map((faq, i) => (
               <div key={i} className="border-b border-paper-3 pb-8">
                 <h3 className="font-serif text-xl text-ink mb-4">{faq.q}</h3>
                 <p className="font-sans text-ink-2 text-base leading-relaxed">

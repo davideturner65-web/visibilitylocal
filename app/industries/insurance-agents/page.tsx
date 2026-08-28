@@ -10,6 +10,25 @@ export const metadata: Metadata = {
   },
 };
 
+const faqs = [
+              {
+                q: "Can an independent insurance agent compete with State Farm in local search?",
+                a: "Yes, and more often than agents expect. State Farm and Allstate locations use corporate GBP templates that are often generic and under-managed. An independent agent with a fully optimized, actively managed profile, correct primary category, and consistent citations can rank above captive agents in the local map pack. Many searchers are specifically looking for independent agents, which means ranking above a captive agent also converts better because the search intent matches what you offer.",
+              },
+              {
+                q: "What GBP category should an independent insurance agent use?",
+                a: "The correct primary category for most independent agents is 'Insurance Agency.' Not 'Insurance Broker' and not 'Life Insurance Agency.' Those categories surface in different search results with different traffic volumes. Google frequently assigns the wrong default when a listing is first created. Secondary categories like 'Auto Insurance Agency,' 'Home Insurance Agency,' and 'Health Insurance Agency' expand your search footprint appropriately.",
+              },
+              {
+                q: "Which directories matter most for insurance agent citations?",
+                a: "The highest-authority sources are: your state's Department of Insurance licensee lookup (government domain, enormous trust signal), the IIABA directory, Insurance.com, your local Chamber of Commerce, and the major general directories. The state DOI listing is the most commonly missed and most valuable. We audit and correct it first because it's the reference point for every other citation we build.",
+              },
+              {
+                q: "How does local SEO generate insurance referrals?",
+                a: "Two channels. First, direct client acquisition: someone searches 'independent insurance agent [city]' and finds you. Second, professional referrals: CPAs, financial advisors, and mortgage brokers search locally for insurance professionals to refer clients to. Both require the same foundation, consistent NAP, correct GBP category, active management, and authoritative citations, but the content strategy for each channel is different. We build visibility in both.",
+              },
+            ];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -27,43 +46,18 @@ const schema = {
       },
       areaServed: { "@type": "Country", name: "United States" },
       serviceType: "Local SEO",
+      audience: {
+        "@type": "Audience",
+        audienceType: "Independent insurance agents",
+      },
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Can an independent insurance agent compete with State Farm in local search?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, and in many cases more easily than agents expect. State Farm and Allstate locations rely on corporate GBP templates that are often generic. An independent agent with a fully optimized, actively managed profile, correct primary category, and consistent citations can rank above captive agents in the local map pack. The key is that many searchers are specifically looking for independent agents, which means you're not just competing on rank but also on fit. Searchers who type 'independent insurance agent' are already filtering for you.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What GBP category should an independent insurance agent use?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The correct primary category for most independent agents is 'Insurance Agency.' Not 'Insurance Broker' and not 'Life Insurance Agency.' Those categories surface in different search results and often have lower search volume for local queries. Google frequently assigns the wrong default category when a listing is first created, so correcting it is one of the first steps we take. Secondary categories like 'Auto Insurance Agency,' 'Home Insurance Agency,' and 'Health Insurance Agency' expand your search footprint without diluting the primary signal.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Which directories matter most for insurance agent citations?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The highest-authority citation sources for insurance agents are: your state's Department of Insurance licensee lookup (this is a government domain and carries significant trust), the IIABA (Independent Insurance Agents and Brokers of America) directory, Insurance.com, your local Chamber of Commerce, and the major general directories like Google, Yelp, and Facebook. The state DOI listing is often overlooked and is one of the strongest citations available because it's official, authoritative, and almost always matches exactly how your business is registered.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How does local SEO generate insurance referrals?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Local search generates referrals two ways. First, direct client acquisition: someone in your market searches 'independent insurance agent [city]' and finds your optimized GBP listing or local page. Second, professional referrals: CPAs, financial advisors, and mortgage brokers in your area search for local professionals to refer their clients to. Being visible in those professional searches positions you as the obvious referral partner. Both channels require the same foundation: consistent NAP, correct categories, active GBP management, and authoritative citations.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -370,24 +364,7 @@ export default function InsuranceAgentsPage() {
             Common questions from insurance agents
           </h2>
           <div className="space-y-8">
-            {[
-              {
-                q: "Can an independent insurance agent compete with State Farm in local search?",
-                a: "Yes, and more often than agents expect. State Farm and Allstate locations use corporate GBP templates that are often generic and under-managed. An independent agent with a fully optimized, actively managed profile, correct primary category, and consistent citations can rank above captive agents in the local map pack. Many searchers are specifically looking for independent agents, which means ranking above a captive agent also converts better because the search intent matches what you offer.",
-              },
-              {
-                q: "What GBP category should an independent insurance agent use?",
-                a: "The correct primary category for most independent agents is 'Insurance Agency.' Not 'Insurance Broker' and not 'Life Insurance Agency.' Those categories surface in different search results with different traffic volumes. Google frequently assigns the wrong default when a listing is first created. Secondary categories like 'Auto Insurance Agency,' 'Home Insurance Agency,' and 'Health Insurance Agency' expand your search footprint appropriately.",
-              },
-              {
-                q: "Which directories matter most for insurance agent citations?",
-                a: "The highest-authority sources are: your state's Department of Insurance licensee lookup (government domain, enormous trust signal), the IIABA directory, Insurance.com, your local Chamber of Commerce, and the major general directories. The state DOI listing is the most commonly missed and most valuable. We audit and correct it first because it's the reference point for every other citation we build.",
-              },
-              {
-                q: "How does local SEO generate insurance referrals?",
-                a: "Two channels. First, direct client acquisition: someone searches 'independent insurance agent [city]' and finds you. Second, professional referrals: CPAs, financial advisors, and mortgage brokers search locally for insurance professionals to refer clients to. Both require the same foundation, consistent NAP, correct GBP category, active management, and authoritative citations, but the content strategy for each channel is different. We build visibility in both.",
-              },
-            ].map((faq, i) => (
+            {faqs.map((faq, i) => (
               <div key={i} className="border-b border-paper-3 pb-8">
                 <h3 className="font-serif text-xl text-ink mb-4">{faq.q}</h3>
                 <p className="font-sans text-ink-2 text-base leading-relaxed">

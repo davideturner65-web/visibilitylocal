@@ -8,62 +8,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://visibilitylocal.com/resources/ai-search-visibility" },
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      headline: "How to Get Recommended by ChatGPT, Perplexity, and Google AI",
-      author: { "@type": "Person", name: "David Turner" },
-      publisher: {
-        "@type": "Organization",
-        name: "Visibility Local",
-        url: "https://visibilitylocal.com",
-      },
-      url: "https://visibilitylocal.com/resources/ai-search-visibility",
-      description:
-        "A practical guide to getting your local business recommended by AI search tools in 2026. GEO, AEO, and AI citation strategy for small businesses.",
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Can a small local business actually appear in ChatGPT recommendations?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, and it is more achievable than most people assume. ChatGPT pulls local business data from Bing's web index. A claimed, verified, complete Bing Places listing is one of the most direct actions a local business can take to appear in ChatGPT local recommendations. Combined with consistent citations across authoritative directories and clear schema markup, a small local business with no national brand recognition can appear in AI-generated local recommendations.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What is the difference between SEO and GEO (Generative Engine Optimization)?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Traditional SEO optimizes for keyword ranking in Google's 10 blue links. GEO optimizes for citation in AI-generated responses. The underlying assets, accurate citations, authoritative content, structured data, overlap significantly. But GEO places more emphasis on entity establishment (being recognized as a specific, real, located business), FAQ-format content that AI tools can cite directly, and presence in the sources those tools trust.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Does schema markup really help with AI search?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, for a specific reason. Schema markup puts your business data in a structured, machine-readable format. When an AI tool is building a response about local businesses, structured data is exactly what it is looking for: unambiguous information it can confidently cite. A LocalBusiness schema with accurate name, address, phone, hours, and service area removes the need for the AI to infer or interpolate any of that data.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do I know if my business is showing up in AI search results?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Test it directly. Open ChatGPT, Perplexity, and Google AI Overviews. Ask variations of 'who is the best [your profession] in [your city]?' and 'recommend a [your service] near [your city].' If you are not appearing, note which competitors are. Look at their citation profile, schema implementation, and GBP completeness. The gap between you and the businesses appearing is the work to be done.",
-          },
-        },
-      ],
-    },
-  ],
-};
-
 const faqs = [
   {
     q: "Can a small local business actually appear in ChatGPT recommendations?",
@@ -82,6 +26,36 @@ const faqs = [
     a: "Test it directly. Open ChatGPT, Perplexity, and Google AI Overviews. Ask variations of 'who is the best [your profession] in [your city]?' and 'recommend a [your service] near [your city].' If you are not appearing, note which competitors are. Look at their citation profile, schema implementation, and GBP completeness. The gap between you and the businesses appearing is the work to be done.",
   },
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "How to Get Recommended by ChatGPT, Perplexity, and Google AI",
+      datePublished: "2026-01-15",
+      dateModified: "2026-08-28",
+      author: { "@type": "Person", name: "David Turner" },
+      publisher: {
+        "@type": "Organization",
+        name: "Visibility Local",
+        url: "https://visibilitylocal.com",
+      },
+      url: "https://visibilitylocal.com/resources/ai-search-visibility",
+      description:
+        "A practical guide to getting your local business recommended by AI search tools in 2026. GEO, AEO, and AI citation strategy for small businesses.",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
+
 
 export default function AISearchVisibilityPage() {
   return (

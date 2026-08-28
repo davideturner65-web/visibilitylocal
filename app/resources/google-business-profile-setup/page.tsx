@@ -8,62 +8,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://visibilitylocal.com/resources/google-business-profile-setup" },
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      headline: "Google Business Profile Setup Guide 2026",
-      author: { "@type": "Person", name: "David Turner" },
-      publisher: {
-        "@type": "Organization",
-        name: "Visibility Local",
-        url: "https://visibilitylocal.com",
-      },
-      url: "https://visibilitylocal.com/resources/google-business-profile-setup",
-      description:
-        "Complete step-by-step guide to setting up and optimizing your Google Business Profile. Categories, photos, posts, Q&A, and everything that affects your map pack ranking.",
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "How long does it take for a new GBP to start ranking?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "A brand new listing typically takes 4 to 12 weeks to start appearing in the map pack for competitive terms. The timeline depends on how established your business is in other signals: citation count, domain age, and whether you have any existing reviews. Fully completing your profile on day one compresses that timeline. An incomplete profile can sit dormant for months.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What happens if Google changes my business category?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Google occasionally updates category options, which can auto-migrate listings to a new category. Check your primary category once a month. If Google reassigns you to something incorrect, change it back immediately. Google also sometimes suggests category changes based on reviews or content on your linked website. You do not have to accept these suggestions.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can I have multiple GBP listings for the same business?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Only if you have multiple physical locations. One address, one listing. Creating duplicate listings for the same location violates Google's guidelines and can result in both listings being suspended. If you serve multiple cities from one office, use the service area feature rather than creating additional listings.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do I know if my GBP optimization is working?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Check three things monthly in your GBP dashboard: Search terms (what queries triggered your listing), Actions (calls, website clicks, direction requests), and Photo views. If calls are flat and search terms are showing irrelevant queries, your category selection or service descriptions need work. If photo views are low, add more photos. The GBP dashboard's Performance tab shows you exactly what's driving activity.",
-          },
-        },
-      ],
-    },
-  ],
-};
-
 const faqs = [
   {
     q: "How long does it take for a new GBP to start ranking?",
@@ -82,6 +26,36 @@ const faqs = [
     a: "Check three things monthly in your GBP dashboard: Search terms (what queries triggered your listing), Actions (calls, website clicks, direction requests), and Photo views. If calls are flat and search terms are showing irrelevant queries, your category selection or service descriptions need work. If photo views are low, add more photos. The GBP dashboard's Performance tab shows you exactly what's driving activity.",
   },
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "Google Business Profile Setup Guide 2026",
+      datePublished: "2026-01-15",
+      dateModified: "2026-08-28",
+      author: { "@type": "Person", name: "David Turner" },
+      publisher: {
+        "@type": "Organization",
+        name: "Visibility Local",
+        url: "https://visibilitylocal.com",
+      },
+      url: "https://visibilitylocal.com/resources/google-business-profile-setup",
+      description:
+        "Complete step-by-step guide to setting up and optimizing your Google Business Profile. Categories, photos, posts, Q&A, and everything that affects your map pack ranking.",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
+
 
 export default function GBPSetupGuidePage() {
   return (

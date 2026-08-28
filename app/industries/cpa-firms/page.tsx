@@ -10,6 +10,25 @@ export const metadata: Metadata = {
   },
 };
 
+const faqs = [
+              {
+                q: "Should a CPA firm have a Google Business Profile?",
+                a: "Yes, and it should be actively managed year-round. Your GBP is often the first result prospective clients see when searching for a local accountant. A complete profile with accurate categories, strong reviews, and regular posts builds consistent visibility. An unclaimed or neglected listing typically means a competitor appears first for searches you should be winning.",
+              },
+              {
+                q: "How does local SEO help a CPA firm beyond tax season?",
+                a: "Clients switch accountants year-round. Business owners who had a bad experience in April start searching for a new CPA in June, not in January. Bookkeeping clients search any month. Business formation clients search when they're starting a business, not on any predictable schedule. A firm with year-round local visibility captures these searches when competitors have gone quiet, which is when the most motivated clients are looking.",
+              },
+              {
+                q: "What keywords should a CPA target for local search?",
+                a: "The most valuable targets are service-specific and audience-specific: 'small business CPA [city],' 'tax planning [city],' 'bookkeeping services [city],' 'real estate investor tax [city],' 'S-corp setup [city].' Each represents a different client type with different complexity and different willingness to pay. Dedicated content pages for each are more effective than a single generic accounting page trying to rank for everything.",
+              },
+              {
+                q: "How can a small CPA firm compete with H&R Block?",
+                a: "By targeting the searches where H&R Block's model is a disadvantage. Clients searching for 'CPA for small business' or 'tax planning [city]' have already decided they want expertise and continuity, not a tax prep chain. Make your expertise and relationship model explicit in your GBP and content. That's the search intent match that H&R Block can't replicate regardless of how much they spend on advertising.",
+              },
+            ];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -27,43 +46,18 @@ const schema = {
       },
       areaServed: { "@type": "Country", name: "United States" },
       serviceType: "Local SEO",
+      audience: {
+        "@type": "Audience",
+        audienceType: "CPA firms and accountants",
+      },
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Should a CPA firm have a Google Business Profile?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, and it should be actively managed year-round, not just during tax season. Google Business Profile is often the first thing a prospective client sees when they search for a local accountant. A complete, active profile with accurate categories, strong reviews, and regular posts builds the kind of visibility that generates new client inquiries consistently. An unclaimed or neglected GBP listing often means a competitor's listing appears first.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How does local SEO help a CPA firm beyond tax season?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Clients switch accountants year-round. Business owners who had a bad tax season with their current CPA start looking for alternatives in May and June, not in January. Small business owners needing bookkeeping help search any time. Entity clients looking for estate planning support don't wait for filing deadlines. A CPA firm with consistent local visibility captures these searches in the off-season when competitors have gone quiet, which is often when the most motivated clients are looking.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What keywords should a CPA target for local search?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The most valuable local keyword clusters for CPAs are service-specific and audience-specific, not just 'CPA near me.' Targets include: 'small business CPA [city],' 'tax planning [city],' 'bookkeeping services [city],' 'real estate investor tax [city],' 'S-corp setup [city],' and 'estate tax planning [city].' Each of these represents a different client type with different needs and different willingness to pay. Targeting them with dedicated content pages is more effective than a single generic accounting page.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How can a small CPA firm compete with H&R Block?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "H&R Block competes on price and volume. Your advantage is expertise, relationship, and the fact that many clients specifically want a CPA who handles their account directly rather than a revolving door of seasonal staff. State that clearly in your GBP description and website content, and target the searches where expertise matters: 'CPA for small business,' 'tax planning for self-employed,' 'accountant for real estate investors.' These searchers have already decided they want more than a tax prep chain. You just need to be visible when they're looking.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -305,24 +299,7 @@ export default function CpaFirmsPage() {
             Common questions from CPA firms
           </h2>
           <div className="space-y-8">
-            {[
-              {
-                q: "Should a CPA firm have a Google Business Profile?",
-                a: "Yes, and it should be actively managed year-round. Your GBP is often the first result prospective clients see when searching for a local accountant. A complete profile with accurate categories, strong reviews, and regular posts builds consistent visibility. An unclaimed or neglected listing typically means a competitor appears first for searches you should be winning.",
-              },
-              {
-                q: "How does local SEO help a CPA firm beyond tax season?",
-                a: "Clients switch accountants year-round. Business owners who had a bad experience in April start searching for a new CPA in June, not in January. Bookkeeping clients search any month. Business formation clients search when they're starting a business, not on any predictable schedule. A firm with year-round local visibility captures these searches when competitors have gone quiet, which is when the most motivated clients are looking.",
-              },
-              {
-                q: "What keywords should a CPA target for local search?",
-                a: "The most valuable targets are service-specific and audience-specific: 'small business CPA [city],' 'tax planning [city],' 'bookkeeping services [city],' 'real estate investor tax [city],' 'S-corp setup [city].' Each represents a different client type with different complexity and different willingness to pay. Dedicated content pages for each are more effective than a single generic accounting page trying to rank for everything.",
-              },
-              {
-                q: "How can a small CPA firm compete with H&R Block?",
-                a: "By targeting the searches where H&R Block's model is a disadvantage. Clients searching for 'CPA for small business' or 'tax planning [city]' have already decided they want expertise and continuity, not a tax prep chain. Make your expertise and relationship model explicit in your GBP and content. That's the search intent match that H&R Block can't replicate regardless of how much they spend on advertising.",
-              },
-            ].map((faq, i) => (
+            {faqs.map((faq, i) => (
               <div key={i} className="border-b border-paper-3 pb-8">
                 <h3 className="font-serif text-xl text-ink mb-4">{faq.q}</h3>
                 <p className="font-sans text-ink-2 text-base leading-relaxed">

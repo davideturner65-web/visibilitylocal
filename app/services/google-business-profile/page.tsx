@@ -8,6 +8,25 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://visibilitylocal.com/services/google-business-profile" },
 };
 
+const faqs = [
+  {
+    q: "What is the most important field in Google Business Profile?",
+    a: "Primary category. It is the single field with the most weight on which searches your listing appears in. An independent insurance agent who selects 'Insurance Agency' instead of 'Life Insurance Agency' or 'Health Insurance Agency' is showing up in different searches than their clients are running. Most businesses have never audited their primary category against actual search volume data.",
+  },
+  {
+    q: "How often should I post to my GBP?",
+    a: "Every 7 days. GBP posts have a limited display window, and consistent weekly posting keeps your listing active in Google's freshness signals. Sporadic posting, or no posting at all, tells Google the business is not actively managed. That matters for ranking in a competitive map pack.",
+  },
+  {
+    q: "Does my GBP category affect what searches I show up in?",
+    a: "Yes, directly. Google uses primary and secondary categories to determine which query types your listing is eligible for. 'Mortgage Broker' and 'Mortgage Lender' are different categories that surface in different searches. Picking the wrong one means you are invisible to the specific queries your best clients are actually using.",
+  },
+  {
+    q: "What is the difference between GBP optimization and local SEO?",
+    a: "GBP optimization works on your Google Business Profile specifically, affecting your map pack and knowledge panel ranking. Local SEO is broader and includes your website's on-page signals, citation consistency across directories, link signals from local sources, and content strategy. GBP optimization is one part of a full local SEO program, and it is usually the right place to start, because the profile already exists and most agents have it set up wrong.",
+  },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -26,40 +45,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "What is the most important field in Google Business Profile?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Primary category. It is the single field with the most weight on which searches your listing appears in. An independent insurance agent who selects 'Insurance Agency' instead of 'Life Insurance Agency' or 'Health Insurance Agency' is showing up in different searches than their clients are running. Most businesses have never audited their primary category against actual search volume data.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How often should I post to my GBP?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Every 7 days. GBP posts have a limited display window, and consistent weekly posting keeps your listing active in Google's freshness signals. Sporadic posting, or no posting at all, tells Google the business is not actively managed. That matters for ranking in a competitive map pack.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Does my GBP category affect what searches I show up in?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, directly. Google uses primary and secondary categories to determine which query types your listing is eligible for. 'Mortgage Broker' and 'Mortgage Lender' are different categories that surface in different searches. Picking the wrong one means you are invisible to the specific queries your best clients are actually using.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What is the difference between GBP optimization and local SEO?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "GBP optimization works on your Google Business Profile specifically, affecting your map pack and knowledge panel ranking. Local SEO is broader and includes your website's on-page signals, citation consistency across directories, link signals from local sources, and content strategy. GBP optimization is one part of a full local SEO program, and it is usually the right place to start, because the profile already exists and most agents have it set up wrong.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -106,24 +96,6 @@ const whyMatters = [
   },
 ];
 
-const faqs = [
-  {
-    q: "What is the most important field in Google Business Profile?",
-    a: "Primary category. It is the single field with the most weight on which searches your listing appears in. An independent insurance agent who selects 'Insurance Agency' instead of 'Life Insurance Agency' or 'Health Insurance Agency' is showing up in different searches than their clients are running. Most businesses have never audited their primary category against actual search volume data.",
-  },
-  {
-    q: "How often should I post to my GBP?",
-    a: "Every 7 days. GBP posts have a limited display window, and consistent weekly posting keeps your listing active in Google's freshness signals. Sporadic posting, or no posting at all, tells Google the business is not actively managed. That matters for ranking in a competitive map pack.",
-  },
-  {
-    q: "Does my GBP category affect what searches I show up in?",
-    a: "Yes, directly. Google uses primary and secondary categories to determine which query types your listing is eligible for. 'Mortgage Broker' and 'Mortgage Lender' are different categories that surface in different searches. Picking the wrong one means you are invisible to the specific queries your best clients are actually using.",
-  },
-  {
-    q: "What is the difference between GBP optimization and local SEO?",
-    a: "GBP optimization works on your Google Business Profile specifically, affecting your map pack and knowledge panel ranking. Local SEO is broader and includes your website's on-page signals, citation consistency across directories, link signals from local sources, and content strategy. GBP optimization is one part of a full local SEO program, and it is usually the right place to start, because the profile already exists and most agents have it set up wrong.",
-  },
-];
 
 const relatedServices = [
   { label: "Local SEO", href: "/services/local-seo" },

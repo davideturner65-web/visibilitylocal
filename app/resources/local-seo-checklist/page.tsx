@@ -8,62 +8,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://visibilitylocal.com/resources/local-seo-checklist" },
 };
 
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      headline: "40-Point Local SEO Checklist for 2026",
-      author: { "@type": "Person", name: "David Turner" },
-      publisher: {
-        "@type": "Organization",
-        name: "Visibility Local",
-        url: "https://visibilitylocal.com",
-      },
-      url: "https://visibilitylocal.com/resources/local-seo-checklist",
-      description:
-        "The 40 local SEO factors that actually drive map pack rankings and local search visibility in 2026. Audit your business against this list.",
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "How often should I run through this checklist?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Run a full checklist audit quarterly. Some items, like GBP posting cadence and review monitoring, need weekly attention. Others, like schema markup and citation consistency, are set-and-monitor tasks you check every three months. A quarterly audit takes about 2 hours and will surface any drift from competitors who are actively optimizing.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What is the most important item on this list?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Primary GBP category. Every other item on this list can be perfectly executed and still fail to move rankings if your GBP is filed under the wrong category. Category determines which search queries your listing is even eligible to appear in. Fix the category first, then work through everything else.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do I know which items I have already completed?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Run a GBP audit inside your dashboard (completeness score is visible under 'Edit profile'), run your NAP through Whitespark or BrightLocal to see citation consistency, and use Google's Rich Results Test to check schema markup. For on-page items, a crawl with Screaming Frog or Sitebulb will surface missing title tags, meta descriptions, and schema errors.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Does this checklist apply to all business types?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The GBP, NAP, on-page, and review sections apply universally. The AI search section applies to any business that wants to appear in ChatGPT, Perplexity, or Google AI Overviews. The content section is more important for service businesses and professionals than for retail locations. Industry-specific citation sources vary by profession.",
-          },
-        },
-      ],
-    },
-  ],
-};
-
 const faqs = [
   {
     q: "How often should I run through this checklist?",
@@ -82,6 +26,36 @@ const faqs = [
     a: "The GBP, NAP, on-page, and review sections apply universally. The AI search section applies to any business that wants to appear in ChatGPT, Perplexity, or Google AI Overviews. The content section is more important for service businesses and professionals than for retail locations. Industry-specific citation sources vary by profession.",
   },
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "40-Point Local SEO Checklist for 2026",
+      datePublished: "2026-01-15",
+      dateModified: "2026-08-28",
+      author: { "@type": "Person", name: "David Turner" },
+      publisher: {
+        "@type": "Organization",
+        name: "Visibility Local",
+        url: "https://visibilitylocal.com",
+      },
+      url: "https://visibilitylocal.com/resources/local-seo-checklist",
+      description:
+        "The 40 local SEO factors that actually drive map pack rankings and local search visibility in 2026. Audit your business against this list.",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
+
 
 const sections = [
   {

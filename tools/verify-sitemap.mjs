@@ -12,7 +12,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-const BASE = 'https://www.hillcrestlifeandhealth.com'
+const BASE = 'https://visibilitylocal.com'
 const ROOT = '.next/server/app'
 const SITEMAP = path.join(ROOT, 'sitemap.xml.body')
 

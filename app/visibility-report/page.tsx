@@ -13,6 +13,25 @@ export const metadata: Metadata = {
 const STRIPE_PAYMENT_LINK = "REPLACE_WITH_STRIPE_PAYMENT_LINK";
 const isPaymentLinkLive = !STRIPE_PAYMENT_LINK.startsWith("REPLACE_");
 
+const faqs = [
+  {
+    q: "What do I actually receive?",
+    a: "A written report covering five areas: your Google Business Profile, your position in the map pack for the searches that matter in your market, your citation data across the directories that carry weight for insurance, your website, and what ChatGPT and Perplexity say when asked for an agent in your city. Then a 30-minute call to go through it. You keep the report either way.",
+  },
+  {
+    q: "Is the $297 credited if I hire you?",
+    a: "Yes. The full $297 comes off your setup cost if we go on to work together. If we do not, you keep the report and owe nothing further.",
+  },
+  {
+    q: "Why does this cost money when other agencies audit for free?",
+    a: "Because a free audit is a sales call with a PDF attached, and both sides know it. Charging for the diagnostic means the work is the product rather than the bait, which means it can honestly conclude that you do not need me. That conclusion is worth more than a free report that never reaches it.",
+  },
+  {
+    q: "How long does it take?",
+    a: "The report is with you within five business days of purchase, and the call is booked at your convenience after that.",
+  },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -40,40 +59,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "What do I actually receive?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "A written report covering five areas: your Google Business Profile, your position in the map pack for the searches that matter in your market, your citation data across the directories that carry weight for insurance, your website, and what ChatGPT and Perplexity say when asked for an agent in your city. Then a 30-minute call to go through it. You keep the report either way.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Is the $297 credited if I hire you?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. The full $297 comes off your setup cost if we go on to work together. If we do not, you keep the report and owe nothing further.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Why does this cost money when other agencies audit for free?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Because a free audit is a sales call with a PDF attached, and both sides know it. Charging for the diagnostic means the work is the product rather than the bait, which means it can honestly conclude that you do not need me. That conclusion is worth more than a free report that never reaches it.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How long does it take?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The report is with you within five business days of purchase, and the call is booked at your convenience after that.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -136,15 +126,13 @@ export default function VisibilityReportPage() {
                   Buy the report
                 </a>
               ) : (
-                <span
-                  className="inline-block px-8 py-4 text-base font-sans font-semibold rounded-sm"
-                  style={{ background: "#b91c1c", color: "#fff" }}
-                >
-                  PLACEHOLDER: Stripe payment link not yet configured
-                </span>
+                <Link href="/contact" className="btn-primary text-base px-8 py-4 inline-block">
+                  Request the report
+                </Link>
               )}
               <p className="font-sans text-sm text-ink-3 mt-2">
                 Credited in full toward setup if you hire me.
+                {!isPaymentLinkLive && " Invoiced directly for now."}
               </p>
             </div>
           </div>
@@ -165,31 +153,6 @@ export default function VisibilityReportPage() {
                 <p className="font-sans text-ink-2 text-base leading-relaxed">{item.body}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Sample excerpt */}
-      <section className="bg-paper py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <p className="section-label">A sample</p>
-          <h2 className="font-serif text-4xl text-ink mt-4 mb-8">An excerpt from a real report</h2>
-
-          {/* PLACEHOLDER: swap for a real redacted excerpt before launch. Styled to fail
-              loudly rather than read as finished copy. */}
-          <div
-            className="border-2 border-dashed rounded-sm p-8"
-            style={{ borderColor: "#b91c1c", background: "rgba(185,28,28,0.04)" }}
-          >
-            <p className="font-sans text-sm font-semibold mb-3" style={{ color: "#b91c1c" }}>
-              PLACEHOLDER, DO NOT PUBLISH: replace with a redacted excerpt from a real report
-            </p>
-            <p className="font-sans text-base text-ink-2 leading-relaxed">
-              Use two or three pages from an actual client report with the agency name and
-              address removed. The GBP category finding and the AI transcript are the two most
-              persuasive sections, so lead with those. A screenshot of the map pack grid carries
-              more weight than a paragraph describing it.
-            </p>
           </div>
         </div>
       </section>
@@ -230,17 +193,14 @@ export default function VisibilityReportPage() {
                 Buy the report, $297
               </a>
             ) : (
-              <span
-                className="inline-block px-8 py-4 text-base font-sans font-semibold rounded-sm"
-                style={{ background: "#b91c1c", color: "#fff" }}
-              >
-                PLACEHOLDER: Stripe payment link not yet configured
-              </span>
+              <Link href="/contact" className="btn-primary text-base px-8 py-4 inline-block">
+                Request the report, $297
+              </Link>
             )}
           </div>
 
           <p className="font-sans text-sm text-ink-3 mt-6">
-            Not ready to spend anything?{" "}
+            Not ready to spend anything yet?{" "}
             <Link href="/scorecard" className="text-gold hover:underline">
               Grade your own listing in ten minutes
             </Link>{" "}
@@ -250,6 +210,23 @@ export default function VisibilityReportPage() {
             </Link>{" "}
             first.
           </p>
+        </div>
+      </section>
+
+      {/* Rendered from the same array the FAQPage schema is built from, so the two cannot
+          drift apart. Server-rendered, not injected on click. */}
+      <section className="bg-paper py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="section-label">Questions</p>
+          <h2 className="font-serif text-4xl text-ink mt-4 mb-10">Before you buy</h2>
+          <div className="space-y-8">
+            {faqs.map((faq) => (
+              <div key={faq.q}>
+                <h3 className="font-serif text-xl text-ink mb-2">{faq.q}</h3>
+                <p className="font-sans text-base text-ink-2 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

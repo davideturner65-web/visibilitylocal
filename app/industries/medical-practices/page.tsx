@@ -10,6 +10,25 @@ export const metadata: Metadata = {
   },
 };
 
+const faqs = [
+              {
+                q: "How does HIPAA affect responding to Google reviews?",
+                a: "HIPAA prohibits confirming or denying that a reviewer was a patient or sharing any details about their care. Responses must be generic: don't acknowledge the reviewer as a patient, don't mention treatment details, and don't use language that implies a treatment relationship. A response like 'We appreciate all feedback and encourage you to contact our office directly' is compliant. We write all medical practice review responses within these parameters.",
+              },
+              {
+                q: "What GBP category should a medical practice use?",
+                a: "Use the most specific specialty category available: 'Dentist,' 'Family Practice Physician,' 'Dermatologist,' 'Orthopedic Surgeon,' 'Pediatrician.' Do not use generic categories like 'Medical Clinic' or 'Doctor' if a specialty-specific category exists. The primary category determines which searches your listing is eligible to appear for, and specialty categories access specialty searches that generic categories cannot reach.",
+              },
+              {
+                q: "Which medical directories are most important for local SEO?",
+                a: "Healthgrades, Zocdoc, WebMD (physician profiles), Vitals, and the US News Health physician directory are the highest-authority sources. Healthgrades in particular ranks independently in search results for physician name searches and often appears before your own website. Hospital affiliation directories add authoritative citations if applicable. Many physicians have profiles on all of these platforms but have never claimed or updated them.",
+              },
+              {
+                q: "How can a private practice compete with large hospital systems in local search?",
+                a: "Proximity is Google's strongest local ranking signal. A private practice closer to the searcher with a well-optimized GBP will rank above a hospital system's location page for local searches in most cases. Hospital systems have brand authority but poor local search specificity. A private practice with the correct specialty category, explicit insurance acceptance information, strong review rating, and proximity-focused content closes that gap effectively.",
+              },
+            ];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -27,43 +46,18 @@ const schema = {
       },
       areaServed: { "@type": "Country", name: "United States" },
       serviceType: "Local SEO",
+      audience: {
+        "@type": "Audience",
+        audienceType: "Medical and dental practices",
+      },
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "How does HIPAA affect responding to Google reviews?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "HIPAA prohibits confirming or denying that a reviewer was a patient, or sharing any details about their care. When responding to a Google review, you should respond generically without acknowledging the reviewer as a patient, without mentioning any treatment, appointment, or medical details, and without using the reviewer's name in a way that implies a treatment relationship. A standard response like 'We appreciate all feedback and encourage you to contact our office directly' is compliant. We write all review responses for medical practices within these parameters.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What GBP category should a medical practice use?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Use the most specific specialty category available. 'Dentist,' 'Family Practice Physician,' 'Dermatologist,' 'Orthopedic Surgeon,' 'Pediatrician' are all available as GBP categories and should be used as primary over generic categories like 'Medical Clinic' or 'Doctor.' The primary category determines which searches your listing is eligible to appear for. A dermatologist using 'Medical Clinic' as primary is losing visibility for every dermatology-specific search in their market.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Which medical directories are most important for local SEO?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The highest-authority medical citation sources are Healthgrades, Zocdoc, WebMD (physician profiles), Vitals, and the US News Health physician directory. Healthgrades in particular ranks independently in search results for physician name searches and often appears before a practice's own website. Your hospital affiliations, if applicable, also generate authoritative citations through hospital directory listings. Many physicians have profiles on all of these platforms but have never claimed or updated them.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How can a private practice compete with large hospital systems in local search?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Hospital systems have enormous brand authority but poor local search specificity. A private practice with a fully optimized GBP listing using the correct specialty category, complete insurance acceptance information, active review generation, and proximity-focused content can rank above a hospital system's location page for specific searches in its immediate area. Proximity is Google's strongest local ranking signal, and a private practice that is geographically closer to the searcher will generally outrank a hospital system that is further away, provided the practice has equivalent or better optimization.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -307,24 +301,7 @@ export default function MedicalPracticesPage() {
             Common questions from medical practices
           </h2>
           <div className="space-y-8">
-            {[
-              {
-                q: "How does HIPAA affect responding to Google reviews?",
-                a: "HIPAA prohibits confirming or denying that a reviewer was a patient or sharing any details about their care. Responses must be generic: don't acknowledge the reviewer as a patient, don't mention treatment details, and don't use language that implies a treatment relationship. A response like 'We appreciate all feedback and encourage you to contact our office directly' is compliant. We write all medical practice review responses within these parameters.",
-              },
-              {
-                q: "What GBP category should a medical practice use?",
-                a: "Use the most specific specialty category available: 'Dentist,' 'Family Practice Physician,' 'Dermatologist,' 'Orthopedic Surgeon,' 'Pediatrician.' Do not use generic categories like 'Medical Clinic' or 'Doctor' if a specialty-specific category exists. The primary category determines which searches your listing is eligible to appear for, and specialty categories access specialty searches that generic categories cannot reach.",
-              },
-              {
-                q: "Which medical directories are most important for local SEO?",
-                a: "Healthgrades, Zocdoc, WebMD (physician profiles), Vitals, and the US News Health physician directory are the highest-authority sources. Healthgrades in particular ranks independently in search results for physician name searches and often appears before your own website. Hospital affiliation directories add authoritative citations if applicable. Many physicians have profiles on all of these platforms but have never claimed or updated them.",
-              },
-              {
-                q: "How can a private practice compete with large hospital systems in local search?",
-                a: "Proximity is Google's strongest local ranking signal. A private practice closer to the searcher with a well-optimized GBP will rank above a hospital system's location page for local searches in most cases. Hospital systems have brand authority but poor local search specificity. A private practice with the correct specialty category, explicit insurance acceptance information, strong review rating, and proximity-focused content closes that gap effectively.",
-              },
-            ].map((faq, i) => (
+            {faqs.map((faq, i) => (
               <div key={i} className="border-b border-paper-3 pb-8">
                 <h3 className="font-serif text-xl text-ink mb-4">{faq.q}</h3>
                 <p className="font-sans text-ink-2 text-base leading-relaxed">

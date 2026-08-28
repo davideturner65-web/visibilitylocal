@@ -8,6 +8,25 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://visibilitylocal.com/services/content" },
 };
 
+const faqs = [
+  {
+    q: "What kind of content helps local businesses rank?",
+    a: "Three content types drive local rankings in combination. Location pages target city-plus-service queries and rank in organic results below the map pack. FAQ content answers specific questions that get pulled into AI Overviews and Perplexity results. Resource and guide content builds topical authority over time and earns citations from other websites. Generic blog posts accomplish none of these goals and should not be the focus of a local content strategy.",
+  },
+  {
+    q: "How is local content different from general blog content?",
+    a: "Local content has a specific job: rank for a geographic-plus-service query, answer a question that a local prospect is asking, or establish your topical authority in a way that compounds over time. General blog content is often written without a specific ranking target, serves no particular local intent, and sits on the site accumulating nothing. Every piece of local content we write is mapped to a specific query, a specific audience, and a specific conversion goal.",
+  },
+  {
+    q: "How many pages do I need to rank locally?",
+    a: "Enough to cover your primary service in your primary market with authority, and then expand. For most independent professionals, that means one substantive page per service, one page per city or service area, and a set of FAQ content that covers the questions your prospects actually ask. The minimum viable local content footprint is probably 8 to 15 pages. What matters more than count is that every page targets a real query and has enough depth to actually rank.",
+  },
+  {
+    q: "Does content help with AI search recommendations?",
+    a: "Directly. Perplexity surfaces content that answers specific questions clearly, and cites the source. Google AI Overviews pull from indexed content with explicit answers to the query. ChatGPT's underlying data includes indexed web content. Content written to answer questions directly, with clear structure and appropriate schema markup, is more likely to be cited by AI tools than content written for general engagement.",
+  },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -26,40 +45,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "What kind of content helps local businesses rank?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Three content types drive local rankings in combination. Location pages target city-plus-service queries and rank in organic results below the map pack. FAQ content answers specific questions that get pulled into AI Overviews and Perplexity results. Resource and guide content builds topical authority over time and earns citations from other websites. Generic blog posts accomplish none of these goals and should not be the focus of a local content strategy.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How is local content different from general blog content?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Local content has a specific job: rank for a geographic-plus-service query, answer a question that a local prospect is asking, or establish your topical authority in a way that compounds over time. General blog content is often written without a specific ranking target, serves no particular local intent, and sits on the site accumulating nothing. Every piece of local content we write is mapped to a specific query, a specific audience, and a specific conversion goal.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How many pages do I need to rank locally?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Enough to cover your primary service in your primary market with authority, and then expand. For most independent professionals, that means one substantive page per service, one page per city or service area, and a set of FAQ content that covers the questions your prospects actually ask. The minimum viable local content footprint is probably 8 to 15 pages. What matters more than count is that every page targets a real query and has enough depth to actually rank.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Does content help with AI search recommendations?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Directly. Perplexity surfaces content that answers specific questions clearly, and cites the source. Google AI Overviews pull from indexed content with explicit answers to the query. ChatGPT's underlying data includes indexed web content. Content written to answer questions directly, with clear structure and appropriate schema markup, is more likely to be cited by AI tools than content written for general engagement.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -106,24 +96,6 @@ const whyMatters = [
   },
 ];
 
-const faqs = [
-  {
-    q: "What kind of content helps local businesses rank?",
-    a: "Three content types drive local rankings in combination. Location pages target city-plus-service queries and rank in organic results below the map pack. FAQ content answers specific questions that get pulled into AI Overviews and Perplexity results. Resource and guide content builds topical authority over time and earns citations from other websites. Generic blog posts accomplish none of these goals and should not be the focus of a local content strategy.",
-  },
-  {
-    q: "How is local content different from general blog content?",
-    a: "Local content has a specific job: rank for a geographic-plus-service query, answer a question that a local prospect is asking, or establish your topical authority in a way that compounds over time. General blog content is often written without a specific ranking target, serves no particular local intent, and sits on the site accumulating nothing. Every piece of local content we write is mapped to a specific query, a specific audience, and a specific conversion goal.",
-  },
-  {
-    q: "How many pages do I need to rank locally?",
-    a: "Enough to cover your primary service in your primary market with authority, and then expand. For most independent professionals, that means one substantive page per service, one page per city or service area, and a set of FAQ content that covers the questions your prospects actually ask. The minimum viable local content footprint is probably 8 to 15 pages. What matters more than count is that every page targets a real query and has enough depth to actually rank.",
-  },
-  {
-    q: "Does content help with AI search recommendations?",
-    a: "Directly. Perplexity surfaces content that answers specific questions clearly, and cites the source. Google AI Overviews pull from indexed content with explicit answers to the query. ChatGPT's underlying data includes indexed web content. Content written to answer questions directly, with clear structure and appropriate schema markup, is more likely to be cited by AI tools than content written for general engagement.",
-  },
-];
 
 const relatedServices = [
   { label: "Local SEO", href: "/services/local-seo" },

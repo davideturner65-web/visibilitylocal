@@ -8,6 +8,25 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://visibilitylocal.com/services/citations" },
 };
 
+const faqs = [
+  {
+    q: "What is a citation in local SEO?",
+    a: "A citation is any online mention of your business name, address, and phone number, commonly called NAP. Citations appear in business directories like Yelp, Google Business Profile, Bing Places, and industry-specific platforms. Google uses citations as a prominence signal: a business mentioned consistently across many authoritative sources is treated as more established and trustworthy than one with sparse or conflicting directory presence.",
+  },
+  {
+    q: "How many citations do I need?",
+    a: "Quality matters far more than quantity. The Tier 1 platforms (Google Business Profile, Apple Maps, Bing Places, Yelp, Facebook) are required for every local business. After that, 30 to 50 consistent, verified listings on authoritative general and industry-specific directories will outperform 200 scraped, low-quality listings every time. The right benchmark is being present and correct on the directories that carry actual weight in your industry, not accumulating a raw count.",
+  },
+  {
+    q: "Does NAP inconsistency really affect rankings?",
+    a: "Yes, and it is one of the most common ranking suppressors we find. When Google encounters your business with different phone numbers, suite numbers formatted inconsistently, abbreviated street names in some places and spelled out in others, or old addresses from a previous location, it cannot confidently establish your business as a single entity. That uncertainty translates directly into lower prominence scores and lower map pack rankings.",
+  },
+  {
+    q: "Which citation directories matter most for my industry?",
+    a: "It depends on your industry. For insurance agents: Insurance.com, Insurify, and state insurance department directories. For attorneys: Avvo, Martindale-Hubbell, and FindLaw. For CPAs: the AICPA member directory and Accounting Today. For medical practices: Healthgrades, Zocdoc, and Vitals. Industry-specific directories carry more weight for relevance signals than general directories, even if the general directories have higher overall domain authority.",
+  },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -26,40 +45,11 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "What is a citation in local SEO?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "A citation is any online mention of your business name, address, and phone number, commonly called NAP. Citations appear in business directories like Yelp, Google Business Profile, Bing Places, and industry-specific platforms. Google uses citations as a prominence signal: a business mentioned consistently across many authoritative sources is treated as more established and trustworthy than one with sparse or conflicting directory presence.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How many citations do I need?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Quality matters far more than quantity. The Tier 1 platforms (Google Business Profile, Apple Maps, Bing Places, Yelp, Facebook) are required for every local business. After that, 30 to 50 consistent, verified listings on authoritative general and industry-specific directories will outperform 200 scraped, low-quality listings every time. The right benchmark is being present and correct on the directories that carry actual weight in your industry, not accumulating a raw count.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Does NAP inconsistency really affect rankings?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, and it is one of the most common ranking suppressors we find. When Google encounters your business with different phone numbers, suite numbers formatted inconsistently, abbreviated street names in some places and spelled out in others, or old addresses from a previous location, it cannot confidently establish your business as a single entity. That uncertainty translates directly into lower prominence scores and lower map pack rankings.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Which citation directories matter most for my industry?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "It depends on your industry. For insurance agents: Insurance.com, Insurify, and state insurance department directories. For attorneys: Avvo, Martindale-Hubbell, and FindLaw. For CPAs: the AICPA member directory and Accounting Today. For medical practices: Healthgrades, Zocdoc, and Vitals. Industry-specific directories carry more weight for relevance signals than general directories, even if the general directories have higher overall domain authority.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
@@ -123,24 +113,6 @@ const whyMatters = [
   },
 ];
 
-const faqs = [
-  {
-    q: "What is a citation in local SEO?",
-    a: "A citation is any online mention of your business name, address, and phone number, commonly called NAP. Citations appear in business directories like Yelp, Google Business Profile, Bing Places, and industry-specific platforms. Google uses citations as a prominence signal: a business mentioned consistently across many authoritative sources is treated as more established and trustworthy than one with sparse or conflicting directory presence.",
-  },
-  {
-    q: "How many citations do I need?",
-    a: "Quality matters far more than quantity. The Tier 1 platforms (Google Business Profile, Apple Maps, Bing Places, Yelp, Facebook) are required for every local business. After that, 30 to 50 consistent, verified listings on authoritative general and industry-specific directories will outperform 200 scraped, low-quality listings every time. The right benchmark is being present and correct on the directories that carry actual weight in your industry, not accumulating a raw count.",
-  },
-  {
-    q: "Does NAP inconsistency really affect rankings?",
-    a: "Yes, and it is one of the most common ranking suppressors we find. When Google encounters your business with different phone numbers, suite numbers formatted inconsistently, abbreviated street names in some places and spelled out in others, or old addresses from a previous location, it cannot confidently establish your business as a single entity. That uncertainty translates directly into lower prominence scores and lower map pack rankings.",
-  },
-  {
-    q: "Which citation directories matter most for my industry?",
-    a: "It depends on your industry. For insurance agents: Insurance.com, Insurify, and state insurance department directories. For attorneys: Avvo, Martindale-Hubbell, and FindLaw. For CPAs: the AICPA member directory and Accounting Today. For medical practices: Healthgrades, Zocdoc, and Vitals. Industry-specific directories carry more weight for relevance signals than general directories, even if the general directories have higher overall domain authority.",
-  },
-];
 
 const relatedServices = [
   { label: "Local SEO", href: "/services/local-seo" },
