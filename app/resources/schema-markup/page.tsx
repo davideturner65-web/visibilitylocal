@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Schema Markup for Local Businesses: Complete Guide | Visibility Local",
+  title: "Schema Markup for Local Businesses: Complete Guide",
   description:
     "How to implement schema markup for local business SEO and AI search visibility. LocalBusiness, Service, FAQPage, and Person schema for independent professionals.",
   alternates: { canonical: "https://visibilitylocal.com/resources/schema-markup" },
@@ -182,7 +182,7 @@ export default function SchemaMarkupGuidePage() {
             <p className="section-label mb-5">Guide</p>
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-ink leading-tight mb-6">
               Schema markup for{" "}
-              <span className="italic text-gold">local businesses</span>
+              <span className="italic text-accent">local businesses</span>
             </h1>
             <p className="font-sans text-lg text-ink-2 leading-relaxed mb-4 max-w-2xl">
               Schema markup is structured data that tells search engines and AI tools explicitly what your website content means. Without it, a machine reading your website has to infer whether the text in your header is a business name or a tagline, whether the number in your footer is a phone or a fax, whether the list on your services page is a menu or a product catalog.
@@ -200,7 +200,7 @@ export default function SchemaMarkupGuidePage() {
           <div className="max-w-3xl mx-auto">
 
             <div className="mb-14">
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Why local businesses benefit more than most
               </h2>
@@ -226,7 +226,7 @@ export default function SchemaMarkupGuidePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-4xl mx-auto">
             <p className="section-label mb-4">The four types that matter</p>
-            <div className="divider-gold" />
+            <div className="divider-accent" />
             <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-10">
               Start with these before anything else.
             </h2>
@@ -235,7 +235,7 @@ export default function SchemaMarkupGuidePage() {
                 <div key={item.type} className="bg-paper-2 border border-paper-3 rounded-sm p-7">
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <h3 className="font-serif text-2xl text-ink">{item.type}</h3>
-                    <span className="font-sans text-xs font-semibold text-gold uppercase tracking-wide bg-gold/10 px-3 py-1 rounded-full shrink-0">
+                    <span className="font-sans text-xs font-semibold text-accent uppercase tracking-wide bg-accent/10 px-3 py-1 rounded-full shrink-0">
                       {item.priority}
                     </span>
                   </div>
@@ -265,7 +265,7 @@ export default function SchemaMarkupGuidePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-4xl mx-auto">
             <p className="section-label mb-4">Code examples</p>
-            <div className="divider-gold" />
+            <div className="divider-accent" />
             <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-10">
               Working JSON-LD templates.
             </h2>
@@ -311,7 +311,7 @@ export default function SchemaMarkupGuidePage() {
           <div className="max-w-3xl mx-auto">
 
             <div className="mb-14">
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Common mistakes that make schema worthless
               </h2>
@@ -338,7 +338,7 @@ export default function SchemaMarkupGuidePage() {
                     fix: "Schema markup errors are common and silent. A missing comma in JSON-LD breaks the entire block. Run every page you add schema to through Google's Rich Results Test before considering it done. A schema block with a syntax error provides exactly zero benefit.",
                   },
                 ].map((item) => (
-                  <div key={item.mistake} className="border-l-2 border-gold pl-5">
+                  <div key={item.mistake} className="border-l-2 border-accent pl-5">
                     <p className="font-sans text-sm font-semibold text-ink mb-2">{item.mistake}</p>
                     <p className="font-sans text-sm text-ink-2 leading-relaxed">{item.fix}</p>
                   </div>
@@ -347,7 +347,7 @@ export default function SchemaMarkupGuidePage() {
             </div>
 
             <div className="mb-14">
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Industry-specific schema notes
               </h2>
@@ -384,7 +384,7 @@ export default function SchemaMarkupGuidePage() {
             </div>
 
             <div>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 How to implement and test
               </h2>
@@ -440,10 +440,10 @@ export default function SchemaMarkupGuidePage() {
                   { label: "GBP Setup Guide", href: "/resources/google-business-profile-setup" },
                 ].map((s) => (
                   <Link key={s.href} href={s.href} className="flex items-center gap-3 group">
-                    <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
-                    <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">{s.label}</span>
+                    <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">{s.label}</span>
                   </Link>
                 ))}
               </div>
@@ -451,19 +451,19 @@ export default function SchemaMarkupGuidePage() {
             <div>
               <p className="section-label mb-6">Related service</p>
               <Link href="/services/ai-search-visibility" className="flex items-center gap-3 group">
-                <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-                <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">AI Search Visibility Service</span>
+                <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">AI Search Visibility Service</span>
               </Link>
             </div>
             <div>
               <p className="section-label mb-6">All resources</p>
               <Link href="/resources" className="flex items-center gap-3 group">
-                <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-                <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">View all guides</span>
+                <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">View all guides</span>
               </Link>
             </div>
           </div>
@@ -474,14 +474,14 @@ export default function SchemaMarkupGuidePage() {
       <section className="bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="section-label mb-4" style={{ color: "#c8922a" }}>
+            <p className="section-label mb-4">
               Want schema implemented correctly?
             </p>
             <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
               We implement and validate schema for every client.
             </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(247,244,238,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need me, the call will say so.
+            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
+              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const services = [
@@ -31,11 +32,10 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-paper border-b border-paper-3">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <span className="font-serif text-xl text-ink">Visibility</span>
-            <span className="font-serif text-xl text-gold italic">Local</span>
+          <Link href="/" className="flex items-center shrink-0">
+            <Image src="/logo.png" alt="Visibility Local" width={800} height={300} priority className="h-16 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
@@ -86,6 +86,9 @@ export default function Header() {
               )}
             </div>
 
+            <Link href="/offer" className="px-3 py-2 text-sm font-sans font-medium text-ink-2 hover:text-ink transition-colors rounded">
+              How It Works
+            </Link>
             <Link href="/resources" className="px-3 py-2 text-sm font-sans font-medium text-ink-2 hover:text-ink transition-colors rounded">
               Resources
             </Link>
@@ -99,7 +102,7 @@ export default function Header() {
                 dropdown, because it is the practice rather than one vertical of eight. */}
             <Link
               href="/industries/insurance-agents"
-              className="px-3 py-2 text-sm font-sans font-medium text-ink hover:text-gold transition-colors rounded"
+              className="px-3 py-2 text-sm font-sans font-medium text-ink hover:text-accent transition-colors rounded"
             >
               For Insurance Agents
             </Link>
@@ -133,7 +136,7 @@ export default function Header() {
           <div className="space-y-1">
             <Link
               href="/industries/insurance-agents"
-              className="block py-2.5 text-base font-sans font-semibold text-ink hover:text-gold"
+              className="block py-2.5 text-base font-sans font-semibold text-ink hover:text-accent"
               onClick={() => setMobileOpen(false)}
             >
               For Insurance Agents
@@ -164,6 +167,7 @@ export default function Header() {
             ))}
 
             <div className="pt-4 space-y-1 border-t border-paper-3 mt-2">
+              <Link href="/offer" className="block py-2 text-sm font-sans font-medium text-ink-2 hover:text-ink" onClick={() => setMobileOpen(false)}>How It Works</Link>
               <Link href="/resources" className="block py-2 text-sm font-sans font-medium text-ink-2 hover:text-ink" onClick={() => setMobileOpen(false)}>Resources</Link>
               <Link href="/about" className="block py-2 text-sm font-sans font-medium text-ink-2 hover:text-ink" onClick={() => setMobileOpen(false)}>About</Link>
             </div>

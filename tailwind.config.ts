@@ -9,24 +9,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Sampled from the logo: navy wordmark, slate "Local", teal arc and star.
         ink: {
-          DEFAULT: "#0f0e0c",
-          2: "#3a3830",
-          3: "#6b6860",
-          4: "#9e9b94",
+          DEFAULT: "#0c2442",
+          2: "#33414f",
+          3: "#526072",
+          4: "#64748b",
         },
         paper: {
-          DEFAULT: "#f7f4ee",
-          2: "#eeeadf",
-          3: "#e5e0d3",
+          DEFAULT: "#ffffff",
+          2: "#f1f6f8",
+          3: "#dbe5ea",
         },
-        gold: {
-          DEFAULT: "#c8922a",
-          light: "#f0d9a8",
-          dark: "#8a610f",
-        },
-        teal: {
-          DEFAULT: "#1a6b5a",
+        // DEFAULT is a deeper cut of the logo teal so small text passes contrast on white.
+        // "bright" is the logo teal lifted for use on navy backgrounds.
+        accent: {
+          DEFAULT: "#0f7480",
+          light: "#d6eef0",
+          dark: "#0b5a63",
+          bright: "#4cc4c4",
         },
       },
       fontFamily: {

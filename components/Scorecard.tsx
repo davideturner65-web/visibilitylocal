@@ -60,7 +60,7 @@ const CHECKS: Check[] = [
     id: "nap",
     question: "Do your name, address, and phone match across Yelp, Facebook, and Bing Places?",
     how: "Search your business name on each. Compare against your GBP, including whether you use Ste, Suite, or nothing at all.",
-    why: "Inconsistent listing data is a direct negative signal for local ranking, and it is the most common thing I find that nobody has ever looked at.",
+    why: "Inconsistent listing data is a direct negative signal for local ranking, and it is the most common thing we find that nobody has ever looked at.",
     weight: 2,
   },
   {
@@ -113,7 +113,7 @@ function band(pct: number) {
   if (pct >= 85) {
     return {
       label: "In good shape",
-      note: "Your fundamentals are genuinely in order, which puts you ahead of most independent agencies I look at. The remaining gains are in content and AI citation rather than in fixing what is broken. Honestly, you may not need to hire anyone.",
+      note: "Your fundamentals are genuinely in order, which puts you ahead of most independent agencies we look at. The remaining gains are in content and AI citation rather than in fixing what is broken. Honestly, you may not need to hire anyone.",
     };
   }
   if (pct >= 60) {
@@ -162,7 +162,7 @@ export default function Scorecard() {
         </div>
         <div className="h-1.5 bg-paper-3 rounded-sm overflow-hidden">
           <div
-            className="h-full bg-gold transition-all duration-300"
+            className="h-full bg-accent transition-all duration-300"
             style={{ width: `${(answered.length / CHECKS.length) * 100}%` }}
           />
         </div>
@@ -203,7 +203,7 @@ export default function Scorecard() {
                       </button>
                       <button
                         onClick={() => setExpanded(isOpen ? null : check.id)}
-                        className="px-4 py-1.5 text-sm font-sans text-gold hover:underline"
+                        className="px-4 py-1.5 text-sm font-sans text-accent hover:underline"
                         aria-expanded={isOpen}
                       >
                         {isOpen ? "Hide" : "How do I check?"}
@@ -213,7 +213,7 @@ export default function Scorecard() {
                 </div>
 
                 {isOpen && (
-                  <div className="mt-4 ml-10 pl-4 border-l-2 border-gold space-y-3">
+                  <div className="mt-4 ml-10 pl-4 border-l-2 border-accent space-y-3">
                     <div>
                       <p className="section-label mb-1">How to check</p>
                       <p className="font-sans text-sm text-ink-2 leading-relaxed">{check.how}</p>
@@ -233,39 +233,39 @@ export default function Scorecard() {
       {/* Result */}
       {complete && (
         <div className="mt-12 bg-ink rounded-sm p-8 lg:p-10">
-          <p className="section-label mb-3" style={{ color: "#c8922a" }}>
+          <p className="section-label mb-3">
             Your score
           </p>
           <p className="font-serif text-5xl text-paper mb-2">
             {score}
             <span className="text-ink-4 text-3xl">/{MAX_SCORE}</span>
           </p>
-          <p className="font-serif text-2xl text-gold mb-4">{result.label}</p>
-          <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(247,244,238,0.72)" }}>
+          <p className="font-serif text-2xl text-accent mb-4">{result.label}</p>
+          <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.72)" }}>
             {result.note}
           </p>
 
           {failed.length > 0 && (
             <div className="mb-8">
-              <p className="section-label mb-3" style={{ color: "#c8922a" }}>
+              <p className="section-label mb-3">
                 Fix in this order
               </p>
               <ol className="space-y-2">
                 {failed.map((c, i) => (
-                  <li key={c.id} className="font-sans text-sm leading-relaxed" style={{ color: "rgba(247,244,238,0.8)" }}>
-                    <span className="text-gold font-medium">{i + 1}.</span> {c.question}
+                  <li key={c.id} className="font-sans text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.8)" }}>
+                    <span className="text-accent font-medium">{i + 1}.</span> {c.question}
                   </li>
                 ))}
               </ol>
             </div>
           )}
 
-          <div className="border-t pt-8" style={{ borderColor: "rgba(247,244,238,0.15)" }}>
+          <div className="border-t pt-8" style={{ borderColor: "rgba(255,255,255,0.15)" }}>
             <p className="font-sans text-base text-paper mb-2 font-medium">
               Want this written up, with the specific fix for each one?
             </p>
-            <p className="font-sans text-sm mb-5" style={{ color: "rgba(247,244,238,0.6)" }}>
-              I will send the action plan for the items you missed. One email, no sequence, and I
+            <p className="font-sans text-sm mb-5" style={{ color: "rgba(255,255,255,0.6)" }}>
+              We will send the action plan for the items you missed. One email, no sequence, and we
               will not add you to anything.
             </p>
             <form
@@ -285,7 +285,7 @@ export default function Scorecard() {
                 name="email"
                 required
                 placeholder="you@youragency.com"
-                className="flex-1 min-w-[16rem] px-4 py-3 rounded-sm bg-paper text-ink font-sans text-sm border border-paper-3 focus:outline-none focus:border-gold"
+                className="flex-1 min-w-[16rem] px-4 py-3 rounded-sm bg-paper text-ink font-sans text-sm border border-paper-3 focus:outline-none focus:border-accent"
               />
               <button type="submit" className="btn-primary text-sm px-6 py-3">
                 Send me the plan
@@ -303,9 +303,9 @@ export default function Scorecard() {
       )}
 
       <p className="mt-10 font-sans text-sm text-ink-3">
-        Would rather I did this properly, from the outside, with the AI transcripts and the map
+        Would rather we did this properly, from the outside, with the AI transcripts and the map
         grid?{" "}
-        <Link href="/visibility-report" className="text-gold hover:underline">
+        <Link href="/visibility-report" className="text-accent hover:underline">
           That is the Visibility Report
         </Link>
         .

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Local SEO Guides & Resources | Visibility Local",
+  title: "Local SEO Guides & Resources",
   description:
     "Free local SEO guides, GBP tutorials, and AI search visibility resources for independent professionals. Written to rank and be cited by AI tools.",
   alternates: { canonical: "https://visibilitylocal.com/resources" },
@@ -88,7 +88,7 @@ export default function ResourcesIndexPage() {
             <p className="section-label mb-5">Resources</p>
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-ink leading-tight mb-6">
               Free guides.{" "}
-              <span className="italic text-gold">Real information.</span>
+              <span className="italic text-accent">Real information.</span>
             </h1>
             <p className="font-sans text-lg text-ink-2 leading-relaxed mb-4 max-w-2xl">
               These guides are written to be useful, not to generate leads. If you learn something from them, great. If you want help applying it, you know where to find us.
@@ -108,20 +108,20 @@ export default function ResourcesIndexPage() {
               <Link
                 key={resource.href}
                 href={resource.href}
-                className="group bg-paper border border-paper-3 rounded-sm p-7 flex flex-col hover:border-gold transition-colors duration-200"
+                className="group bg-paper border border-paper-3 rounded-sm p-7 flex flex-col hover:border-accent transition-colors duration-200"
               >
                 <div className="flex items-center justify-between mb-4">
                   <p className="section-label">{resource.category}</p>
                   <span className="font-sans text-xs text-ink-4">{resource.length}</span>
                 </div>
-                <div className="divider-gold mb-4" />
-                <h2 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors duration-200 leading-snug">
+                <div className="divider-accent mb-4" />
+                <h2 className="font-serif text-xl text-ink mb-3 group-hover:text-accent transition-colors duration-200 leading-snug">
                   {resource.title}
                 </h2>
                 <p className="font-sans text-sm text-ink-2 leading-relaxed flex-1">
                   {resource.description}
                 </p>
-                <div className="mt-5 flex items-center gap-2 text-gold">
+                <div className="mt-5 flex items-center gap-2 text-accent">
                   <span className="font-sans text-sm font-semibold">Read guide</span>
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -139,7 +139,7 @@ export default function ResourcesIndexPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div>
               <p className="section-label mb-4">Why these guides exist</p>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-4xl text-ink mt-6 mb-5">
                 Most local SEO content is written for search engines, not for you.
               </h2>
@@ -171,7 +171,7 @@ export default function ResourcesIndexPage() {
                 },
               ].map((item) => (
                 <div key={item.stat} className="bg-paper-2 border border-paper-3 rounded-sm p-6">
-                  <p className="font-serif text-2xl text-gold mb-1">{item.stat}</p>
+                  <p className="font-serif text-2xl text-accent mb-1">{item.stat}</p>
                   <p className="font-sans text-sm text-ink-3 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -185,7 +185,7 @@ export default function ResourcesIndexPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
             <p className="section-label mb-4">Where to start</p>
-            <div className="divider-gold" />
+            <div className="divider-accent" />
             <h2 className="font-serif text-4xl text-ink mt-6 mb-5">
               Depends on your biggest gap.
             </h2>
@@ -221,7 +221,7 @@ export default function ResourcesIndexPage() {
                   <div className="pb-4">
                     <p className="font-sans text-sm font-semibold text-ink mb-1">{item.condition}</p>
                     <p className="font-sans text-sm text-ink-2 leading-relaxed mb-3">{item.guide}</p>
-                    <Link href={item.href} className="font-sans text-sm text-gold hover:text-gold-dark transition-colors duration-200 font-semibold flex items-center gap-1">
+                    <Link href={item.href} className="font-sans text-sm text-accent hover:text-accent-dark transition-colors duration-200 font-semibold flex items-center gap-1">
                       {item.label}
                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -239,14 +239,14 @@ export default function ResourcesIndexPage() {
       <section className="bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="section-label mb-4" style={{ color: "#c8922a" }}>
+            <p className="section-label mb-4">
               One client per market
             </p>
             <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
               Want help applying any of this?
             </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(247,244,238,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need me, the call will say so.
+            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
+              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">

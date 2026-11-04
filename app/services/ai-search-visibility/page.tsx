@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "AI Search Visibility | Get Recommended by ChatGPT & Perplexity | Visibility Local",
+  title: "AI Search Visibility | Get Recommended by ChatGPT & Perplexity",
   description:
     "Get your business recommended by ChatGPT, Perplexity, and Google AI Overviews. AI search visibility optimization for local professionals nationwide.",
   alternates: { canonical: "https://visibilitylocal.com/services/ai-search-visibility" },
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "How long does it take to appear in AI recommendations?",
-    a: "I do not know, and neither does anyone who tells you they do. The mechanics have schedules: schema gets validated and indexed, entity data across directories takes one to three months to agree, and content has to exist before it can be cited. Those steps I will commit to. When a specific model starts recommending you depends on retraining cycles and retrieval behaviour that no agency has visibility into. Treat a promised date as a reason to walk away from that vendor.",
+    a: "We do not know, and neither does anyone who tells you they do. The mechanics have schedules: schema gets validated and indexed, entity data across directories takes one to three months to agree, and content has to exist before it can be cited. Those steps we will commit to. When a specific model starts recommending you depends on retraining cycles and retrieval behaviour that no agency has visibility into. Treat a promised date as a reason to walk away from that vendor.",
   },
 ];
 
@@ -123,7 +123,7 @@ export default function AISearchVisibilityPage() {
             <p className="section-label mb-5">Service</p>
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-ink leading-tight mb-6">
               AI Search{" "}
-              <span className="italic text-gold">Visibility</span>
+              <span className="italic text-accent">Visibility</span>
             </h1>
             <p className="font-sans text-lg text-ink-2 leading-relaxed mb-4 max-w-2xl">
               ChatGPT and Perplexity are already recommending local professionals to people who ask for them. The businesses showing up in those recommendations have done specific things to get there: structured data, consistent entity presence across authoritative directories, and content written to answer specific questions directly.
@@ -143,20 +143,20 @@ export default function AISearchVisibilityPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             <div>
-              <p className="font-serif text-xl text-gold mb-2">ChatGPT</p>
-              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(247,244,238,0.75)" }}>
+              <p className="font-serif text-xl text-accent mb-2">ChatGPT</p>
+              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
                 Pulls from Bing's web index and training data. Prefers businesses with consistent entity data across multiple sources and well-structured web pages. Bing search presence is a direct input.
               </p>
             </div>
             <div>
-              <p className="font-serif text-xl text-gold mb-2">Perplexity</p>
-              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(247,244,238,0.75)" }}>
+              <p className="font-serif text-xl text-accent mb-2">Perplexity</p>
+              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
                 Performs live web searches and cites sources directly in the answer. Content that answers specific questions explicitly is more likely to be surfaced. Source citations are visible to the user.
               </p>
             </div>
             <div>
-              <p className="font-serif text-xl text-gold mb-2">Google AI Overviews</p>
-              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(247,244,238,0.75)" }}>
+              <p className="font-serif text-xl text-accent mb-2">Google AI Overviews</p>
+              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
                 Pulls from Google's index with preference for structured, authoritative pages. GBP data feeds directly into local AI Overviews. Schema markup is critical for parseable recommendations.
               </p>
             </div>
@@ -176,7 +176,7 @@ export default function AISearchVisibilityPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {deliverables.map((item) => (
               <div key={item.title} className="bg-paper border border-paper-3 rounded-sm p-7">
-                <div className="divider-gold" />
+                <div className="divider-accent" />
                 <h3 className="font-serif text-xl text-ink mb-3">{item.title}</h3>
                 <p className="font-sans text-sm text-ink-2 leading-relaxed">{item.desc}</p>
               </div>
@@ -197,7 +197,7 @@ export default function AISearchVisibilityPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {whyMatters.map((item) => (
               <div key={item.title}>
-                <div className="divider-gold" />
+                <div className="divider-accent" />
                 <h3 className="font-serif text-2xl text-ink mb-3">{item.title}</h3>
                 <p className="font-sans text-sm text-ink-2 leading-relaxed">{item.body}</p>
               </div>
@@ -239,10 +239,10 @@ export default function AISearchVisibilityPage() {
                     href={s.href}
                     className="flex items-center gap-3 group"
                   >
-                    <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
-                    <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">{s.label}</span>
+                    <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">{s.label}</span>
                   </Link>
                 ))}
               </div>
@@ -256,10 +256,10 @@ export default function AISearchVisibilityPage() {
                     href={ind.href}
                     className="flex items-center gap-3 group"
                   >
-                    <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
-                    <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">{ind.label}</span>
+                    <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">{ind.label}</span>
                   </Link>
                 ))}
               </div>
@@ -272,14 +272,14 @@ export default function AISearchVisibilityPage() {
       <section className="bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="section-label mb-4" style={{ color: "#c8922a" }}>
+            <p className="section-label mb-4">
               One client per market
             </p>
             <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
               Find out what your town actually sees.
             </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(247,244,238,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need me, the call will say so.
+            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
+              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">

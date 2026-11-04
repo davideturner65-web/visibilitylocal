@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Local SEO for Home Services | Visibility Local",
+  title: "Local SEO for Home Services",
   description:
     "Local SEO for plumbers, HVAC companies, electricians, and home services businesses. Highest search intent per query of any local category. One business per market.",
   alternates: {
@@ -100,8 +100,6 @@ export default function HomeServicesPage() {
           </div>
         </div>
       </section>
-
-      <div className="divider-gold" />
 
       {/* Challenge section */}
       <section className="bg-paper-2 py-20 px-6">
@@ -209,9 +207,9 @@ export default function HomeServicesPage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="bg-paper-2 border border-paper-3 p-6 hover:border-gold transition-colors group"
+                className="bg-paper-2 border border-paper-3 p-6 hover:border-accent transition-colors group"
               >
-                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors">
+                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-accent transition-colors">
                   {s.title}
                 </h3>
                 <p className="font-sans text-ink-3 text-sm">{s.desc}</p>
@@ -221,8 +219,6 @@ export default function HomeServicesPage() {
         </div>
       </section>
 
-      <div className="divider-gold" />
-
       {/* Tactics section */}
       <section className="bg-paper-2 py-20 px-6">
         <div className="max-w-5xl mx-auto">
@@ -231,7 +227,7 @@ export default function HomeServicesPage() {
             What actually moves the needle for home services businesses
           </h2>
           <div className="space-y-10">
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Be specific with GBP category. Not "Home Services."
               </h3>
@@ -247,7 +243,7 @@ export default function HomeServicesPage() {
                 home services GBP listings.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 State emergency and same-day availability explicitly everywhere
               </h3>
@@ -262,7 +258,7 @@ export default function HomeServicesPage() {
                 scan. Make "24/7 emergency service" impossible to miss.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Build Google Local Services Ads alongside GBP, not instead of it
               </h3>
@@ -278,7 +274,7 @@ export default function HomeServicesPage() {
                 Guaranteed"), compounding the trust signals across surfaces.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Ask for reviews immediately after each completed job
               </h3>
@@ -341,9 +337,9 @@ export default function HomeServicesPage() {
               <Link
                 key={r.href}
                 href={r.href}
-                className="bg-paper border border-paper-3 p-6 hover:border-gold transition-colors group"
+                className="bg-paper border border-paper-3 p-6 hover:border-accent transition-colors group"
               >
-                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors">
+                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-accent transition-colors">
                   {r.title}
                 </h3>
                 <p className="font-sans text-ink-3 text-sm">{r.desc}</p>
@@ -356,7 +352,7 @@ export default function HomeServicesPage() {
       {/* CTA */}
       <section className="bg-ink py-24 px-6 text-center">
         <div className="max-w-3xl mx-auto">
-          <p className="section-label text-gold">Get Started</p>
+          <p className="section-label text-accent">Get Started</p>
           <h2 className="font-serif text-4xl text-paper mt-4 mb-6">
             One home services business per trade per market
           </h2>

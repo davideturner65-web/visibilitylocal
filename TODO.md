@@ -3,8 +3,8 @@
 ## Blocking
 
 - [ ] **Stripe Payment Link for the Visibility Report.** Create a $297 payment link and put it
-      in `STRIPE_PAYMENT_LINK` in `app/visibility-report/page.tsx`. Until it is set, the page
-      falls back to "Request the report" pointing at /contact, which works but is manual.
+      in `STRIPE_PAYMENT_LINK` in `lib/payment.ts`. Until it is set, the report page falls back to
+      "Request the report" pointing at the /contact form, and you invoice by hand.
 
 - [ ] **Real figures in the Hillcrest case study.** `app/results/hillcrest-life-and-health/page.tsx`
       is built with loud placeholders and set to `noindex`. Fill in the starting condition,
@@ -21,10 +21,18 @@
       category finding and the AI transcript are the most persuasive parts. A screenshot of the
       map pack grid carries more weight than a paragraph describing one.
 
-- [ ] **Decide on "we" versus "I".** The site currently mixes them: older copy says "we work
-      with one client per market" while the new copy says "I". It is a solo practice and the
-      About page already says David Turner handles every client directly, so "I" is the honest
-      choice, but it is a brand decision rather than a bug.
+- [ ] **Link the outside profiles.** Add the Visibility Local Google Business Profile and LinkedIn
+      URLs to `sameAs` in the `app/page.tsx` schema. It currently points only at the site itself.
+
+- [ ] **Add a photo to the About page.**
+
+- [ ] **Turn on Web Analytics in the Vercel dashboard.** The code is in `app/layout.tsx`; no data
+      arrives until it is enabled for the project.
+
+- [ ] **Have a lawyer read `/privacy` and `/terms`.** They are a plain-language first draft. The
+      legal entity name, governing state and report refund policy still need adding.
+
+- [ ] **Get a vector version of the logo** before anything is printed.
 
 - [ ] **Publish `/research`** once the Invisible Agent Index has data. The route exists and is
       noindex; add it to the nav when there is something to read.

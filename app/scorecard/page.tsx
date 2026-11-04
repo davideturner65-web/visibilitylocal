@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Scorecard from "@/components/Scorecard";
 
 export const metadata: Metadata = {
-  title: "Free Local Search Scorecard for Insurance Agents | Visibility Local",
+  title: "Free Local Search Scorecard for Insurance Agents",
   description:
     "Twelve checks you can run against your own Google Business Profile and website in about ten minutes. Score it yourself, no email required to see the result.",
   alternates: { canonical: "https://visibilitylocal.com/scorecard" },
@@ -55,8 +55,6 @@ export default function ScorecardPage() {
           </div>
         </div>
       </section>
-
-      <div className="divider-gold" />
 
       <section className="bg-paper-2 py-16 px-6">
         <div className="max-w-3xl mx-auto">

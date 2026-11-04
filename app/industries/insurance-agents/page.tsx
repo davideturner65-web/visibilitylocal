@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Local SEO for Insurance Agents | Visibility Local",
+  title: "Local SEO for Insurance Agents",
   description:
     "Local SEO and GBP optimization for independent insurance agents. One agent per market. Compete against captive agents and national carriers in local search.",
   alternates: {
@@ -99,14 +99,12 @@ export default function InsuranceAgentsPage() {
         </div>
       </section>
 
-      <div className="divider-gold" />
-
       {/* What the business actually looks like. The technical problems come after; these are
           the four things that show up in nearly every independent agency. */}
       <section className="bg-ink py-20 px-6">
         <div className="max-w-3xl mx-auto">
-          <p className="section-label" style={{ color: "#c8922a" }}>
-            What I see in almost every agency
+          <p className="section-label">
+            What we see in almost every agency
           </p>
           <h2 className="font-serif text-4xl text-paper mt-4 mb-10">
             Four things costing you business that have nothing to do with your carriers
@@ -115,9 +113,9 @@ export default function InsuranceAgentsPage() {
           <div className="space-y-10">
             <div>
               <h3 className="font-serif text-2xl text-paper mb-3">Your FMO gave you a website that hurts you</h3>
-              <div className="space-y-4 font-sans text-base leading-relaxed" style={{ color: "rgba(247,244,238,0.72)" }}>
+              <div className="space-y-4 font-sans text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 <p>
-                  This one genuinely irritates me. Your FMO or IMO handed you a site as a benefit of contracting. It has the same structure, the same page titles, and very close to the same body copy as every other agent who took the same deal. Sometimes hundreds of them. Your name and headshot were swapped in and that is the extent of what makes it yours.
+                  This one is worth being blunt about. Your FMO or IMO handed you a site as a benefit of contracting. It has the same structure, the same page titles, and very close to the same body copy as every other agent who took the same deal. Sometimes hundreds of them. Your name and headshot were swapped in and that is the extent of what makes it yours.
                 </p>
                 <p>
                   Google is very good at spotting that. When four hundred pages say nearly the same thing, it picks one to show and treats the rest as redundant. You are not being outranked by a better agent. You are being filtered as a duplicate.
@@ -130,7 +128,7 @@ export default function InsuranceAgentsPage() {
 
             <div>
               <h3 className="font-serif text-2xl text-paper mb-3">Referrals are your best business and your worst pipeline</h3>
-              <div className="space-y-4 font-sans text-base leading-relaxed" style={{ color: "rgba(247,244,238,0.72)" }}>
+              <div className="space-y-4 font-sans text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 <p>
                   Referred clients close faster, price-shop less, and stay longer. Nothing here argues against that. The trouble is that you cannot turn referrals up in a month when you need production, and you cannot make them arrive during the eight weeks when writing business actually matters.
                 </p>
@@ -142,21 +140,21 @@ export default function InsuranceAgentsPage() {
 
             <div>
               <h3 className="font-serif text-2xl text-paper mb-3">Your year is compressed into about ten weeks</h3>
-              <div className="space-y-4 font-sans text-base leading-relaxed" style={{ color: "rgba(247,244,238,0.72)" }}>
+              <div className="space-y-4 font-sans text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 <p>
                   Medicare Annual Enrollment runs October 15 to December 7. ACA Open Enrollment runs November 1 to January 15. If you write either line, a large share of your year lands inside that window.
                 </p>
                 <p>
-                  Now put that against how search works. Google Business Profile corrections move in 30 to 60 days. Content rankings take 90 to 180. Do the arithmetic backwards from October 15 and the work has to be underway by roughly June to be paying you in the fall. Agents call me in late September every year, and by then the honest answer is that we are building for next season.
+                  Now put that against how search works. Google Business Profile corrections move in 30 to 60 days. Content rankings take 90 to 180. Do the arithmetic backwards from October 15 and the work has to be underway by roughly June to be paying you in the fall. Agents call us in late September every year, and by then the honest answer is that we are building for next season.
                 </p>
               </div>
             </div>
 
             <div>
               <h3 className="font-serif text-2xl text-paper mb-3">You are probably targeting the wrong line</h3>
-              <div className="space-y-4 font-sans text-base leading-relaxed" style={{ color: "rgba(247,244,238,0.72)" }}>
+              <div className="space-y-4 font-sans text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 <p>
-                  Most agents who ask about SEO want to rank for home and auto. I would steer you off it. Those terms are saturated by carriers with national ad budgets, aggregators, and lead sellers who can pay more for a click than the policy is worth to you. You can spend a year there and place tenth.
+                  Most agents who ask about SEO want to rank for home and auto. We would steer you off it. Those terms are saturated by carriers with national ad budgets, aggregators, and lead sellers who can pay more for a click than the policy is worth to you. You can spend a year there and place tenth.
                 </p>
                 <p>
                   Medicare, ACA, final expense, and small commercial behave differently. The searches are more specific, the intent is higher, the national brands compete less directly for them, and the client relationship is worth considerably more over its life. That is where an independent can actually take ground.
@@ -270,9 +268,9 @@ export default function InsuranceAgentsPage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="bg-paper-2 border border-paper-3 p-6 hover:border-gold transition-colors group"
+                className="bg-paper-2 border border-paper-3 p-6 hover:border-accent transition-colors group"
               >
-                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors">
+                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-accent transition-colors">
                   {s.title}
                 </h3>
                 <p className="font-sans text-ink-3 text-sm">{s.desc}</p>
@@ -282,8 +280,6 @@ export default function InsuranceAgentsPage() {
         </div>
       </section>
 
-      <div className="divider-gold" />
-
       {/* Tactics section */}
       <section className="bg-paper-2 py-20 px-6">
         <div className="max-w-5xl mx-auto">
@@ -292,7 +288,7 @@ export default function InsuranceAgentsPage() {
             What actually moves the needle for insurance agents
           </h2>
           <div className="space-y-10">
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Fix the GBP primary category first
               </h3>
@@ -307,7 +303,7 @@ export default function InsuranceAgentsPage() {
                 with the wrong default constantly, and most agents never check.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Use the state DOI listing as your anchor citation
               </h3>
@@ -322,7 +318,7 @@ export default function InsuranceAgentsPage() {
                 canonical reference for every other citation we build or clean.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Write content that targets the "independent vs captive" question
               </h3>
@@ -336,7 +332,7 @@ export default function InsuranceAgentsPage() {
                 ranking for the more competitive local insurance terms.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Build referral visibility alongside client visibility
               </h3>
@@ -404,9 +400,9 @@ export default function InsuranceAgentsPage() {
               <Link
                 key={r.href}
                 href={r.href}
-                className="bg-paper border border-paper-3 p-6 hover:border-gold transition-colors group"
+                className="bg-paper border border-paper-3 p-6 hover:border-accent transition-colors group"
               >
-                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors">
+                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-accent transition-colors">
                   {r.title}
                 </h3>
                 <p className="font-sans text-ink-3 text-sm">{r.desc}</p>
@@ -419,7 +415,7 @@ export default function InsuranceAgentsPage() {
       {/* CTA */}
       <section className="bg-ink py-24 px-6 text-center">
         <div className="max-w-3xl mx-auto">
-          <p className="section-label text-gold">Get Started</p>
+          <p className="section-label text-accent">Get Started</p>
           <h2 className="font-serif text-4xl text-paper mt-4 mb-6">
             One insurance agent per market
           </h2>

@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { STRIPE_PAYMENT_LINK, isPaymentLinkLive } from "@/lib/payment";
 
 export const metadata: Metadata = {
-  title: "The Visibility Report, $297 | Visibility Local",
+  title: "The Visibility Report, $297",
   description:
     "A full diagnostic of how your agency turns up when someone in your town goes looking for an insurance agent. Google Business Profile, map pack, citations, website, and what AI tools say. Written report plus a 30-minute call.",
   alternates: { canonical: "https://visibilitylocal.com/visibility-report" },
 };
-
-// Stripe Payment Link. Replace with the live link before launch; the placeholder is
-// deliberately obvious so it cannot ship unnoticed.
-const STRIPE_PAYMENT_LINK = "REPLACE_WITH_STRIPE_PAYMENT_LINK";
-const isPaymentLinkLive = !STRIPE_PAYMENT_LINK.startsWith("REPLACE_");
 
 const faqs = [
   {
@@ -24,7 +20,7 @@ const faqs = [
   },
   {
     q: "Why does this cost money when other agencies audit for free?",
-    a: "Because a free audit is a sales call with a PDF attached, and both sides know it. Charging for the diagnostic means the work is the product rather than the bait, which means it can honestly conclude that you do not need me. That conclusion is worth more than a free report that never reaches it.",
+    a: "Because a free audit is a sales call with a PDF attached, and both sides know it. Charging for the diagnostic means the work is the product rather than the bait, which means it can honestly conclude that you do not need us. That conclusion is worth more than a free report that never reaches it.",
   },
   {
     q: "How long does it take?",
@@ -75,7 +71,7 @@ const included = [
   },
   {
     title: "Map pack position, by search",
-    body: "Where you rank for the searches that matter in your market, checked from several points around your city rather than from wherever I happen to be sitting. Proximity moves local results, so a single ranking number is close to meaningless. You see who is holding the three-pack and how far outside it you are.",
+    body: "Where you rank for the searches that matter in your market, checked from several points around your city rather than from wherever we happen to be sitting. Proximity moves local results, so a single ranking number is close to meaningless. You see who is holding the three-pack and how far outside it you are.",
   },
   {
     title: "Citation and NAP audit",
@@ -91,7 +87,7 @@ const included = [
   },
   {
     title: "A 30-minute call",
-    body: "We go through it together and you can ask what any of it means. If the answer is that you should fix three things yourself and call me in a year, that is what I will tell you.",
+    body: "We go through it together and you can ask what any of it means. If the answer is that you should fix three things yourself and call us in a year, that is what we will tell you.",
   },
 ];
 
@@ -112,7 +108,7 @@ export default function VisibilityReportPage() {
               You know what your agency looks like from the inside. This is what it looks like from the outside, to somebody in your city who has decided they want an independent agent and is about to pick one.
             </p>
             <p>
-              Five areas, written up properly, plus a call to walk through it. Three hundred dollars, near enough, and it comes straight off your setup if you decide to work with me afterwards.
+              Five areas, written up properly, plus a call to walk through it. Three hundred dollars, near enough, and it comes straight off your setup if you decide to work with us afterwards.
             </p>
           </div>
 
@@ -126,20 +122,18 @@ export default function VisibilityReportPage() {
                   Buy the report
                 </a>
               ) : (
-                <Link href="/contact" className="btn-primary text-base px-8 py-4 inline-block">
+                <Link href="/contact#request" className="btn-primary text-base px-8 py-4 inline-block">
                   Request the report
                 </Link>
               )}
               <p className="font-sans text-sm text-ink-3 mt-2">
-                Credited in full toward setup if you hire me.
+                Credited in full toward setup if you hire us.
                 {!isPaymentLinkLive && " Invoiced directly for now."}
               </p>
             </div>
           </div>
         </div>
       </section>
-
-      <div className="divider-gold" />
 
       {/* What's included */}
       <section className="bg-paper-2 py-20 px-6">
@@ -156,8 +150,6 @@ export default function VisibilityReportPage() {
           </div>
         </div>
       </section>
-
-      <div className="divider-gold" />
 
       {/* Why it costs money */}
       <section className="bg-paper-2 py-20 px-6">
@@ -181,7 +173,7 @@ export default function VisibilityReportPage() {
               the money. It is also an outcome a free audit structurally cannot reach.
             </p>
             <p>
-              The credit exists because I would rather you buy the diagnosis than the pitch. If
+              The credit exists because we would rather you buy the diagnosis than the pitch. If
               the report leads to work, the $297 comes off the setup and you have effectively
               paid nothing for it.
             </p>
@@ -193,7 +185,7 @@ export default function VisibilityReportPage() {
                 Buy the report, $297
               </a>
             ) : (
-              <Link href="/contact" className="btn-primary text-base px-8 py-4 inline-block">
+              <Link href="/contact#request" className="btn-primary text-base px-8 py-4 inline-block">
                 Request the report, $297
               </Link>
             )}
@@ -201,14 +193,18 @@ export default function VisibilityReportPage() {
 
           <p className="font-sans text-sm text-ink-3 mt-6">
             Not ready to spend anything yet?{" "}
-            <Link href="/scorecard" className="text-gold hover:underline">
+            <Link href="/scorecard" className="text-accent hover:underline">
               Grade your own listing in ten minutes
             </Link>{" "}
             with the free scorecard, or{" "}
-            <Link href="/industries/insurance-agents" className="text-gold hover:underline">
+            <Link href="/industries/insurance-agents" className="text-accent hover:underline">
               read what usually goes wrong
             </Link>{" "}
-            first.
+            first. Curious what working together looks like?{" "}
+            <Link href="/offer" className="text-accent hover:underline">
+              See how the work runs
+            </Link>
+            .
           </p>
         </div>
       </section>

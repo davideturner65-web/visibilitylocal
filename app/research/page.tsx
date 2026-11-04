@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Research | Visibility Local",
+  title: "Research",
   description:
     "Original research on how independent insurance agents appear in local and AI search.",
   alternates: { canonical: "https://visibilitylocal.com/research" },

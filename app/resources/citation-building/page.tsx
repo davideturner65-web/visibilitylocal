@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Citation Building for Local SEO: Tier-by-Tier Guide | Visibility Local",
+  title: "Citation Building for Local SEO: Tier-by-Tier Guide",
   description:
     "How to build and clean up local business citations for better map pack rankings. Tier-by-tier guide to the directories that actually matter.",
   alternates: { canonical: "https://visibilitylocal.com/resources/citation-building" },
@@ -142,7 +142,7 @@ export default function CitationBuildingPage() {
             <p className="section-label mb-5">Guide</p>
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-ink leading-tight mb-6">
               Citation building:{" "}
-              <span className="italic text-gold">tier by tier</span>
+              <span className="italic text-accent">tier by tier</span>
             </h1>
             <p className="font-sans text-lg text-ink-2 leading-relaxed mb-4 max-w-2xl">
               A citation is any mention of your business name, address, and phone number online. Google uses citations to verify that your business is real, operating, and located where you say it is. Inconsistent citations create doubt. Consistent citations across authoritative sources build the trust signals that drive map pack rankings.
@@ -160,7 +160,7 @@ export default function CitationBuildingPage() {
           <div className="max-w-3xl mx-auto">
 
             <div className="mb-14">
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Why citation consistency matters more than citation count
               </h2>
@@ -178,7 +178,7 @@ export default function CitationBuildingPage() {
             </div>
 
             <div className="mb-14">
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 The audit step: do this before building anything new
               </h2>
@@ -196,7 +196,7 @@ export default function CitationBuildingPage() {
             </div>
 
             <div className="mb-14">
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 NAP format: pick one and never deviate
               </h2>
@@ -219,7 +219,7 @@ export default function CitationBuildingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-4xl mx-auto">
             <p className="section-label mb-4">Tier 1</p>
-            <div className="divider-gold" />
+            <div className="divider-accent" />
             <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-3">
               Required for every local business
             </h2>
@@ -230,7 +230,7 @@ export default function CitationBuildingPage() {
               {tier1.map((dir) => (
                 <div key={dir.name} className="bg-paper-2 border border-paper-3 rounded-sm p-5">
                   <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-gold mt-2 shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0" />
                     <div>
                       <h3 className="font-serif text-lg text-ink mb-1">{dir.name}</h3>
                       <p className="font-sans text-sm text-ink-3 leading-relaxed">{dir.note}</p>
@@ -248,7 +248,7 @@ export default function CitationBuildingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-4xl mx-auto">
             <p className="section-label mb-4">Tier 2</p>
-            <div className="divider-gold" />
+            <div className="divider-accent" />
             <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-3">
               Important for most businesses
             </h2>
@@ -259,7 +259,7 @@ export default function CitationBuildingPage() {
               {tier2.map((dir) => (
                 <div key={dir.name} className="bg-paper border border-paper-3 rounded-sm p-5">
                   <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-gold mt-2 shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0" />
                     <div>
                       <h3 className="font-serif text-lg text-ink mb-1">{dir.name}</h3>
                       <p className="font-sans text-sm text-ink-3 leading-relaxed">{dir.note}</p>
@@ -277,7 +277,7 @@ export default function CitationBuildingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-4xl mx-auto">
             <p className="section-label mb-4">Tier 3</p>
-            <div className="divider-gold" />
+            <div className="divider-accent" />
             <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-3">
               Industry-specific directories
             </h2>
@@ -291,7 +291,7 @@ export default function CitationBuildingPage() {
                   <div className="space-y-2">
                     {industry.dirs.map((dir) => (
                       <div key={dir} className="flex items-start gap-3 py-2 border-b border-paper-3 last:border-0">
-                        <svg className="w-4 h-4 text-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <svg className="w-4 h-4 text-accent shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                         </svg>
                         <p className="font-sans text-sm text-ink-2 leading-relaxed">{dir}</p>
@@ -309,7 +309,7 @@ export default function CitationBuildingPage() {
       <section className="bg-paper-2 border-b border-paper-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl mx-auto">
-            <div className="divider-gold" />
+            <div className="divider-accent" />
             <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
               How many citations do you actually need?
             </h2>
@@ -360,10 +360,10 @@ export default function CitationBuildingPage() {
                   { label: "Local SEO Checklist", href: "/resources/local-seo-checklist" },
                 ].map((s) => (
                   <Link key={s.href} href={s.href} className="flex items-center gap-3 group">
-                    <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
-                    <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">{s.label}</span>
+                    <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">{s.label}</span>
                   </Link>
                 ))}
               </div>
@@ -371,19 +371,19 @@ export default function CitationBuildingPage() {
             <div>
               <p className="section-label mb-6">Related service</p>
               <Link href="/services/citations" className="flex items-center gap-3 group">
-                <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-                <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">Citation & NAP Service</span>
+                <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">Citation & NAP Service</span>
               </Link>
             </div>
             <div>
               <p className="section-label mb-6">All resources</p>
               <Link href="/resources" className="flex items-center gap-3 group">
-                <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-                <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">View all guides</span>
+                <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">View all guides</span>
               </Link>
             </div>
           </div>
@@ -394,14 +394,14 @@ export default function CitationBuildingPage() {
       <section className="bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="section-label mb-4" style={{ color: "#c8922a" }}>
+            <p className="section-label mb-4">
               Want us to audit and build your citations?
             </p>
             <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
               We handle the audit, cleanup, and build-out.
             </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(247,244,238,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need me, the call will say so.
+            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
+              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">

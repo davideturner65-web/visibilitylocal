@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --ink: #0f0e0c;
-  --ink-2: #3a3830;
-  --ink-3: #6b6860;
-  --ink-4: #9e9b94;
-  --paper: #f7f4ee;
-  --paper-2: #eeeadf;
-  --paper-3: #e5e0d3;
-  --gold: #c8922a;
-  --gold-light: #f0d9a8;
-  --gold-dark: #8a610f;
-  --teal: #1a6b5a;
+  --ink: #0c2442;
+  --ink-2: #33414f;
+  --ink-3: #526072;
+  --ink-4: #64748b;
+  --paper: #ffffff;
+  --paper-2: #f1f6f8;
+  --paper-3: #dbe5ea;
+  --accent: #0f7480;
+  --accent-light: #d6eef0;
+  --accent-dark: #0b5a63;
+  --accent-bright: #4cc4c4;
   --serif: var(--font-instrument-serif), Georgia, serif;
   --sans: var(--font-dm-sans), system-ui, sans-serif;
 }
@@ -40,23 +40,23 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-gold text-white font-sans font-semibold text-sm tracking-wide rounded transition-colors duration-200 hover:bg-gold-dark focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-accent text-white font-sans font-semibold text-sm tracking-wide rounded transition-colors duration-200 hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
   }
 
   .btn-secondary {
     @apply inline-flex items-center justify-center px-6 py-3 border border-ink-3 text-ink-2 font-sans font-semibold text-sm tracking-wide rounded transition-colors duration-200 hover:border-ink hover:text-ink focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2;
   }
 
-  .btn-outline-gold {
-    @apply inline-flex items-center justify-center px-6 py-3 border border-gold text-gold font-sans font-semibold text-sm tracking-wide rounded transition-colors duration-200 hover:bg-gold hover:text-white focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2;
+  .btn-outline-accent {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-accent text-accent font-sans font-semibold text-sm tracking-wide rounded transition-colors duration-200 hover:bg-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
   }
 
   .section-label {
-    @apply text-xs font-sans font-semibold uppercase tracking-widest text-gold;
+    @apply text-xs font-sans font-semibold uppercase tracking-widest text-accent;
   }
 
-  .divider-gold {
-    @apply w-12 h-px bg-gold my-4;
+  .divider-accent {
+    @apply w-12 h-px bg-accent my-4;
   }
 
   .card {
@@ -66,4 +66,37 @@ body {
   .prose-editorial {
     @apply text-ink-2 leading-relaxed;
   }
+}
+
+/* On navy, the light-background colors wash out. :where() keeps specificity low so a
+   hover: utility on the element still applies. */
+.bg-ink :where(.text-accent, .section-label) {
+  color: var(--accent-bright);
+}
+
+.bg-ink :where(.text-ink-3, .text-ink-4) {
+  color: #a9b8c8;
+}
+
+.bg-ink :where(.divider-accent) {
+  background-color: var(--accent-bright);
+}
+
+.bg-ink .btn-primary {
+  background-color: var(--accent-bright);
+  color: var(--ink);
+}
+
+.bg-ink .btn-primary:hover {
+  background-color: #ffffff;
+}
+
+.bg-ink .btn-secondary {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+
+.bg-ink .btn-secondary:hover {
+  border-color: #ffffff;
+  color: #ffffff;
 }

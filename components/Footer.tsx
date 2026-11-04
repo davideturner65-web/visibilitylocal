@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const services = [
@@ -36,21 +37,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Col 1: Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="font-serif text-xl text-paper">Visibility</span>
-              <span className="font-serif text-xl text-gold italic">Local</span>
+            {/* The logo's navy lettering disappears on the navy footer, so it sits on white. */}
+            <div className="inline-block bg-white rounded-sm px-3 py-2 mb-5">
+              <Image src="/logo.png" alt="Visibility Local" width={800} height={300} className="h-14 w-auto" />
             </div>
             <p className="text-sm text-ink-4 leading-relaxed mb-5">
               Local SEO and AI search visibility for professionals who can&apos;t afford to be invisible. One client per market.
             </p>
             <div className="space-y-2 text-sm">
-              <a href="tel:+15015542183" className="flex items-center gap-2 text-ink-4 hover:text-gold-light transition-colors">
+              <a href="tel:+15015542183" className="flex items-center gap-2 text-ink-4 hover:text-accent-light transition-colors">
                 <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                 </svg>
                 (501) 554-2183
               </a>
-              <a href="mailto:info@visibilitylocal.com" className="flex items-center gap-2 text-ink-4 hover:text-gold-light transition-colors">
+              <a href="mailto:info@visibilitylocal.com" className="flex items-center gap-2 text-ink-4 hover:text-accent-light transition-colors">
                 <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                 </svg>
@@ -68,11 +69,11 @@ export default function Footer() {
 
           {/* Col 2: Services */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-gold mb-4">Services</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-accent mb-4">Services</h3>
             <ul className="space-y-2">
               {services.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="text-sm text-ink-4 hover:text-gold-light transition-colors">
+                  <Link href={s.href} className="text-sm text-ink-4 hover:text-accent-light transition-colors">
                     {s.label}
                   </Link>
                 </li>
@@ -82,11 +83,11 @@ export default function Footer() {
 
           {/* Col 3: Industries */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-gold mb-4">Industries</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-accent mb-4">Industries</h3>
             <ul className="space-y-2">
               {industries.map((i) => (
                 <li key={i.href}>
-                  <Link href={i.href} className="text-sm text-ink-4 hover:text-gold-light transition-colors">
+                  <Link href={i.href} className="text-sm text-ink-4 hover:text-accent-light transition-colors">
                     {i.label}
                   </Link>
                 </li>
@@ -96,17 +97,17 @@ export default function Footer() {
 
           {/* Col 4: Resources */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-gold mb-4">Resources</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-accent mb-4">Resources</h3>
             <ul className="space-y-2">
               {resources.map((r) => (
                 <li key={r.href}>
-                  <Link href={r.href} className="text-sm text-ink-4 hover:text-gold-light transition-colors">
+                  <Link href={r.href} className="text-sm text-ink-4 hover:text-accent-light transition-colors">
                     {r.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/resources" className="text-sm text-gold hover:text-gold-light transition-colors">
+                <Link href="/resources" className="text-sm text-accent hover:text-accent-light transition-colors">
                   All Guides
                 </Link>
               </li>
@@ -122,9 +123,12 @@ export default function Footer() {
           <p className="text-xs text-ink-3">
             Serving independent professionals nationwide
           </p>
-          <div className="flex gap-4 text-xs text-ink-3">
-            <Link href="/about" className="hover:text-ink-4 transition-colors">About</Link>
-            <Link href="/contact" className="hover:text-ink-4 transition-colors">Contact</Link>
+          <div className="flex flex-wrap justify-center gap-4 text-xs text-ink-3">
+            <Link href="/offer" className="hover:text-white transition-colors">How It Works</Link>
+            <Link href="/about" className="hover:text-white transition-colors">About</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
           </div>
         </div>
       </div>

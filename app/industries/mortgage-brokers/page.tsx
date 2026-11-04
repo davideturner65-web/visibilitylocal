@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Local SEO for Mortgage Brokers | Visibility Local",
+  title: "Local SEO for Mortgage Brokers",
   description:
     "Local SEO and GBP optimization for independent mortgage brokers competing against big banks in local search. One broker per market.",
   alternates: {
@@ -98,8 +98,6 @@ export default function MortgageBrokersPage() {
           </div>
         </div>
       </section>
-
-      <div className="divider-gold" />
 
       {/* Challenge section */}
       <section className="bg-paper-2 py-20 px-6">
@@ -200,9 +198,9 @@ export default function MortgageBrokersPage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="bg-paper-2 border border-paper-3 p-6 hover:border-gold transition-colors group"
+                className="bg-paper-2 border border-paper-3 p-6 hover:border-accent transition-colors group"
               >
-                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors">
+                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-accent transition-colors">
                   {s.title}
                 </h3>
                 <p className="font-sans text-ink-3 text-sm">{s.desc}</p>
@@ -212,8 +210,6 @@ export default function MortgageBrokersPage() {
         </div>
       </section>
 
-      <div className="divider-gold" />
-
       {/* Tactics section */}
       <section className="bg-paper-2 py-20 px-6">
         <div className="max-w-5xl mx-auto">
@@ -222,7 +218,7 @@ export default function MortgageBrokersPage() {
             What actually moves the needle for mortgage brokers
           </h2>
           <div className="space-y-10">
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 "Mortgage Broker" as primary GBP category, with no exceptions
               </h3>
@@ -237,7 +233,7 @@ export default function MortgageBrokersPage() {
                 else matters.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Treat NMLS as a citation data point, not just a compliance requirement
               </h3>
@@ -251,7 +247,7 @@ export default function MortgageBrokersPage() {
                 this before referring clients.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Build realtor search visibility as a parallel channel
               </h3>
@@ -266,7 +262,7 @@ export default function MortgageBrokersPage() {
                 your consumer visibility.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Separate content for purchase and refinance intent
               </h3>
@@ -338,9 +334,9 @@ export default function MortgageBrokersPage() {
               <Link
                 key={r.href}
                 href={r.href}
-                className="bg-paper border border-paper-3 p-6 hover:border-gold transition-colors group"
+                className="bg-paper border border-paper-3 p-6 hover:border-accent transition-colors group"
               >
-                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors">
+                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-accent transition-colors">
                   {r.title}
                 </h3>
                 <p className="font-sans text-ink-3 text-sm">{r.desc}</p>
@@ -353,7 +349,7 @@ export default function MortgageBrokersPage() {
       {/* CTA */}
       <section className="bg-ink py-24 px-6 text-center">
         <div className="max-w-3xl mx-auto">
-          <p className="section-label text-gold">Get Started</p>
+          <p className="section-label text-accent">Get Started</p>
           <h2 className="font-serif text-4xl text-paper mt-4 mb-6">
             One mortgage broker per market
           </h2>

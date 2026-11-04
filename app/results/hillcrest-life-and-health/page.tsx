@@ -3,7 +3,7 @@ import Link from "next/link";
 import Placeholder from "@/components/Placeholder";
 
 export const metadata: Metadata = {
-  title: "Case Study: Hillcrest Life and Health, Little Rock | Visibility Local",
+  title: "Case Study: Hillcrest Life and Health, Little Rock",
   description:
     "What was built for Lancaster Cook, an independent life, health, Medicare and annuity agent in Little Rock, Arkansas, and what happened to his local search visibility.",
   alternates: {
@@ -36,8 +36,6 @@ export default function HillcrestCaseStudyPage() {
           </Placeholder>
         </div>
       </section>
-
-      <div className="divider-gold" />
 
       <section className="bg-paper-2 py-20 px-6">
         <div className="max-w-4xl mx-auto space-y-16">
@@ -144,7 +142,7 @@ export default function HillcrestCaseStudyPage() {
           <h2 className="font-serif text-4xl text-paper mb-5">
             Your market is not Little Rock, but the problems are the same
           </h2>
-          <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(247,244,238,0.72)" }}>
+          <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.72)" }}>
             The Visibility Report is where this starts: the same diagnostic that produced the
             starting condition above, run against your agency.
           </p>

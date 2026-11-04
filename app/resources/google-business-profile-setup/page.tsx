@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Google Business Profile Setup Guide 2026 | Visibility Local",
+  title: "Google Business Profile Setup Guide 2026",
   description:
     "Complete step-by-step guide to setting up and optimizing your Google Business Profile. Categories, photos, posts, Q&A, and everything that affects your map pack ranking.",
   alternates: { canonical: "https://visibilitylocal.com/resources/google-business-profile-setup" },
@@ -72,7 +72,7 @@ export default function GBPSetupGuidePage() {
             <p className="section-label mb-5">Guide</p>
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-ink leading-tight mb-6">
               Google Business Profile{" "}
-              <span className="italic text-gold">Setup Guide</span>
+              <span className="italic text-accent">Setup Guide</span>
             </h1>
             <p className="font-sans text-lg text-ink-2 leading-relaxed mb-4 max-w-2xl">
               Forty-six percent of all Google searches have local intent. That means nearly half of the searches happening right now are from someone looking for a local business, professional, or service. Your Google Business Profile determines whether you appear in those results or not.
@@ -92,7 +92,7 @@ export default function GBPSetupGuidePage() {
             {/* Step 1 */}
             <div className="mb-14">
               <p className="section-label mb-3">Step 1</p>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Claiming vs. creating: check before you build
               </h2>
@@ -112,7 +112,7 @@ export default function GBPSetupGuidePage() {
             {/* Step 2 */}
             <div className="mb-14">
               <p className="section-label mb-3">Step 2</p>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Category selection: the most consequential field on your profile
               </h2>
@@ -146,7 +146,7 @@ export default function GBPSetupGuidePage() {
             {/* Step 3 */}
             <div className="mb-14">
               <p className="section-label mb-3">Step 3</p>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Business description: write for the human, not the algorithm
               </h2>
@@ -166,7 +166,7 @@ export default function GBPSetupGuidePage() {
             {/* Step 4 */}
             <div className="mb-14">
               <p className="section-label mb-3">Step 4</p>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Services section: your complete offering, not a summary
               </h2>
@@ -186,7 +186,7 @@ export default function GBPSetupGuidePage() {
             {/* Step 5 */}
             <div className="mb-14">
               <p className="section-label mb-3">Step 5</p>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Attributes: the filters that match searchers to you
               </h2>
@@ -206,7 +206,7 @@ export default function GBPSetupGuidePage() {
             {/* Step 6 */}
             <div className="mb-14">
               <p className="section-label mb-3">Step 6</p>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Photos: the silent conversion factor
               </h2>
@@ -229,7 +229,7 @@ export default function GBPSetupGuidePage() {
             {/* Step 7 */}
             <div className="mb-14">
               <p className="section-label mb-3">Step 7</p>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Website link: point it to the right place
               </h2>
@@ -246,7 +246,7 @@ export default function GBPSetupGuidePage() {
             {/* Step 8 */}
             <div className="mb-14">
               <p className="section-label mb-3">Step 8</p>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Posts: the 7-day freshness signal
               </h2>
@@ -266,7 +266,7 @@ export default function GBPSetupGuidePage() {
             {/* Step 9 */}
             <div className="mb-14">
               <p className="section-label mb-3">Step 9</p>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Q&A: seed it yourself before someone else does
               </h2>
@@ -300,7 +300,7 @@ export default function GBPSetupGuidePage() {
             {/* Step 10 */}
             <div className="mb-14">
               <p className="section-label mb-3">Step 10</p>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Review strategy: timing is the variable most businesses ignore
               </h2>
@@ -323,7 +323,7 @@ export default function GBPSetupGuidePage() {
             {/* Ongoing */}
             <div className="mb-14">
               <p className="section-label mb-3">Ongoing</p>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Monthly GBP maintenance: what to check and why
               </h2>
@@ -376,10 +376,10 @@ export default function GBPSetupGuidePage() {
                   { label: "Citation Building Guide", href: "/resources/citation-building" },
                 ].map((s) => (
                   <Link key={s.href} href={s.href} className="flex items-center gap-3 group">
-                    <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
-                    <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">{s.label}</span>
+                    <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">{s.label}</span>
                   </Link>
                 ))}
               </div>
@@ -388,20 +388,20 @@ export default function GBPSetupGuidePage() {
               <p className="section-label mb-6">Related service</p>
               <div className="space-y-3">
                 <Link href="/services/google-business-profile" className="flex items-center gap-3 group">
-                  <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
-                  <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">GBP Optimization Service</span>
+                  <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">GBP Optimization Service</span>
                 </Link>
               </div>
             </div>
             <div>
               <p className="section-label mb-6">All resources</p>
               <Link href="/resources" className="flex items-center gap-3 group">
-                <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-                <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">View all guides</span>
+                <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">View all guides</span>
               </Link>
             </div>
           </div>
@@ -412,14 +412,14 @@ export default function GBPSetupGuidePage() {
       <section className="bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="section-label mb-4" style={{ color: "#c8922a" }}>
+            <p className="section-label mb-4">
               Want this done for you?
             </p>
             <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
               We handle the setup and ongoing management.
             </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(247,244,238,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need me, the call will say so.
+            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
+              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">

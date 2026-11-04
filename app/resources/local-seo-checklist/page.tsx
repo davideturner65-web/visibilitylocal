@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "40-Point Local SEO Checklist for 2026 | Visibility Local",
+  title: "40-Point Local SEO Checklist for 2026",
   description:
     "The 40 local SEO factors that actually drive map pack rankings and local search visibility in 2026. Audit your business against this list.",
   alternates: { canonical: "https://visibilitylocal.com/resources/local-seo-checklist" },
@@ -351,7 +351,7 @@ export default function LocalSEOChecklistPage() {
             <p className="section-label mb-5">Guide</p>
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-ink leading-tight mb-6">
               40-Point Local SEO{" "}
-              <span className="italic text-gold">Checklist</span>
+              <span className="italic text-accent">Checklist</span>
             </h1>
             <p className="font-sans text-lg text-ink-2 leading-relaxed mb-4 max-w-2xl">
               Most local SEO checklists are vague category labels with no actionable specifics. "Optimize your GBP" is not a checklist item. These 40 items are. Each one is a specific task with a specific reason it matters, written for businesses that want to audit themselves against the actual factors that drive map pack rankings.
@@ -400,7 +400,7 @@ export default function LocalSEOChecklistPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
             <p className="section-label mb-4">How to use this list</p>
-            <div className="divider-gold" />
+            <div className="divider-accent" />
             <h2 className="font-serif text-4xl text-ink mt-6 mb-5">
               Start with the items that move rankings fastest.
             </h2>
@@ -454,10 +454,10 @@ export default function LocalSEOChecklistPage() {
                   { label: "Citation Building Guide", href: "/resources/citation-building" },
                 ].map((s) => (
                   <Link key={s.href} href={s.href} className="flex items-center gap-3 group">
-                    <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
-                    <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">{s.label}</span>
+                    <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">{s.label}</span>
                   </Link>
                 ))}
               </div>
@@ -465,19 +465,19 @@ export default function LocalSEOChecklistPage() {
             <div>
               <p className="section-label mb-6">Related service</p>
               <Link href="/services/local-seo" className="flex items-center gap-3 group">
-                <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-                <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">Local SEO Service</span>
+                <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">Local SEO Service</span>
               </Link>
             </div>
             <div>
               <p className="section-label mb-6">All resources</p>
               <Link href="/resources" className="flex items-center gap-3 group">
-                <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-                <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">View all guides</span>
+                <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">View all guides</span>
               </Link>
             </div>
           </div>
@@ -488,14 +488,14 @@ export default function LocalSEOChecklistPage() {
       <section className="bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="section-label mb-4" style={{ color: "#c8922a" }}>
+            <p className="section-label mb-4">
               Want us to run this audit for you?
             </p>
             <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
               We will tell you exactly where you stand.
             </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(247,244,238,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need me, the call will say so.
+            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
+              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">

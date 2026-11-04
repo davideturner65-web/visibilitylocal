@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How to Get Recommended by ChatGPT, Perplexity, and Google AI | Visibility Local",
+  title: "How to Get Recommended by ChatGPT, Perplexity, and Google AI",
   description:
     "A practical guide to getting your local business recommended by AI search tools in 2026. GEO, AEO, and AI citation strategy for small businesses.",
   alternates: { canonical: "https://visibilitylocal.com/resources/ai-search-visibility" },
@@ -72,7 +72,7 @@ export default function AISearchVisibilityPage() {
             <p className="section-label mb-5">Guide</p>
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-ink leading-tight mb-6">
               Getting recommended by{" "}
-              <span className="italic text-gold">AI search tools</span>
+              <span className="italic text-accent">AI search tools</span>
             </h1>
             <p className="font-sans text-lg text-ink-2 leading-relaxed mb-4 max-w-2xl">
               When someone asks ChatGPT, Perplexity, or Google's AI Overviews for a local professional recommendation, the response they get is not a list of whoever ranks highest on Google. It is a synthesized answer drawn from structured data, authoritative sources, and content that AI tools can confidently cite.
@@ -90,7 +90,7 @@ export default function AISearchVisibilityPage() {
           <div className="max-w-3xl mx-auto">
 
             <div className="mb-14">
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 How AI tools actually find local businesses
               </h2>
@@ -108,7 +108,7 @@ export default function AISearchVisibilityPage() {
             </div>
 
             <div className="mb-14">
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 The three AI search surfaces, and how they differ
               </h2>
@@ -146,7 +146,7 @@ export default function AISearchVisibilityPage() {
             </div>
 
             <div className="mb-14">
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Entity establishment: the foundation of AI search visibility
               </h2>
@@ -164,7 +164,7 @@ export default function AISearchVisibilityPage() {
             </div>
 
             <div className="mb-14">
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Schema markup: making your data directly parseable
               </h2>
@@ -182,7 +182,7 @@ export default function AISearchVisibilityPage() {
             </div>
 
             <div className="mb-14">
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 FAQ content strategy: write answers AI tools want to cite
               </h2>
@@ -200,7 +200,7 @@ export default function AISearchVisibilityPage() {
             </div>
 
             <div className="mb-14">
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Authority signals: the sources AI tools trust most
               </h2>
@@ -218,7 +218,7 @@ export default function AISearchVisibilityPage() {
             </div>
 
             <div className="mb-14">
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-3xl lg:text-4xl text-ink mt-5 mb-4">
                 Timeline: what can be promised and what cannot
               </h2>
@@ -271,10 +271,10 @@ export default function AISearchVisibilityPage() {
                   { label: "Schema Markup Guide", href: "/resources/schema-markup" },
                 ].map((s) => (
                   <Link key={s.href} href={s.href} className="flex items-center gap-3 group">
-                    <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
-                    <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">{s.label}</span>
+                    <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">{s.label}</span>
                   </Link>
                 ))}
               </div>
@@ -282,19 +282,19 @@ export default function AISearchVisibilityPage() {
             <div>
               <p className="section-label mb-6">Related service</p>
               <Link href="/services/ai-search-visibility" className="flex items-center gap-3 group">
-                <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-                <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">AI Search Visibility Service</span>
+                <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">AI Search Visibility Service</span>
               </Link>
             </div>
             <div>
               <p className="section-label mb-6">All resources</p>
               <Link href="/resources" className="flex items-center gap-3 group">
-                <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-                <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">View all guides</span>
+                <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">View all guides</span>
               </Link>
             </div>
           </div>
@@ -305,14 +305,14 @@ export default function AISearchVisibilityPage() {
       <section className="bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="section-label mb-4" style={{ color: "#c8922a" }}>
+            <p className="section-label mb-4">
               Ready to get in front of AI recommendations?
             </p>
             <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
               We build the signals that AI tools trust.
             </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(247,244,238,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need me, the call will say so.
+            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
+              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">

@@ -15,11 +15,11 @@ const faqs = [
   },
   {
     q: "How is Visibility Local different from a regular SEO agency?",
-    a: "Two things. First, we work with one client per market, so we're never splitting attention between you and a direct competitor. Second, there are no account managers or junior staff. David Turner handles every client directly. The person you talk to is the person doing the work.",
+    a: "Two things. First, we work with one client per market, so we're never splitting attention between you and a direct competitor. Second, the work is built for how local search runs now: the map pack, Google's AI Overviews, ChatGPT and Perplexity, not just the ten blue links.",
   },
   {
     q: "Do you work with businesses nationwide?",
-    a: "Yes. The work is not geography-constrained on my end, so the market I am in has no bearing on the market you are in. The only limit is the one-per-market policy: if I already represent an agent in your city, I will tell you rather than take you both.",
+    a: "Yes. The work is not geography-constrained on our end, so where we are has no bearing on the market you are in. The only limit is the one-per-market policy: if we already represent an agent in your city, we will tell you rather than take you both.",
   },
   {
     q: "What does 'one client per market' mean?",
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "How long does it take to see results?",
-    a: "Google Business Profile work usually shows movement in 30 to 60 days, because it corrects things Google already measures: your primary category, citation consistency, review velocity. Organic content rankings take 90 to 180 days. For AI search I will not give you a date. Nobody outside the model vendors can see when a system starts naming you, and anyone quoting a timeline for it is guessing. What I commit to is the work: the schema ships, the entity data agrees across the web, and the content is written to be citable. Then we watch what the tools actually say about your market.",
+    a: "Google Business Profile work usually shows movement in 30 to 60 days, because it corrects things Google already measures: your primary category, citation consistency, review velocity. Organic content rankings take 90 to 180 days. For AI search we will not give you a date. Nobody outside the model vendors can see when a system starts naming you, and anyone quoting a timeline for it is guessing. What we commit to is the work: the schema ships, the entity data agrees across the web, and the content is written to be citable. Then we watch what the tools actually say about your market.",
   },
 ];
 
@@ -40,6 +40,7 @@ const schema = {
       description:
         "Local SEO and AI search visibility consulting for independent professionals nationwide. One client per market.",
       url: "https://visibilitylocal.com",
+      logo: "https://visibilitylocal.com/logo.png",
       telephone: "(501) 554-2183",
       email: "info@visibilitylocal.com",
       founder: { "@type": "Person", name: "David Turner" },
@@ -124,13 +125,13 @@ export default function HomePage() {
             <p className="section-label mb-5">Local SEO for independent insurance agents</p>
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-ink leading-tight mb-6">
               They went looking for an agent.<br />
-              <span className="italic text-gold">They found the captive down the street.</span>
+              <span className="italic text-accent">They found the captive down the street.</span>
             </h1>
             <p className="font-sans text-lg text-ink-2 leading-relaxed mb-4 max-w-2xl">
               Every month, people in your town search for an insurance agent with nobody particular in mind. They read a few names off a map and call one. The agent they call usually does not have better carriers or better advice. He is just the one who turned up.
             </p>
             <p className="font-sans text-base text-ink-3 leading-relaxed mb-8 max-w-xl">
-              I work with independent insurance agents, nationwide, one agent per market. Not because exclusivity sounds good in a pitch, but because I cannot run the same playbook for two agents fighting over the same map pack.
+              We work with independent insurance agents, nationwide, one agent per market. Not because exclusivity sounds good in a pitch, but because we cannot run the same playbook for two agents fighting over the same map pack.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/visibility-report" className="btn-primary text-base px-7 py-3.5">
@@ -149,16 +150,16 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             <div>
-              <p className="font-serif text-3xl text-gold">One per market</p>
-              <p className="font-sans text-sm text-ink-4 mt-1">Your competitor cannot hire me.</p>
+              <p className="font-serif text-3xl text-accent">One per market</p>
+              <p className="font-sans text-sm text-ink-4 mt-1">Your competitor cannot hire us.</p>
             </div>
             <div>
-              <p className="font-serif text-3xl text-gold">Three surfaces</p>
+              <p className="font-serif text-3xl text-accent">Three surfaces</p>
               <p className="font-sans text-sm text-ink-4 mt-1">The map pack, AI assistants, organic search.</p>
             </div>
             <div>
-              <p className="font-serif text-3xl text-gold">Agents only</p>
-              <p className="font-sans text-sm text-ink-4 mt-1">The specialty, not one vertical on a list of eight.</p>
+              <p className="font-serif text-3xl text-accent">Agents first</p>
+              <p className="font-sans text-sm text-ink-4 mt-1">The specialty. The same system also serves other independent professionals.</p>
             </div>
           </div>
         </div>
@@ -179,8 +180,8 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-paper border border-paper-3 rounded-sm p-8">
-              <div className="w-10 h-10 rounded-full bg-gold-light flex items-center justify-center mb-4">
-                <svg className="w-5 h-5 text-gold-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <div className="w-10 h-10 rounded-full bg-accent-light flex items-center justify-center mb-4">
+                <svg className="w-5 h-5 text-accent-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
@@ -192,8 +193,8 @@ export default function HomePage() {
             </div>
 
             <div className="bg-paper border border-paper-3 rounded-sm p-8">
-              <div className="w-10 h-10 rounded-full bg-gold-light flex items-center justify-center mb-4">
-                <svg className="w-5 h-5 text-gold-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <div className="w-10 h-10 rounded-full bg-accent-light flex items-center justify-center mb-4">
+                <svg className="w-5 h-5 text-accent-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
@@ -204,8 +205,8 @@ export default function HomePage() {
             </div>
 
             <div className="bg-paper border border-paper-3 rounded-sm p-8">
-              <div className="w-10 h-10 rounded-full bg-gold-light flex items-center justify-center mb-4">
-                <svg className="w-5 h-5 text-gold-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <div className="w-10 h-10 rounded-full bg-accent-light flex items-center justify-center mb-4">
+                <svg className="w-5 h-5 text-accent-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
@@ -228,7 +229,7 @@ export default function HomePage() {
                 Every surface. Every signal.
               </h2>
             </div>
-            <Link href="/contact" className="btn-outline-gold self-start lg:self-auto whitespace-nowrap">
+            <Link href="/contact" className="btn-outline-accent self-start lg:self-auto whitespace-nowrap">
               Check your market
             </Link>
           </div>
@@ -238,20 +239,20 @@ export default function HomePage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="group bg-paper-2 border border-paper-3 rounded-sm p-6 hover:border-gold transition-colors duration-200"
+                className="group bg-paper-2 border border-paper-3 rounded-sm p-6 hover:border-accent transition-colors duration-200"
               >
-                <div className="w-9 h-9 rounded-full bg-gold-light flex items-center justify-center mb-4 group-hover:bg-gold transition-colors duration-200">
-                  <svg className="w-4 h-4 text-gold-dark group-hover:text-white transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <div className="w-9 h-9 rounded-full bg-accent-light flex items-center justify-center mb-4 group-hover:bg-accent transition-colors duration-200">
+                  <svg className="w-4 h-4 text-accent-dark group-hover:text-white transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d={s.icon} />
                   </svg>
                 </div>
-                <h3 className="font-serif text-xl text-ink mb-2 group-hover:text-gold transition-colors duration-200">
+                <h3 className="font-serif text-xl text-ink mb-2 group-hover:text-accent transition-colors duration-200">
                   {s.title}
                 </h3>
                 <p className="font-sans text-sm text-ink-2 leading-relaxed">
                   {s.desc}
                 </p>
-                <p className="font-sans text-sm text-gold mt-4 flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+                <p className="font-sans text-sm text-accent mt-4 flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
                   Learn more
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -283,16 +284,16 @@ export default function HomePage() {
             className="group block bg-ink rounded-sm p-8 lg:p-10 mb-10 hover:bg-ink-2 transition-colors duration-200"
           >
             <div className="max-w-3xl">
-              <p className="section-label mb-3" style={{ color: "#c8922a" }}>
+              <p className="section-label mb-3">
                 The specialty
               </p>
-              <h3 className="font-serif text-3xl lg:text-4xl text-paper mb-4 group-hover:text-gold transition-colors duration-200">
+              <h3 className="font-serif text-3xl lg:text-4xl text-paper mb-4 group-hover:text-accent-bright transition-colors duration-200">
                 Local SEO for independent agents
               </h3>
-              <p className="font-sans text-base leading-relaxed mb-5" style={{ color: "rgba(247,244,238,0.72)" }}>
-                Four problems show up in nearly every independent agency I look at. The FMO handed you a template site that is identical to four hundred other agents. Your Google listing is set to a category somebody picked at random. Your pipeline runs on referrals, which works right up until it does not. And your Medicare and ACA seasons compress most of the year&apos;s revenue into a few weeks, which is exactly when being invisible costs the most.
+              <p className="font-sans text-base leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.72)" }}>
+                Four problems show up in nearly every independent agency we look at. The FMO handed you a template site that is identical to four hundred other agents. Your Google listing is set to a category somebody picked at random. Your pipeline runs on referrals, which works right up until it does not. And your Medicare and ACA seasons compress most of the year&apos;s revenue into a few weeks, which is exactly when being invisible costs the most.
               </p>
-              <span className="font-sans text-sm font-medium text-gold">
+              <span className="font-sans text-sm font-medium text-accent">
                 What that looks like fixed &rarr;
               </span>
             </div>
@@ -312,9 +313,9 @@ export default function HomePage() {
                 <Link
                   key={ind.href}
                   href={ind.href}
-                  className="group bg-paper border border-paper-3 rounded-sm px-4 py-3.5 hover:border-gold transition-colors duration-200"
+                  className="group bg-paper border border-paper-3 rounded-sm px-4 py-3.5 hover:border-accent transition-colors duration-200"
                 >
-                  <h4 className="font-sans text-sm font-medium text-ink group-hover:text-gold transition-colors duration-200">
+                  <h4 className="font-sans text-sm font-medium text-ink group-hover:text-accent transition-colors duration-200">
                     {ind.label}
                   </h4>
                   <p className="font-sans text-xs text-ink-3 leading-relaxed mt-0.5">{ind.note}</p>
@@ -330,32 +331,31 @@ export default function HomePage() {
           <div className="max-w-2xl mb-12">
             <p className="section-label mb-4">Why Visibility Local</p>
             <h2 className="font-serif text-4xl lg:text-5xl text-ink">
-              No agency overhead. No competitor conflicts.
+              No competitor conflicts. Built for AI search.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h3 className="font-serif text-2xl text-ink mb-3">One client per market</h3>
               <p className="font-sans text-sm text-ink-2 leading-relaxed">
                 Most agencies will happily take your money and then take your competitor&apos;s money too. We don&apos;t. When you&apos;re our client in a market, we don&apos;t work with anyone who competes with you in that market. The territory is yours.
               </p>
             </div>
             <div>
-              <div className="divider-gold" />
-              <h3 className="font-serif text-2xl text-ink mb-3">Direct access</h3>
-              <p className="font-sans text-sm text-ink-2 leading-relaxed">
-                David Turner works every account. No handoff to a junior SEO, no account manager translating your questions through three layers of hierarchy. You get the person who built the system, not someone who read a summary of it.
-              </p>
-            </div>
-            <div>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h3 className="font-serif text-2xl text-ink mb-3">Built for AI search</h3>
               <p className="font-sans text-sm text-ink-2 leading-relaxed">
                 Most agencies still sell the same ten blue links they were selling a decade ago. Local search now runs through AI Overviews, ChatGPT recommendations, and Perplexity citations as well as the map pack, and those surfaces read structured data rather than keyword density. The work is different, so the deliverables are different.
               </p>
             </div>
+          </div>
+
+          <div className="mt-10">
+            <Link href="/offer" className="btn-outline-accent">
+              See how the work runs
+            </Link>
           </div>
         </div>
       </section>
@@ -370,15 +370,15 @@ export default function HomePage() {
                 Learn the system.
               </h2>
             </div>
-            <Link href="/resources" className="btn-outline-gold self-start lg:self-auto whitespace-nowrap">
+            <Link href="/resources" className="btn-outline-accent self-start lg:self-auto whitespace-nowrap">
               All guides
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Link href="/resources/google-business-profile-setup" className="group bg-paper border border-paper-3 rounded-sm p-7 hover:border-gold transition-colors duration-200">
+            <Link href="/resources/google-business-profile-setup" className="group bg-paper border border-paper-3 rounded-sm p-7 hover:border-accent transition-colors duration-200">
               <p className="section-label mb-3">Google Business Profile</p>
-              <h3 className="font-serif text-xl text-ink mb-2 group-hover:text-gold transition-colors duration-200">
+              <h3 className="font-serif text-xl text-ink mb-2 group-hover:text-accent transition-colors duration-200">
                 Complete GBP Setup and Optimization Guide
               </h3>
               <p className="font-sans text-sm text-ink-2 leading-relaxed">
@@ -386,9 +386,9 @@ export default function HomePage() {
               </p>
             </Link>
 
-            <Link href="/resources/ai-search-visibility" className="group bg-paper border border-paper-3 rounded-sm p-7 hover:border-gold transition-colors duration-200">
+            <Link href="/resources/ai-search-visibility" className="group bg-paper border border-paper-3 rounded-sm p-7 hover:border-accent transition-colors duration-200">
               <p className="section-label mb-3">AI Search</p>
-              <h3 className="font-serif text-xl text-ink mb-2 group-hover:text-gold transition-colors duration-200">
+              <h3 className="font-serif text-xl text-ink mb-2 group-hover:text-accent transition-colors duration-200">
                 How to Get Recommended by ChatGPT and Perplexity
               </h3>
               <p className="font-sans text-sm text-ink-2 leading-relaxed">
@@ -396,9 +396,9 @@ export default function HomePage() {
               </p>
             </Link>
 
-            <Link href="/resources/local-seo-checklist" className="group bg-paper border border-paper-3 rounded-sm p-7 hover:border-gold transition-colors duration-200">
+            <Link href="/resources/local-seo-checklist" className="group bg-paper border border-paper-3 rounded-sm p-7 hover:border-accent transition-colors duration-200">
               <p className="section-label mb-3">Local SEO</p>
-              <h3 className="font-serif text-xl text-ink mb-2 group-hover:text-gold transition-colors duration-200">
+              <h3 className="font-serif text-xl text-ink mb-2 group-hover:text-accent transition-colors duration-200">
                 40-Point Local SEO Checklist
               </h3>
               <p className="font-sans text-sm text-ink-2 leading-relaxed">
@@ -434,12 +434,12 @@ export default function HomePage() {
       <section className="bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="section-label mb-4" style={{ color: '#c8922a' }}>Start with the diagnosis</p>
+            <p className="section-label mb-4">Start with the diagnosis</p>
             <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
               Find out what your town actually sees.
             </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: 'rgba(247,244,238,0.7)' }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody goes looking for an agent: your Google listing, the map pack, your citation data, your site, and what the AI tools say when asked for an agent in your city. Written report, plus a call to walk through it. If the honest answer is that you do not need me, that is what the call will say.
+            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.7)' }}>
+              The Visibility Report is a full diagnostic of how your agency turns up when somebody goes looking for an agent: your Google listing, the map pack, your citation data, your site, and what the AI tools say when asked for an agent in your city. Written report, plus a call to walk through it. If the honest answer is that you do not need us, that is what the call will say.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">

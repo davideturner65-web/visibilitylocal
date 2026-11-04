@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Local Content Strategy | Visibility Local",
+  title: "Local Content Strategy",
   description:
     "Local content strategy for professionals who need to rank and be cited by AI tools. Service pages, guides, and location content written to win local search.",
   alternates: { canonical: "https://visibilitylocal.com/services/content" },
@@ -123,7 +123,7 @@ export default function ContentPage() {
             <p className="section-label mb-5">Service</p>
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-ink leading-tight mb-6">
               Local Content{" "}
-              <span className="italic text-gold">Strategy</span>
+              <span className="italic text-accent">Strategy</span>
             </h1>
             <p className="font-sans text-lg text-ink-2 leading-relaxed mb-4 max-w-2xl">
               Content for local SEO is not the same as content marketing. It has specific jobs: location pages that rank for city-plus-service queries, FAQ content that gets pulled into AI Overviews, and resource pages that build topical authority and earn citations. Generic blog posts accomplish none of these things.
@@ -150,7 +150,7 @@ export default function ContentPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {deliverables.map((item) => (
               <div key={item.title} className="bg-paper border border-paper-3 rounded-sm p-7">
-                <div className="divider-gold" />
+                <div className="divider-accent" />
                 <h3 className="font-serif text-xl text-ink mb-3">{item.title}</h3>
                 <p className="font-sans text-sm text-ink-2 leading-relaxed">{item.desc}</p>
               </div>
@@ -171,7 +171,7 @@ export default function ContentPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {whyMatters.map((item) => (
               <div key={item.title}>
-                <div className="divider-gold" />
+                <div className="divider-accent" />
                 <h3 className="font-serif text-2xl text-ink mb-3">{item.title}</h3>
                 <p className="font-sans text-sm text-ink-2 leading-relaxed">{item.body}</p>
               </div>
@@ -213,10 +213,10 @@ export default function ContentPage() {
                     href={s.href}
                     className="flex items-center gap-3 group"
                   >
-                    <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
-                    <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">{s.label}</span>
+                    <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">{s.label}</span>
                   </Link>
                 ))}
               </div>
@@ -230,10 +230,10 @@ export default function ContentPage() {
                     href={ind.href}
                     className="flex items-center gap-3 group"
                   >
-                    <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
-                    <span className="font-sans text-sm text-ink-2 group-hover:text-gold transition-colors duration-200">{ind.label}</span>
+                    <span className="font-sans text-sm text-ink-2 group-hover:text-accent transition-colors duration-200">{ind.label}</span>
                   </Link>
                 ))}
               </div>
@@ -246,14 +246,14 @@ export default function ContentPage() {
       <section className="bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="section-label mb-4" style={{ color: "#c8922a" }}>
+            <p className="section-label mb-4">
               One client per market
             </p>
             <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
               Find out what your town actually sees.
             </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(247,244,238,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need me, the call will say so.
+            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
+              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">

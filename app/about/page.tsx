@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About David Turner | Visibility Local",
+  title: "About David Turner",
   description:
-    "David Turner is a local SEO and AI search visibility consultant. Direct work, one client per market, no agency overhead.",
+    "David Turner is a local SEO and AI search visibility consultant. One client per market, nationwide.",
   alternates: { canonical: "https://visibilitylocal.com/about" },
 };
 
@@ -55,10 +55,10 @@ export default function AboutPage() {
               David Turner
             </h1>
             <p className="font-sans text-xl text-ink-2 leading-relaxed mb-4">
-              Local SEO and AI search visibility consultant. Working directly with independent professionals nationwide.
+              Local SEO and AI search visibility consultant. Working with independent professionals nationwide.
             </p>
             <p className="font-sans text-base text-ink-3 leading-relaxed">
-              No agency overhead. No junior staff. One client per market.
+              One client per market.
             </p>
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div>
               <p className="section-label mb-4">Background</p>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h2 className="font-serif text-4xl text-ink mt-6 mb-5">
                 A psychology degree taught him how clients decide
               </h2>
@@ -90,15 +90,11 @@ export default function AboutPage() {
             <div className="space-y-6">
               {/* Stat callout boxes */}
               <div className="bg-paper border border-paper-3 rounded-sm p-6">
-                <p className="font-serif text-3xl text-gold mb-1">One client</p>
+                <p className="font-serif text-3xl text-accent mb-1">One client</p>
                 <p className="font-sans text-sm text-ink-3">per market, per industry. Never both sides of a competitive matchup.</p>
               </div>
               <div className="bg-paper border border-paper-3 rounded-sm p-6">
-                <p className="font-serif text-3xl text-gold mb-1">Direct work</p>
-                <p className="font-sans text-sm text-ink-3">David handles every client personally. No account managers relaying messages to someone else doing the work.</p>
-              </div>
-              <div className="bg-paper border border-paper-3 rounded-sm p-6">
-                <p className="font-serif text-3xl text-gold mb-1">Nationwide</p>
+                <p className="font-serif text-3xl text-accent mb-1">Nationwide</p>
                 <p className="font-sans text-sm text-ink-3">Serving clients nationwide. Local SEO doesn&apos;t require being in the same city.</p>
               </div>
             </div>
@@ -111,28 +107,18 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
             <p className="section-label mb-4">How It Works</p>
-            <div className="divider-gold" />
+            <div className="divider-accent" />
             <h2 className="font-serif text-4xl text-ink mt-6 mb-5">
-              Direct. Exclusive. No surprises.
+              Exclusive. No surprises.
             </h2>
 
             <div className="space-y-6 mt-8">
               <div className="flex gap-6 items-start">
                 <div className="w-px bg-paper-3 self-stretch shrink-0" />
                 <div className="pb-6">
-                  <h3 className="font-serif text-xl text-ink mb-2">You work with David, not a team assigned to you</h3>
-                  <p className="font-sans text-sm text-ink-2 leading-relaxed">
-                    There&apos;s no account manager who translates your goals to a strategist who hands off to an implementation team. David does the audit, sets the strategy, and executes the work. That compression eliminates the translation failures that make most agencies frustrating to work with.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6 items-start">
-                <div className="w-px bg-paper-3 self-stretch shrink-0" />
-                <div className="pb-6">
                   <h3 className="font-serif text-xl text-ink mb-2">One client per market, per industry</h3>
                   <p className="font-sans text-sm text-ink-2 leading-relaxed">
-                    One insurance agent per city. One mortgage broker per metro. Once I take you on, I will not sell the same work to the agent across town for as long as you are a client. That policy exists because the work only makes sense when I am on one side of a competitive matchup, not because it makes a better headline.
+                    One insurance agent per city. One mortgage broker per metro. Once we take you on, we will not sell the same work to the agent across town for as long as you are a client. That policy exists because the work only makes sense when we are on one side of a competitive matchup, not because it makes a better headline.
                   </p>
                 </div>
               </div>
@@ -156,7 +142,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
             <p className="section-label mb-4">Philosophy</p>
-            <div className="divider-gold" />
+            <div className="divider-accent" />
             <h2 className="font-serif text-4xl text-ink mt-6 mb-5">
               Local SEO isn&apos;t tricks. It&apos;s signal clarity.
             </h2>
@@ -190,12 +176,12 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
             <p className="section-label mb-4">Where to start</p>
-            <div className="divider-gold" />
+            <div className="divider-accent" />
             <h2 className="font-serif text-4xl lg:text-5xl text-ink mt-6 mb-5">
               Start with the diagnosis.
             </h2>
             <p className="font-sans text-base text-ink-2 leading-relaxed mb-8">
-              One agent per market, and once I take yours your competitor cannot hire me. The sensible first step is the Visibility Report: a written diagnostic of your listing, your citations, your map pack position and what the AI tools say about your city. It costs $297 and comes off your setup if we go on to work together.
+              One agent per market, and once we take yours your competitor cannot hire us. The sensible first step is the Visibility Report: a written diagnostic of your listing, your citations, your map pack position and what the AI tools say about your city. It costs $297 and comes off your setup if we go on to work together.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/visibility-report" className="btn-primary text-base px-7 py-3.5">

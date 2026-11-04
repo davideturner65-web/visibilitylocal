@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Reputation Management & Review Generation | Visibility Local",
+  title: "Reputation Management & Review Generation",
   description:
     "Review generation and reputation management for local professionals. Consistent reviews improve local rankings and build trust before the first call.",
   alternates: { canonical: "https://visibilitylocal.com/services/reputation" },
@@ -141,7 +141,7 @@ export default function ReputationPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {deliverables.map((d) => (
               <div key={d.title} className="bg-paper border border-paper-3 rounded-sm p-6">
-                <div className="divider-gold" />
+                <div className="divider-accent" />
                 <h3 className="font-serif text-xl text-ink mb-2">{d.title}</h3>
                 <p className="font-sans text-sm text-ink-2 leading-relaxed">{d.desc}</p>
               </div>
@@ -161,7 +161,7 @@ export default function ReputationPage() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h3 className="font-serif text-2xl text-ink mb-3">48-hour timing matters</h3>
               <p className="font-sans text-sm text-ink-2 leading-relaxed">
                 The best time to ask for a review is within 48 hours of a positive client interaction.
@@ -171,7 +171,7 @@ export default function ReputationPage() {
               </p>
             </div>
             <div>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h3 className="font-serif text-2xl text-ink mb-3">Responses are a ranking signal</h3>
               <p className="font-sans text-sm text-ink-2 leading-relaxed">
                 Google rewards active business profiles. Responding to reviews, positive and negative,
@@ -181,7 +181,7 @@ export default function ReputationPage() {
               </p>
             </div>
             <div>
-              <div className="divider-gold" />
+              <div className="divider-accent" />
               <h3 className="font-serif text-2xl text-ink mb-3">Negative reviews handled right convert</h3>
               <p className="font-sans text-sm text-ink-2 leading-relaxed">
                 A business with 4.6 stars and professional responses to critical reviews often converts
@@ -220,8 +220,8 @@ export default function ReputationPage() {
               <p className="section-label mb-4">Related services</p>
               <div className="space-y-2">
                 {relatedServices.map((s) => (
-                  <Link key={s.href} href={s.href} className="flex items-center gap-2 font-sans text-sm text-ink-2 hover:text-gold transition-colors py-1">
-                    <svg className="w-3.5 h-3.5 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <Link key={s.href} href={s.href} className="flex items-center gap-2 font-sans text-sm text-ink-2 hover:text-accent transition-colors py-1">
+                    <svg className="w-3.5 h-3.5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
                     {s.label}
@@ -233,8 +233,8 @@ export default function ReputationPage() {
               <p className="section-label mb-4">Industries we serve</p>
               <div className="space-y-2">
                 {relatedIndustries.map((ind) => (
-                  <Link key={ind.href} href={ind.href} className="flex items-center gap-2 font-sans text-sm text-ink-2 hover:text-gold transition-colors py-1">
-                    <svg className="w-3.5 h-3.5 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <Link key={ind.href} href={ind.href} className="flex items-center gap-2 font-sans text-sm text-ink-2 hover:text-accent transition-colors py-1">
+                    <svg className="w-3.5 h-3.5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
                     {ind.label}
@@ -250,12 +250,12 @@ export default function ReputationPage() {
       <section className="bg-ink">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="section-label mb-4" style={{ color: "#c8922a" }}>One client per market</p>
+            <p className="section-label mb-4">One client per market</p>
             <h2 className="font-serif text-4xl text-paper mb-4">
               Find out what your town actually sees.
             </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(247,244,238,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need me, the call will say so.
+            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
+              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">

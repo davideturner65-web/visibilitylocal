@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Local SEO for Real Estate Agents | Visibility Local",
+  title: "Local SEO for Real Estate Agents",
   description:
     "Local SEO for real estate agents and brokerages. Hyperlocal neighborhood search strategy, GBP optimization, and review management for agents and teams.",
   alternates: {
@@ -99,8 +99,6 @@ export default function RealEstatePage() {
           </div>
         </div>
       </section>
-
-      <div className="divider-gold" />
 
       {/* Challenge section */}
       <section className="bg-paper-2 py-20 px-6">
@@ -204,9 +202,9 @@ export default function RealEstatePage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="bg-paper-2 border border-paper-3 p-6 hover:border-gold transition-colors group"
+                className="bg-paper-2 border border-paper-3 p-6 hover:border-accent transition-colors group"
               >
-                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors">
+                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-accent transition-colors">
                   {s.title}
                 </h3>
                 <p className="font-sans text-ink-3 text-sm">{s.desc}</p>
@@ -216,8 +214,6 @@ export default function RealEstatePage() {
         </div>
       </section>
 
-      <div className="divider-gold" />
-
       {/* Tactics section */}
       <section className="bg-paper-2 py-20 px-6">
         <div className="max-w-5xl mx-auto">
@@ -226,7 +222,7 @@ export default function RealEstatePage() {
             What actually moves the needle for real estate agents
           </h2>
           <div className="space-y-10">
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Neighborhood pages capture the highest-intent searches
               </h3>
@@ -241,7 +237,7 @@ export default function RealEstatePage() {
                 individual neighborhood search.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Build referral visibility in the transaction ecosystem
               </h3>
@@ -257,7 +253,7 @@ export default function RealEstatePage() {
                 consumer visibility requires.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Treat Zillow and Realtor.com as citation sources, not competitors
               </h3>
@@ -271,7 +267,7 @@ export default function RealEstatePage() {
                 a significant visibility gap that competitors happily occupy.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Ask for reviews at closing, not weeks later
               </h3>
@@ -338,9 +334,9 @@ export default function RealEstatePage() {
               <Link
                 key={r.href}
                 href={r.href}
-                className="bg-paper border border-paper-3 p-6 hover:border-gold transition-colors group"
+                className="bg-paper border border-paper-3 p-6 hover:border-accent transition-colors group"
               >
-                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors">
+                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-accent transition-colors">
                   {r.title}
                 </h3>
                 <p className="font-sans text-ink-3 text-sm">{r.desc}</p>
@@ -353,7 +349,7 @@ export default function RealEstatePage() {
       {/* CTA */}
       <section className="bg-ink py-24 px-6 text-center">
         <div className="max-w-3xl mx-auto">
-          <p className="section-label text-gold">Get Started</p>
+          <p className="section-label text-accent">Get Started</p>
           <h2 className="font-serif text-4xl text-paper mt-4 mb-6">
             One agent or team per market
           </h2>

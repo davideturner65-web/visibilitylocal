@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Local SEO for Financial Advisors | Visibility Local",
+  title: "Local SEO for Financial Advisors",
   description:
     "Local SEO for independent financial advisors and financial planners. Fully compliant with SEC and FINRA rules. One advisor per market.",
   alternates: {
@@ -100,8 +100,6 @@ export default function FinancialAdvisorsPage() {
           </div>
         </div>
       </section>
-
-      <div className="divider-gold" />
 
       {/* Challenge section */}
       <section className="bg-paper-2 py-20 px-6">
@@ -204,9 +202,9 @@ export default function FinancialAdvisorsPage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="bg-paper-2 border border-paper-3 p-6 hover:border-gold transition-colors group"
+                className="bg-paper-2 border border-paper-3 p-6 hover:border-accent transition-colors group"
               >
-                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors">
+                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-accent transition-colors">
                   {s.title}
                 </h3>
                 <p className="font-sans text-ink-3 text-sm">{s.desc}</p>
@@ -216,8 +214,6 @@ export default function FinancialAdvisorsPage() {
         </div>
       </section>
 
-      <div className="divider-gold" />
-
       {/* Tactics section */}
       <section className="bg-paper-2 py-20 px-6">
         <div className="max-w-5xl mx-auto">
@@ -226,7 +222,7 @@ export default function FinancialAdvisorsPage() {
             What actually moves the needle for financial advisors
           </h2>
           <div className="space-y-10">
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 State fee-only status explicitly in GBP and content
               </h3>
@@ -240,7 +236,7 @@ export default function FinancialAdvisorsPage() {
                 opens an entire search cluster to your listing.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Complete your BrokerCheck profile as a citation asset
               </h3>
@@ -255,7 +251,7 @@ export default function FinancialAdvisorsPage() {
                 complete properly and has lasting citation value.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Make CFP certification prominent in GBP and schema
               </h3>
@@ -270,7 +266,7 @@ export default function FinancialAdvisorsPage() {
                 source for advisors who have claimed their profile.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Build AI entity recognition across multiple authoritative sources
               </h3>
@@ -338,9 +334,9 @@ export default function FinancialAdvisorsPage() {
               <Link
                 key={r.href}
                 href={r.href}
-                className="bg-paper border border-paper-3 p-6 hover:border-gold transition-colors group"
+                className="bg-paper border border-paper-3 p-6 hover:border-accent transition-colors group"
               >
-                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors">
+                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-accent transition-colors">
                   {r.title}
                 </h3>
                 <p className="font-sans text-ink-3 text-sm">{r.desc}</p>
@@ -353,7 +349,7 @@ export default function FinancialAdvisorsPage() {
       {/* CTA */}
       <section className="bg-ink py-24 px-6 text-center">
         <div className="max-w-3xl mx-auto">
-          <p className="section-label text-gold">Get Started</p>
+          <p className="section-label text-accent">Get Started</p>
           <h2 className="font-serif text-4xl text-paper mt-4 mb-6">
             One financial advisor per market
           </h2>

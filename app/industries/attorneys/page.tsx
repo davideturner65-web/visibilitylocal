@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Local SEO for Attorneys and Law Firms | Visibility Local",
+  title: "Local SEO for Attorneys and Law Firms",
   description:
     "Local SEO for attorneys and law firms. High-competition, high-value local search strategy targeting practice area searches. One firm per market.",
   alternates: {
@@ -100,8 +100,6 @@ export default function AttorneysPage() {
           </div>
         </div>
       </section>
-
-      <div className="divider-gold" />
 
       {/* Challenge section */}
       <section className="bg-paper-2 py-20 px-6">
@@ -206,9 +204,9 @@ export default function AttorneysPage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="bg-paper-2 border border-paper-3 p-6 hover:border-gold transition-colors group"
+                className="bg-paper-2 border border-paper-3 p-6 hover:border-accent transition-colors group"
               >
-                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors">
+                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-accent transition-colors">
                   {s.title}
                 </h3>
                 <p className="font-sans text-ink-3 text-sm">{s.desc}</p>
@@ -218,8 +216,6 @@ export default function AttorneysPage() {
         </div>
       </section>
 
-      <div className="divider-gold" />
-
       {/* Tactics section */}
       <section className="bg-paper-2 py-20 px-6">
         <div className="max-w-5xl mx-auto">
@@ -228,7 +224,7 @@ export default function AttorneysPage() {
             What actually moves the needle for attorneys
           </h2>
           <div className="space-y-10">
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Practice area secondary categories expand search surface substantially
               </h3>
@@ -244,7 +240,7 @@ export default function AttorneysPage() {
                 fastest wins available in legal local SEO.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 Claim and complete all four major legal directories
               </h3>
@@ -259,7 +255,7 @@ export default function AttorneysPage() {
                 someone else's profile occupies that space.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 The state bar directory is your highest-authority citation
               </h3>
@@ -275,7 +271,7 @@ export default function AttorneysPage() {
                 layers.
               </p>
             </div>
-            <div className="bg-paper p-8 border-l-4 border-gold">
+            <div className="bg-paper p-8 border-l-4 border-accent">
               <h3 className="font-serif text-2xl text-ink mb-4">
                 ABA rules allow voluntary reviews. Ask for them.
               </h3>
@@ -338,9 +334,9 @@ export default function AttorneysPage() {
               <Link
                 key={r.href}
                 href={r.href}
-                className="bg-paper border border-paper-3 p-6 hover:border-gold transition-colors group"
+                className="bg-paper border border-paper-3 p-6 hover:border-accent transition-colors group"
               >
-                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors">
+                <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-accent transition-colors">
                   {r.title}
                 </h3>
                 <p className="font-sans text-ink-3 text-sm">{r.desc}</p>
@@ -353,7 +349,7 @@ export default function AttorneysPage() {
       {/* CTA */}
       <section className="bg-ink py-24 px-6 text-center">
         <div className="max-w-3xl mx-auto">
-          <p className="section-label text-gold">Get Started</p>
+          <p className="section-label text-accent">Get Started</p>
           <h2 className="font-serif text-4xl text-paper mt-4 mb-6">
             One law firm per market
           </h2>

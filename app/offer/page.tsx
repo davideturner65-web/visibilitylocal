@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How the Work Runs | Visibility Local",
+  title: "How the Work Runs",
   description:
     "What the engagement actually is: the full buildout, one agent per market, no minimum term, you own the domain and the code from day one, and everything ships within 60 days or that month is free.",
   alternates: { canonical: "https://visibilitylocal.com/offer" },
@@ -54,14 +54,14 @@ const system = [
   },
   {
     title: "Monthly reporting",
-    body: "What moved, what did not, and what I did about it. Sent whether or not the month was good, which is not universal in this business.",
+    body: "What moved, what did not, and what we did about it. Sent whether or not the month was good, which is not universal in this business.",
   },
 ];
 
 const terms = [
   {
     title: "One independent agent per market",
-    body: "Once I take your market, your competitor cannot hire me for as long as you are a client. This is the whole reason the work is worth doing properly, and it is also why I will sometimes tell you the answer is no.",
+    body: "Once we take your market, your competitor cannot hire us for as long as you are a client. This is the whole reason the work is worth doing properly, and it is also why we will sometimes tell you the answer is no.",
   },
   {
     title: "No minimum term",
@@ -99,8 +99,6 @@ export default function OfferPage() {
         </div>
       </section>
 
-      <div className="divider-gold" />
-
       <section className="bg-paper-2 py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <p className="section-label">The system</p>
@@ -122,7 +120,7 @@ export default function OfferPage() {
           <h2 className="font-serif text-4xl text-ink mt-4 mb-12">Three commitments</h2>
           <div className="space-y-10">
             {terms.map((term) => (
-              <div key={term.title} className="border-l-2 border-gold pl-6">
+              <div key={term.title} className="border-l-2 border-accent pl-6">
                 <h3 className="font-serif text-2xl text-ink mb-3">{term.title}</h3>
                 <p className="font-sans text-base text-ink-2 leading-relaxed">{term.body}</p>
               </div>
@@ -133,20 +131,20 @@ export default function OfferPage() {
 
       <section className="bg-ink py-20 px-6">
         <div className="max-w-3xl mx-auto">
-          <p className="section-label" style={{ color: "#c8922a" }}>
+          <p className="section-label">
             The guarantee
           </p>
           <h2 className="font-serif text-4xl lg:text-5xl text-paper mt-4 mb-6">
             Everything in the buildout ships within 60 days, or that month is free
           </h2>
-          <div className="space-y-5 font-sans text-base leading-relaxed" style={{ color: "rgba(247,244,238,0.75)" }}>
+          <div className="space-y-5 font-sans text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
             <p>
               Not a satisfaction guarantee, which means nothing and cannot be measured. A delivery
               guarantee. The site, the profile work, the citation corrections, and the schema are
               all live within sixty days of starting, or you do not pay for that month.
             </p>
             <p>
-              I can promise this because delivery is the part I control. What I will not promise
+              We can promise this because delivery is the part we control. What we will not promise
               is a ranking, a lead count, or a date by which ChatGPT starts naming you. Nobody
               can see far enough into those systems to commit to them, and an agency that offers
               you a number is either guessing or counting on you not checking.
@@ -163,13 +161,13 @@ export default function OfferPage() {
               Start with the Visibility Report
             </Link>
             <Link href="/contact" className="btn-secondary text-base px-8 py-4">
-              Ask me something first
+              Ask us something first
             </Link>
           </div>
 
-          <p className="font-sans text-sm mt-6" style={{ color: "rgba(247,244,238,0.5)" }}>
-            Pricing is worked out on the report call, once I have seen what your market and your
-            current setup actually require. I am not going to put a number here and then change it.
+          <p className="font-sans text-sm mt-6" style={{ color: "rgba(255,255,255,0.5)" }}>
+            Pricing is worked out on the report call, once we have seen what your market and your
+            current setup actually require. We are not going to put a number here and then change it.
           </p>
         </div>
       </section>
