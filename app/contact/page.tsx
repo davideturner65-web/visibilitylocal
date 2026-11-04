@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { isPaymentLinkLive } from "@/lib/payment";
+import { CONTACT_EMAIL, FORM_ENDPOINT } from "@/lib/forms";
 
 export const metadata: Metadata = {
   title: "Contact: Is Your Market Open?",
@@ -74,7 +75,7 @@ export default function ContactPage() {
             <p className="font-sans text-lg text-ink-2 leading-relaxed mb-4">
               {isPaymentLinkLive
                 ? "If you want the full diagnostic, that is the Visibility Report and you can buy it without talking to us first. This form is for everything else: whether your market is taken, whether your situation is one we can actually help with, or whether the thing you read on this site applies to you."
-                : "Use this form to order the Visibility Report, which we invoice directly, or for anything else: whether your market is taken, whether your situation is one we can actually help with, or whether the thing you read on this site applies to you."}
+                : "Get in touch to order the Visibility Report, which we invoice directly, or for anything else: whether your market is taken, whether your situation is one we can actually help with, or whether the thing you read on this site applies to you."}
             </p>
             <p className="font-sans text-base text-ink-3 leading-relaxed">
               You will get a real answer, usually within a day. No pitch deck, no proposal theater.
@@ -102,8 +103,9 @@ export default function ContactPage() {
               <p className="section-label mb-4">Send a Message</p>
               <div className="divider-accent" />
 
+              {FORM_ENDPOINT ? (
               <form
-                action="https://formspree.io/f/xpzgdwrn"
+                action={FORM_ENDPOINT}
                 method="POST"
                 className="mt-8 space-y-6"
               >
@@ -289,6 +291,26 @@ export default function ContactPage() {
                   .
                 </p>
               </form>
+              ) : (
+                <div className="mt-8 bg-paper border border-paper-3 rounded-sm p-8">
+                  <h2 className="font-serif text-3xl text-ink mb-3">Email or call us directly</h2>
+                  <p className="font-sans text-base text-ink-2 leading-relaxed mb-6">
+                    Tell us your name, your business and your city, and what you would like to know.
+                    To order the Visibility Report, just say so and we will send an invoice.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Question from visibilitylocal.com")}`}
+                      className="btn-primary text-base px-7 py-3.5"
+                    >
+                      Email {CONTACT_EMAIL}
+                    </a>
+                    <a href="tel:+15015542183" className="btn-secondary text-base px-7 py-3.5">
+                      Call (501) 554-2183
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}
@@ -360,7 +382,7 @@ export default function ContactPage() {
       <section className="bg-paper border-b border-paper-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-2xl mb-12">
-            <p className="section-label mb-4">After You Submit</p>
+            <p className="section-label mb-4">After You Get in Touch</p>
             <h2 className="font-serif text-4xl lg:text-5xl text-ink mb-4">
               What happens next
             </h2>

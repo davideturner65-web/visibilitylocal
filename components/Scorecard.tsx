@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { CONTACT_EMAIL, FORM_ENDPOINT } from "@/lib/forms";
 
 /**
  * Self-assessment an independent agent can run against their own listing in about ten minutes.
@@ -268,8 +269,9 @@ export default function Scorecard() {
               We will send the action plan for the items you missed. One email, no sequence, and we
               will not add you to anything.
             </p>
+            {FORM_ENDPOINT ? (
             <form
-              action="https://formspree.io/f/xpzgdwrn"
+              action={FORM_ENDPOINT}
               method="POST"
               className="flex flex-wrap gap-3"
             >
@@ -291,6 +293,14 @@ export default function Scorecard() {
                 Send me the plan
               </button>
             </form>
+            ) : (
+              <a
+                href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Scorecard action plan request")}&body=${encodeURIComponent(`My scorecard result: ${score}/${MAX_SCORE}\nItems missed: ${failed.map((c) => c.id).join(", ")}`)}`}
+                className="btn-primary text-sm px-6 py-3"
+              >
+                Email us for the plan
+              </a>
+            )}
           </div>
         </div>
       )}

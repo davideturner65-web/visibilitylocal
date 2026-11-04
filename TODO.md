@@ -2,6 +2,11 @@
 
 ## Blocking
 
+- [ ] **Connect a working contact form.** The Formspree ID the site shipped with returned
+      "Form not found", so submissions were failing. Create a form at formspree.io, put its URL
+      in `FORM_ENDPOINT` in `lib/forms.ts`, and send a real test. Until then the contact page and
+      scorecard offer email and phone instead.
+
 - [ ] **Stripe Payment Link for the Visibility Report.** Create a $297 payment link and put it
       in `STRIPE_PAYMENT_LINK` in `lib/payment.ts`. Until it is set, the report page falls back to
       "Request the report" pointing at the /contact form, and you invoice by hand.
