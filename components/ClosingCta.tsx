@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function ClosingCta({
   label = "Start with your own market",
   heading = "Find out what your town actually sees.",
-  body = "The market check is free. Tell us your agency and your city, and you get a one-page snapshot back within two business days: your Google listing, who holds the map pack, and what ChatGPT and Perplexity say when asked for an agent in your town. Then fifteen minutes on the phone if you want to go through it. If the answer is that you are in good shape, that is what you will hear.",
+  body = "The market check is free. Tell us your agency and your city, and you get a one-page snapshot back within two business days: your Google listing, who holds the map pack, and what ChatGPT and Claude say when asked for an agent in your town. Then fifteen minutes on the phone if you want to go through it. If the answer is that you are in good shape, that is what you will hear.",
 }: {
   label?: string;
   heading?: string;

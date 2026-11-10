@@ -7,14 +7,14 @@ import { orgRef } from "@/lib/site";
 export const metadata = pageMetadata({
   title: "Free Market Check for Independent Insurance Agents",
   description:
-    "A free one-page snapshot of how your agency shows up when someone in your town looks for an insurance agent: your Google listing, the map pack, and what ChatGPT and Perplexity say. Back within two business days.",
+    "A free one-page snapshot of how your agency shows up when someone in your town looks for an insurance agent: your Google listing, the map pack, and what ChatGPT and Claude say. Back within two business days.",
   path: "/market-check",
 });
 
 const faqs = [
   {
     q: "What do I actually get?",
-    a: "A one-page written snapshot of your agency, sent by email within two business days. It covers three things: how your Google Business Profile is set up, who holds the map pack for the main searches in your city, and what ChatGPT and Perplexity answer when asked for an agent in your town. If you ask for the call, we spend fifteen minutes going through it.",
+    a: "A one-page written snapshot of your agency, sent by email within two business days. It covers three things: how your Google Business Profile is set up, who holds the map pack for the main searches in your city, and what ChatGPT and Claude answer when asked for an agent in your town. If you ask for the call, we spend fifteen minutes going through it.",
   },
   {
     q: "What does it cost?",
@@ -72,7 +72,7 @@ const snapshot = [
   },
   {
     title: "What the AI tools say",
-    body: "The answers ChatGPT and Perplexity give when asked for an insurance agent in your town: who they name, and which sources they lean on to do it.",
+    body: "The answers ChatGPT and Claude give when asked for an insurance agent in your town: who they name, and which sources they lean on to do it.",
   },
 ];
 

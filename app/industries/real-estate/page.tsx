@@ -343,7 +343,7 @@ export default function RealEstatePage() {
 
       <ClosingCta
         heading="See how you show up in your own market."
-        body="The market check is free. Tell us your business and your city, and you get a one-page snapshot back within two business days: your Google listing, who holds the map pack, and what ChatGPT and Perplexity say when asked for a real estate agent in your town. Then fifteen minutes on the phone if you want to go through it. If the answer is that you are in good shape, that is what you will hear."
+        body="The market check is free. Tell us your business and your city, and you get a one-page snapshot back within two business days: your Google listing, who holds the map pack, and what ChatGPT and Claude say when asked for a real estate agent in your town. Then fifteen minutes on the phone if you want to go through it. If the answer is that you are in good shape, that is what you will hear."
       />
     </>
   );

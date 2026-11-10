@@ -103,7 +103,7 @@ const CHECKS: Check[] = [
   {
     id: "ai",
     question: 'Does ChatGPT name you when asked for an independent insurance agent in your city?',
-    how: 'Open ChatGPT and ask, plainly: "who is the best independent insurance agent in [your city]". Then ask Perplexity the same thing. Write down who comes back.',
+    how: 'Open ChatGPT and ask, plainly: "who is the best independent insurance agent in [your city]". Then ask Claude the same thing. Write down who comes back.',
     why: "This is the surface nobody in your market is thinking about yet, and it is the one where being absent is least visible to you. Somebody is on that list already.",
     weight: 2,
   },

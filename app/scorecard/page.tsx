@@ -28,7 +28,7 @@ const schema = {
     { "@type": "HowToStep", name: "Check for unanswered reviews" },
     { "@type": "HowToStep", name: "Check your listed services and descriptions" },
     { "@type": "HowToStep", name: "Test your website for structured data" },
-    { "@type": "HowToStep", name: "Ask ChatGPT and Perplexity for an agent in your city" },
+    { "@type": "HowToStep", name: "Ask ChatGPT and Claude for an agent in your city" },
   ],
 };
 

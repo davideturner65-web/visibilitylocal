@@ -43,7 +43,7 @@ export default function HillcrestCaseStudyPage() {
               What the agency looked like before. Include: the Google Business Profile primary
               category as found, whether secondary categories existed, citation inconsistencies
               counted, whether the site was a shared template, who owned the domain, review count
-              versus the map pack competitors, and whether ChatGPT or Perplexity named the
+              versus the map pack competitors, and whether ChatGPT or Claude named the
               agency when asked for an agent in Little Rock. Dates matter, so record when the
               baseline was taken.
             </Placeholder>
