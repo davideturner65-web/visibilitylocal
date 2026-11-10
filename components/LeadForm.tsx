@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { track } from "@vercel/analytics";
-import { BOOKING_URL, CONTACT_EMAIL, PHONE_DISPLAY, PHONE_E164 } from "@/lib/site";
+import { BOOKING_EMBED_URL, BOOKING_URL, CONTACT_EMAIL, PHONE_DISPLAY, PHONE_E164 } from "@/lib/site";
 
 /**
  * The one lead form on the site. "market" is the market check (the main call to action);
@@ -81,12 +81,14 @@ function Booking() {
         </a>
         .
       </p>
-      <iframe
-        src={BOOKING_URL}
-        title="Book a 15-minute call"
-        loading="lazy"
-        className="w-full h-[720px] bg-paper border border-paper-3 rounded-sm"
-      />
+      {BOOKING_EMBED_URL && (
+        <iframe
+          src={BOOKING_EMBED_URL}
+          title="Book a 15-minute call"
+          loading="lazy"
+          className="w-full h-[720px] bg-white border border-paper-3 rounded-sm"
+        />
+      )}
     </div>
   );
 }

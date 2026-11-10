@@ -8,10 +8,10 @@
       project's environment variables, then redeploy. Until the key is set the pages show email
       and phone links instead of a form. Send a real test from each of the three forms.
 
-- [ ] **Booking link.** Create a 15-minute "Market check" event in Cal.com, Calendly or a Google
-      Calendar appointment schedule, and paste its link into `BOOKING_URL` in `lib/site.ts`. The
-      calendar then appears straight after someone submits the market check form, and on the
-      contact page. Confirm the tool allows its page to be embedded in an iframe.
+- [ ] **Test a booking end to end.** The Google Calendar appointment schedule is wired in
+      (`BOOKING_URL` and `BOOKING_EMBED_URL` in `lib/site.ts`). Once the forms are on, submit
+      the market check form on the live site, confirm the calendar loads underneath, and book a
+      test slot.
 
 - [ ] **Set the price.** Put the setup fee and the monthly fee into `SETUP_FEE` and
       `MONTHLY_PRICE` in `lib/site.ts`. The offer page publishes them once both are set. Until
