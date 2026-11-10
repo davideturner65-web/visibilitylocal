@@ -42,7 +42,7 @@ export default function Footer() {
               <Image src="/logo.png" alt="Visibility Local" width={800} height={300} className="h-14 w-auto" />
             </div>
             <p className="text-sm text-ink-4 leading-relaxed mb-5">
-              Local SEO and AI search visibility for professionals who can&apos;t afford to be invisible. One client per market.
+              Local SEO and AI search visibility for independent insurance agents, and for the independent professionals they work alongside.
             </p>
             <div className="space-y-2 text-sm">
               <a href="tel:+15015542183" className="flex items-center gap-2 text-ink-4 hover:text-accent-light transition-colors">
@@ -62,7 +62,7 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
-                Serving businesses nationwide
+                Working with agents nationwide
               </p>
             </div>
           </div>
@@ -83,7 +83,7 @@ export default function Footer() {
 
           {/* Col 3: Industries */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-accent mb-4">Industries</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-accent mb-4">Who we work with</h3>
             <ul className="space-y-2">
               {industries.map((i) => (
                 <li key={i.href}>
@@ -124,6 +124,7 @@ export default function Footer() {
             Serving independent professionals nationwide
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-xs text-ink-3">
+            <Link href="/market-check" className="hover:text-white transition-colors">Check My Market</Link>
             <Link href="/offer" className="hover:text-white transition-colors">How It Works</Link>
             <Link href="/about" className="hover:text-white transition-colors">About</Link>
             <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>

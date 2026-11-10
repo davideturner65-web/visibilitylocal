@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import ClosingCta from "@/components/ClosingCta";
+import { orgRef } from "@/lib/site";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Local SEO for Mortgage Brokers",
   description:
-    "Local SEO and GBP optimization for independent mortgage brokers competing against big banks in local search. One broker per market.",
-  alternates: {
-    canonical: "https://visibilitylocal.com/industries/mortgage-brokers",
-  },
-};
+    "Local SEO and GBP optimization for independent mortgage brokers competing against big banks in local search.",
+  path: "/industries/mortgage-brokers",
+});
 
 const faqs = [
               {
@@ -39,12 +39,7 @@ const schema = {
       name: "Local SEO for Mortgage Brokers",
       description:
         "Google Business Profile optimization, citation building, and local search strategy for independent mortgage brokers competing against banks and national lenders.",
-      provider: {
-        "@type": "LocalBusiness",
-        name: "Visibility Local",
-        telephone: "(501) 554-2183",
-        email: "info@visibilitylocal.com",
-      },
+      provider: orgRef,
       areaServed: { "@type": "Country", name: "United States" },
       serviceType: "Local SEO",
       audience: {
@@ -346,23 +341,10 @@ export default function MortgageBrokersPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-ink py-24 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
-          <p className="section-label text-accent">Get Started</p>
-          <h2 className="font-serif text-4xl text-paper mt-4 mb-6">
-            One mortgage broker per market
-          </h2>
-          <p className="font-sans text-paper/80 text-lg mb-10">
-            We work with one mortgage broker per geographic market. If your area
-            is open, we can start with a GBP audit and citation analysis this
-            week. Call (501) 554-2183 or send a message below.
-          </p>
-          <Link href="/contact" className="btn-primary">
-            Check availability in your market
-          </Link>
-        </div>
-      </section>
+      <ClosingCta
+        heading="See how your brokerage shows up in your own market."
+        body="The market check is free. Tell us your business and your city, and you get a one-page snapshot back within two business days: your Google listing, who holds the map pack, and what ChatGPT and Perplexity say when asked for a mortgage broker in your town. Then fifteen minutes on the phone if you want to go through it. If the answer is that you are in good shape, that is what you will hear."
+      />
     </>
   );
 }

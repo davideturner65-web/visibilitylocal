@@ -3,7 +3,7 @@
 //
 // Two things are checked in the rendered output:
 //   - the data-placeholder blocks from components/Placeholder.tsx
-//   - the literal string REPLACE_WITH_, used for the Stripe payment link
+//   - the literal string REPLACE_WITH_, for any config value left unset
 //
 // A page carrying placeholders is only a problem if it is also indexable, so pages set to
 // noindex are reported as expected rather than as failures.

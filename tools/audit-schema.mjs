@@ -59,12 +59,13 @@ function visibleText(html) {
 }
 
 const REQUIRED = [
-  [/^\/$/, ['ProfessionalService', 'LocalBusiness', 'FAQPage']],
+  [/^\/$/, ['Organization', 'WebSite', 'FAQPage']],
   [/^\/about$/, ['Person']],
   [/^\/services\//, ['Service']],
   [/^\/industries\//, ['Service']],
   [/^\/resources\/[a-z-]+$/, ['Article']],
-  [/^\/visibility-report$/, ['Service', 'Offer']],
+  [/^\/market-check$/, ['Service', 'Offer']],
+  [/^\/offer$/, ['Service', 'FAQPage']],
 ]
 
 const rows = []

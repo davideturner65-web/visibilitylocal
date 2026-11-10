@@ -1,12 +1,15 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import ClosingCta from "@/components/ClosingCta";
+import { orgRef, founderRef } from "@/lib/site";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Schema Markup for Local Businesses: Complete Guide",
   description:
     "How to implement schema markup for local business SEO and AI search visibility. LocalBusiness, Service, FAQPage, and Person schema for independent professionals.",
-  alternates: { canonical: "https://visibilitylocal.com/resources/schema-markup" },
-};
+  path: "/resources/schema-markup",
+  type: "article",
+});
 
 const faqs = [
   {
@@ -33,14 +36,10 @@ const schema = {
     {
       "@type": "Article",
       headline: "Schema Markup for Local Businesses: Complete Guide",
-      datePublished: "2026-01-15",
+      datePublished: "2026-05-19",
       dateModified: "2026-08-28",
-      author: { "@type": "Person", name: "David Turner" },
-      publisher: {
-        "@type": "Organization",
-        name: "Visibility Local",
-        url: "https://visibilitylocal.com",
-      },
+      author: founderRef,
+      publisher: orgRef,
       url: "https://visibilitylocal.com/resources/schema-markup",
       description:
         "How to implement schema markup for local business SEO and AI search visibility. LocalBusiness, Service, FAQPage, and Person schema for independent professionals.",
@@ -470,30 +469,7 @@ export default function SchemaMarkupGuidePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-ink">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-2xl">
-            <p className="section-label mb-4">
-              Want schema implemented correctly?
-            </p>
-            <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
-              We implement and validate schema for every client.
-            </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">
-                Get Your Visibility Report
-              </Link>
-              <Link href="/scorecard" className="btn-secondary text-base px-8 py-4">
-                Or grade your own listing, free
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ClosingCta label="Want schema implemented correctly?" heading="We implement and validate schema for every client." />
     </>
   );
 }

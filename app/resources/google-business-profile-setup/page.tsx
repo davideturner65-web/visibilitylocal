@@ -1,12 +1,15 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import ClosingCta from "@/components/ClosingCta";
+import { orgRef, founderRef } from "@/lib/site";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Google Business Profile Setup Guide 2026",
   description:
     "Complete step-by-step guide to setting up and optimizing your Google Business Profile. Categories, photos, posts, Q&A, and everything that affects your map pack ranking.",
-  alternates: { canonical: "https://visibilitylocal.com/resources/google-business-profile-setup" },
-};
+  path: "/resources/google-business-profile-setup",
+  type: "article",
+});
 
 const faqs = [
   {
@@ -33,14 +36,10 @@ const schema = {
     {
       "@type": "Article",
       headline: "Google Business Profile Setup Guide 2026",
-      datePublished: "2026-01-15",
+      datePublished: "2026-05-19",
       dateModified: "2026-08-28",
-      author: { "@type": "Person", name: "David Turner" },
-      publisher: {
-        "@type": "Organization",
-        name: "Visibility Local",
-        url: "https://visibilitylocal.com",
-      },
+      author: founderRef,
+      publisher: orgRef,
       url: "https://visibilitylocal.com/resources/google-business-profile-setup",
       description:
         "Complete step-by-step guide to setting up and optimizing your Google Business Profile. Categories, photos, posts, Q&A, and everything that affects your map pack ranking.",
@@ -408,30 +407,7 @@ export default function GBPSetupGuidePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-ink">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-2xl">
-            <p className="section-label mb-4">
-              Want this done for you?
-            </p>
-            <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
-              We handle the setup and ongoing management.
-            </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">
-                Get Your Visibility Report
-              </Link>
-              <Link href="/scorecard" className="btn-secondary text-base px-8 py-4">
-                Or grade your own listing, free
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ClosingCta label="Want this done for you?" heading="We handle the setup and ongoing management." />
     </>
   );
 }

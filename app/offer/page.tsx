@@ -1,30 +1,67 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
+import { MONTHLY_PRICE, SETUP_FEE, orgRef } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "How the Work Runs",
   description:
-    "What the engagement actually is: the full buildout, one agent per market, no minimum term, you own the domain and the code from day one, and everything ships within 60 days or that month is free.",
-  alternates: { canonical: "https://visibilitylocal.com/offer" },
-};
+    "What the engagement actually is: one setup fee, one flat monthly fee, no minimum term, you own the domain and the site from day one, and the buildout ships within 60 days or that month is free.",
+  path: "/offer",
+});
+
+// Both numbers are set in lib/site.ts. Until they are, the page says they come on the call.
+const priceIsPublished = Boolean(MONTHLY_PRICE && SETUP_FEE);
+
+const faqs = [
+  {
+    q: "What does it cost?",
+    a: priceIsPublished
+      ? `${SETUP_FEE} once for the buildout, then ${MONTHLY_PRICE} a month. That covers everything on this page. There are no tiers and no add-ons you need in order to make it work.`
+      : "One setup fee for the buildout, then one flat monthly fee that covers everything on this page. There are no tiers. You get both numbers on the market check call, before you agree to anything.",
+  },
+  {
+    q: "What happens if I cancel?",
+    a: "The monthly work stops at the end of the month you have paid for. The domain, the hosting account and the website were registered to you from the start, so they stay exactly where they are and keep working.",
+  },
+  {
+    q: "Will you also work with other agents in my city?",
+    a: "We may. We do not promise exclusivity as standard, and we would rather say so here than let you assume it. If you want your city reserved for your lines of business, ask on the call. We can agree to that in writing where the market is still open, and we will tell you if it is not.",
+  },
+  {
+    q: "I already have a website. Do you have to rebuild it?",
+    a: "Not always. If you own the domain and the site can be fixed, we fix it. If it is a shared template or sits on a domain you do not control, a rebuild on a domain in your name is usually the better answer, and we will show you why before recommending it.",
+  },
+  {
+    q: "Do you guarantee rankings?",
+    a: "No. We guarantee delivery, because that is the part we control. Nobody outside Google or the AI companies can promise a ranking, a lead count, or a date by which ChatGPT starts naming you.",
+  },
+];
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Local search and AI visibility management for independent insurance agents",
-  provider: {
-    "@type": "LocalBusiness",
-    name: "Visibility Local",
-    url: "https://visibilitylocal.com",
-  },
-  areaServed: { "@type": "Country", name: "United States" },
-  audience: {
-    "@type": "Audience",
-    audienceType: "Independent insurance agents",
-  },
-  description:
-    "Ongoing management of Google Business Profile, website, citations and NAP data, structured data and AI search visibility, monthly content, review generation and monthly reporting, for one independent insurance agent per market.",
-  url: "https://visibilitylocal.com/offer",
+  "@graph": [
+    {
+      "@type": "Service",
+      name: "Local search and AI visibility management for independent insurance agents",
+      provider: orgRef,
+      areaServed: { "@type": "Country", name: "United States" },
+      audience: {
+        "@type": "Audience",
+        audienceType: "Independent insurance agents",
+      },
+      description:
+        "Ongoing management of Google Business Profile, website, citations and NAP data, structured data and AI search visibility, monthly content, review generation and monthly reporting, for independent insurance agents. No minimum term.",
+      url: "https://visibilitylocal.com/offer",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
 };
 
 const system = [
@@ -34,7 +71,7 @@ const system = [
   },
   {
     title: "Your website",
-    body: "Built or rebuilt, on a domain registered in your name. Fast, structured properly, and written so it does not read like the four hundred other agents on the same FMO template.",
+    body: "Built or rebuilt, on a domain registered in your name. Fast, structured properly, and written about your agency and your city, so it reads like nobody else's site.",
   },
   {
     title: "Citations and NAP",
@@ -54,14 +91,16 @@ const system = [
   },
   {
     title: "Monthly reporting",
-    body: "What moved, what did not, and what we did about it. Sent whether or not the month was good, which is not universal in this business.",
+    body: "What moved, what did not, and what we did about it. Sent whether or not the month was good.",
   },
 ];
 
 const terms = [
   {
-    title: "One independent agent per market",
-    body: "Once we take your market, your competitor cannot hire us for as long as you are a client. This is the whole reason the work is worth doing properly, and it is also why we will sometimes tell you the answer is no.",
+    title: "One price",
+    body: priceIsPublished
+      ? `${SETUP_FEE} once for the buildout, then ${MONTHLY_PRICE} a month for everything above. No tiers, and no add-ons you need in order to make it work.`
+      : "One setup fee for the buildout, then one flat monthly fee for everything above. No tiers, and no add-ons you need in order to make it work. You get both numbers on the market check call, before you agree to anything.",
   },
   {
     title: "No minimum term",
@@ -69,7 +108,7 @@ const terms = [
   },
   {
     title: "You own everything, from day one",
-    body: "The domain is registered in your name. The hosting account is in your name. The code is yours. If we part company, you take all of it and nothing breaks. This is the opposite of the FMO arrangement, and it is deliberate.",
+    body: "The domain is registered in your name. The hosting account is in your name. The site is yours. If we stop working together, you take all of it and nothing breaks.",
   },
 ];
 
@@ -91,9 +130,9 @@ export default function OfferPage() {
               Here is the shape of it.
             </p>
             <p>
-              One agent per market. Everything below, run monthly. No contract. You own the
-              assets. And a delivery guarantee with teeth in it rather than a satisfaction promise
-              nobody can enforce.
+              One offer. A buildout in the first sixty days, then seven things run every month.
+              One setup fee and one flat monthly fee. No contract, and you own the assets. And a
+              delivery guarantee you can hold us to.
             </p>
           </div>
         </div>
@@ -131,17 +170,15 @@ export default function OfferPage() {
 
       <section className="bg-ink py-20 px-6">
         <div className="max-w-3xl mx-auto">
-          <p className="section-label">
-            The guarantee
-          </p>
+          <p className="section-label">The guarantee</p>
           <h2 className="font-serif text-4xl lg:text-5xl text-paper mt-4 mb-6">
             Everything in the buildout ships within 60 days, or that month is free
           </h2>
           <div className="space-y-5 font-sans text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
             <p>
-              Not a satisfaction guarantee, which means nothing and cannot be measured. A delivery
-              guarantee. The site, the profile work, the citation corrections, and the schema are
-              all live within sixty days of starting, or you do not pay for that month.
+              Not a satisfaction guarantee, which cannot be measured. A delivery guarantee. The
+              site, the profile work, the citation corrections, and the schema are all live
+              within sixty days of starting, or you do not pay for that month.
             </p>
             <p>
               We can promise this because delivery is the part we control. What we will not promise
@@ -150,25 +187,35 @@ export default function OfferPage() {
               you a number is either guessing or counting on you not checking.
             </p>
             <p>
-              That distinction is the whole thing, really. Ask anyone pitching you which parts of
-              their promise they actually control. It is a short conversation and it tells you
-              most of what you need to know.
+              Ask anyone pitching you which parts of their promise they actually control. It is a
+              short conversation and it tells you most of what you need to know.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">
-              Start with the Visibility Report
+      {/* Rendered from the same array the FAQPage schema is built from. */}
+      <section className="bg-paper-2 py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="section-label">Questions</p>
+          <h2 className="font-serif text-4xl text-ink mt-4 mb-10">Before you start</h2>
+          <div className="space-y-8">
+            {faqs.map((faq) => (
+              <div key={faq.q}>
+                <h3 className="font-serif text-xl text-ink mb-2">{faq.q}</h3>
+                <p className="font-sans text-base text-ink-2 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 flex flex-wrap gap-3">
+            <Link href="/market-check" className="btn-primary text-base px-8 py-4">
+              Check my market, free
             </Link>
-            <Link href="/contact" className="btn-secondary text-base px-8 py-4">
+            <Link href="/contact" className="btn-outline-accent text-base px-8 py-4">
               Ask us something first
             </Link>
           </div>
-
-          <p className="font-sans text-sm mt-6" style={{ color: "rgba(255,255,255,0.5)" }}>
-            Pricing is worked out on the report call, once we have seen what your market and your
-            current setup actually require. We are not going to put a number here and then change it.
-          </p>
         </div>
       </section>
     </>

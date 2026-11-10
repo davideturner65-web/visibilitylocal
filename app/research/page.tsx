@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Research",
   description:
     "Original research on how independent insurance agents appear in local and AI search.",
-  alternates: { canonical: "https://visibilitylocal.com/research" },
+  path: "/research",
   // Route reserved so the URL structure is settled. Not indexed and not in the nav until
   // there is something here.
-  robots: { index: false, follow: false },
-};
+  noindex: true,
+  nofollow: true,
+});
 
 export default function ResearchPage() {
   return (

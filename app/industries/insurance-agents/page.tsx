@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import ClosingCta from "@/components/ClosingCta";
+import { orgRef } from "@/lib/site";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Local SEO for Insurance Agents",
   description:
-    "Local SEO and GBP optimization for independent insurance agents. One agent per market. Compete against captive agents and national carriers in local search.",
-  alternates: {
-    canonical: "https://visibilitylocal.com/industries/insurance-agents",
-  },
-};
+    "Local SEO and Google Business Profile work for independent insurance agents. Compete with captive agents and national carriers in the map pack, in Google, and in AI search.",
+  path: "/industries/insurance-agents",
+});
 
 const faqs = [
               {
@@ -21,7 +21,7 @@ const faqs = [
               },
               {
                 q: "Which directories matter most for insurance agent citations?",
-                a: "The highest-authority sources are: your state's Department of Insurance licensee lookup (government domain, enormous trust signal), the IIABA directory, Insurance.com, your local Chamber of Commerce, and the major general directories. The state DOI listing is the most commonly missed and most valuable. We audit and correct it first because it's the reference point for every other citation we build.",
+                a: "The highest-authority sources are: your state's Department of Insurance licensee lookup (government domain, enormous trust signal), the IIABA directory, Insurance.com, your local Chamber of Commerce, and the major general directories. The state DOI listing is the most commonly missed and most valuable. It is the first thing to audit and correct, because it is the reference point for every other citation.",
               },
               {
                 q: "How does local SEO generate insurance referrals?",
@@ -38,12 +38,7 @@ const schema = {
       name: "Local SEO for Insurance Agents",
       description:
         "Google Business Profile optimization, citation building, and local search strategy for independent insurance agents competing against captive agents and national carriers.",
-      provider: {
-        "@type": "LocalBusiness",
-        name: "Visibility Local",
-        telephone: "(501) 554-2183",
-        email: "info@visibilitylocal.com",
-      },
+      provider: orgRef,
       areaServed: { "@type": "Country", name: "United States" },
       serviceType: "Local SEO",
       audience: {
@@ -104,7 +99,7 @@ export default function InsuranceAgentsPage() {
       <section className="bg-ink py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <p className="section-label">
-            What we see in almost every agency
+            Where independent agencies lose business
           </p>
           <h2 className="font-serif text-4xl text-paper mt-4 mb-10">
             Four things costing you business that have nothing to do with your carriers
@@ -112,16 +107,16 @@ export default function InsuranceAgentsPage() {
 
           <div className="space-y-10">
             <div>
-              <h3 className="font-serif text-2xl text-paper mb-3">Your FMO gave you a website that hurts you</h3>
+              <h3 className="font-serif text-2xl text-paper mb-3">Your website is a template, and it may not be yours</h3>
               <div className="space-y-4 font-sans text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 <p>
-                  This one is worth being blunt about. Your FMO or IMO handed you a site as a benefit of contracting. It has the same structure, the same page titles, and very close to the same body copy as every other agent who took the same deal. Sometimes hundreds of them. Your name and headshot were swapped in and that is the extent of what makes it yours.
+                  A lot of agency websites come from a template program: a site provider, a carrier, or an upline that offers one as a quick way to get an agent online. That is a reasonable way to start. The trouble comes later. The site has the same structure, the same page titles, and very close to the same body copy as every other agent on the same program, sometimes hundreds of them, with a name and a headshot swapped in.
                 </p>
                 <p>
-                  Google is very good at spotting that. When four hundred pages say nearly the same thing, it picks one to show and treats the rest as redundant. You are not being outranked by a better agent. You are being filtered as a duplicate.
+                  Google is very good at spotting that. When hundreds of pages say nearly the same thing, it picks one to show and treats the rest as redundant. You are not being outranked by a better agent. You are being filtered as a duplicate.
                 </p>
                 <p>
-                  The second problem is worse and quieter. On a lot of these arrangements you do not own the domain. Every link earned, every month of age, every bit of authority accrues to an asset you cannot take with you. Change FMOs and you start from nothing. Ask who the registrant is. If the answer is not you, that is the first thing to fix, ahead of anything on this page.
+                  The second problem is less visible. On some of these arrangements the domain is not registered to you. Every link earned, every month of age, every bit of authority builds up on an asset you might not be able to take with you. Check who the registrant is. If it is not you, sorting that out comes ahead of anything else on this page, and a starter site and a site of your own can sit side by side while you do.
                 </p>
               </div>
             </div>
@@ -145,7 +140,7 @@ export default function InsuranceAgentsPage() {
                   Medicare Annual Enrollment runs October 15 to December 7. ACA Open Enrollment runs November 1 to January 15. If you write either line, a large share of your year lands inside that window.
                 </p>
                 <p>
-                  Now put that against how search works. Google Business Profile corrections move in 30 to 60 days. Content rankings take 90 to 180. Do the arithmetic backwards from October 15 and the work has to be underway by roughly June to be paying you in the fall. Agents call us in late September every year, and by then the honest answer is that we are building for next season.
+                  Now put that against how search works. Google Business Profile corrections move in 30 to 60 days. Content rankings take 90 to 180. Do the arithmetic backwards from October 15 and the work has to be underway by roughly June to be paying you in the fall. Start in late September and the honest answer is that you are building for next season.
                 </p>
               </div>
             </div>
@@ -154,7 +149,7 @@ export default function InsuranceAgentsPage() {
               <h3 className="font-serif text-2xl text-paper mb-3">You are probably targeting the wrong line</h3>
               <div className="space-y-4 font-sans text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
                 <p>
-                  Most agents who ask about SEO want to rank for home and auto. We would steer you off it. Those terms are saturated by carriers with national ad budgets, aggregators, and lead sellers who can pay more for a click than the policy is worth to you. You can spend a year there and place tenth.
+                  The first instinct is usually to rank for home and auto. We would steer you off it. Those terms are saturated by carriers with national ad budgets, aggregators, and lead sellers who can pay more for a click than the policy is worth to you. You can spend a year there and place tenth.
                 </p>
                 <p>
                   Medicare, ACA, final expense, and small commercial behave differently. The searches are more specific, the intent is higher, the national brands compete less directly for them, and the client relationship is worth considerably more over its life. That is where an independent can actually take ground.
@@ -242,7 +237,7 @@ export default function InsuranceAgentsPage() {
               {
                 href: "/services/local-seo",
                 title: "Local SEO",
-                desc: "On-page optimization for your website targeting the specific searches your clients use: independent insurance, health insurance, auto insurance, by city and neighborhood.",
+                desc: "On-page work for your website aimed at the searches where an independent can win: independent insurance agent, Medicare, ACA, final expense and small commercial, by city and neighborhood.",
               },
               {
                 href: "/services/ai-search-visibility",
@@ -257,7 +252,7 @@ export default function InsuranceAgentsPage() {
               {
                 href: "/services/content",
                 title: "Local Content",
-                desc: "Written content that targets specific local search queries: auto insurance in [city], health insurance broker near [neighborhood], independent insurance vs captive agent.",
+                desc: "Written content aimed at specific local questions: Medicare enrollment in [city], health insurance broker near [neighborhood], independent versus captive agent.",
               },
               {
                 href: "/services/reputation",
@@ -314,8 +309,7 @@ export default function InsuranceAgentsPage() {
                 name and address. It is one of the highest-authority citations
                 available in the insurance vertical, and most agents have never
                 checked whether it accurately reflects their current business
-                name or website. We audit that listing first and use it as the
-                canonical reference for every other citation we build or clean.
+                name or website. That listing gets audited first and becomes the canonical reference for every other citation that is built or cleaned.
               </p>
             </div>
             <div className="bg-paper p-8 border-l-4 border-accent">
@@ -412,23 +406,7 @@ export default function InsuranceAgentsPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-ink py-24 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
-          <p className="section-label text-accent">Get Started</p>
-          <h2 className="font-serif text-4xl text-paper mt-4 mb-6">
-            One insurance agent per market
-          </h2>
-          <p className="font-sans text-paper/80 text-lg mb-10">
-            We work with one insurance agent per geographic market. If your area
-            is open, we can begin with a GBP audit and a citation analysis
-            within this week. Call (501) 554-2183 or send a message.
-          </p>
-          <Link href="/contact" className="btn-primary">
-            Check availability in your market
-          </Link>
-        </div>
-      </section>
+      <ClosingCta />
     </>
   );
 }

@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Privacy Policy",
-  description: "What Visibility Local collects through this website, how it is used, and how to ask for it to be removed.",
-  alternates: { canonical: "https://visibilitylocal.com/privacy" },
-};
+  description:
+    "What Visibility Local collects through this website, how it is used, and how to ask for it to be removed.",
+  path: "/privacy",
+});
 
 const sections = [
   {
     "heading": "What we collect",
-    "body": "What you choose to send us through a form or by email: your name, email address, phone number, business name, industry, market, and message. If you use the free scorecard, your answers stay in your browser and nothing is sent unless you submit the form at the end, which sends your email address, your score, and the items you missed."
+    "body": "What you choose to send us through a form or by email: your name, email address, phone number, business name, city, website, and message. If you use the free scorecard, your answers stay in your browser and nothing is sent unless you submit the form at the end, which sends your email address, your score, and the items you missed."
   },
   {
     "heading": "How we use it",
@@ -17,7 +18,7 @@ const sections = [
   },
   {
     "heading": "Who handles it for us",
-    "body": "Forms are processed by Formspree. The site is hosted by Vercel, which also provides our visitor analytics. Those analytics count page views in aggregate and do not use cookies. Payments, when you make one online, are processed by Stripe, and we do not see or store your full card number."
+    "body": "Form submissions are delivered to our inbox by Resend, an email delivery service. If you book a call, the booking is handled by a third-party scheduling tool, which collects the name and email address you enter there. The site is hosted by Vercel, which also provides our visitor analytics. Those analytics count page views and form submissions in aggregate and do not use cookies."
   },
   {
     "heading": "How long we keep it",
@@ -37,7 +38,7 @@ export default function PrivacyPage() {
   return (
     <section className="bg-paper py-20 px-6">
       <div className="max-w-3xl mx-auto">
-        <p className="section-label">Effective November 4, 2026</p>
+        <p className="section-label">Effective November 10, 2026</p>
         <h1 className="font-serif text-5xl text-ink mt-4 mb-6 leading-tight">Privacy Policy</h1>
         <p className="font-sans text-base text-ink-2 leading-relaxed mb-10">
           This page explains what Visibility Local collects through this website and what happens to it.

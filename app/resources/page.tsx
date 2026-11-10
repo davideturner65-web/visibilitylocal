@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import ClosingCta from "@/components/ClosingCta";
+import { orgRef } from "@/lib/site";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Local SEO Guides & Resources",
   description:
     "Free local SEO guides, GBP tutorials, and AI search visibility resources for independent professionals. Written to rank and be cited by AI tools.",
-  alternates: { canonical: "https://visibilitylocal.com/resources" },
-};
+  path: "/resources",
+});
 
 const schema = {
   "@context": "https://schema.org",
@@ -15,11 +17,7 @@ const schema = {
   description:
     "Free local SEO guides, GBP tutorials, and AI search visibility resources for independent professionals.",
   url: "https://visibilitylocal.com/resources",
-  publisher: {
-    "@type": "Organization",
-    name: "Visibility Local",
-    url: "https://visibilitylocal.com",
-  },
+  publisher: orgRef,
 };
 
 const resources = [
@@ -235,30 +233,7 @@ export default function ResourcesIndexPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-ink">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-2xl">
-            <p className="section-label mb-4">
-              One client per market
-            </p>
-            <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
-              Want help applying any of this?
-            </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">
-                Get Your Visibility Report
-              </Link>
-              <Link href="/scorecard" className="btn-secondary text-base px-8 py-4">
-                Or grade your own listing, free
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ClosingCta heading="Want help applying any of this?" />
     </>
   );
 }

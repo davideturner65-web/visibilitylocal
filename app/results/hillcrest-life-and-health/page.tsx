@@ -1,17 +1,15 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Placeholder from "@/components/Placeholder";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Case Study: Hillcrest Life and Health, Little Rock",
   description:
     "What was built for Lancaster Cook, an independent life, health, Medicare and annuity agent in Little Rock, Arkansas, and what happened to his local search visibility.",
-  alternates: {
-    canonical: "https://visibilitylocal.com/results/hillcrest-life-and-health",
-  },
+  path: "/results/hillcrest-life-and-health",
   // Not indexed until the real figures replace the placeholders.
-  robots: { index: false, follow: true },
-};
+  noindex: true,
+});
 
 export default function HillcrestCaseStudyPage() {
   return (
@@ -32,7 +30,7 @@ export default function HillcrestCaseStudyPage() {
             This page is built and not published. It is set to noindex and is not linked from
             the nav. Fill in every placeholder below with real figures, then remove the robots
             noindex and add the links from the homepage, the insurance agents page and the
-            visibility report page.
+            market check page.
           </Placeholder>
         </div>
       </section>
@@ -44,7 +42,7 @@ export default function HillcrestCaseStudyPage() {
             <Placeholder label="starting condition">
               What the agency looked like before. Include: the Google Business Profile primary
               category as found, whether secondary categories existed, citation inconsistencies
-              counted, whether the site was an FMO template, who owned the domain, review count
+              counted, whether the site was a shared template, who owned the domain, review count
               versus the map pack competitors, and whether ChatGPT or Perplexity named the
               agency when asked for an agent in Little Rock. Dates matter, so record when the
               baseline was taken.
@@ -143,12 +141,11 @@ export default function HillcrestCaseStudyPage() {
             Your market is not Little Rock, but the problems are the same
           </h2>
           <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.72)" }}>
-            The Visibility Report is where this starts: the same diagnostic that produced the
-            starting condition above, run against your agency.
+            The free market check is where this starts: a one-page snapshot of how your own agency shows up in your town.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">
-              Get Your Visibility Report
+            <Link href="/market-check" className="btn-primary text-base px-8 py-4">
+              Check my market
             </Link>
             <Link href="/industries/insurance-agents" className="btn-secondary text-base px-8 py-4">
               What usually goes wrong

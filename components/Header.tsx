@@ -13,21 +13,9 @@ const services = [
   { label: "Reputation Management", href: "/services/reputation" },
 ];
 
-const industries = [
-  { label: "Insurance Agents", href: "/industries/insurance-agents" },
-  { label: "Mortgage Brokers", href: "/industries/mortgage-brokers" },
-  { label: "CPA Firms", href: "/industries/cpa-firms" },
-  { label: "Financial Advisors", href: "/industries/financial-advisors" },
-  { label: "Real Estate", href: "/industries/real-estate" },
-  { label: "Attorneys", href: "/industries/attorneys" },
-  { label: "Medical Practices", href: "/industries/medical-practices" },
-  { label: "Home Services", href: "/industries/home-services" },
-];
-
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [industriesOpen, setIndustriesOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-paper border-b border-paper-3">
@@ -41,8 +29,25 @@ export default function Header() {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
             {/* Services Dropdown */}
-            <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-sans font-medium text-ink-2 hover:text-ink transition-colors rounded">
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+              onFocus={() => setServicesOpen(true)}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget)) setServicesOpen(false);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") setServicesOpen(false);
+              }}
+            >
+              <button
+                type="button"
+                aria-haspopup="true"
+                aria-expanded={servicesOpen}
+                onClick={() => setServicesOpen((open) => !open)}
+                className="flex items-center gap-1 px-3 py-2 text-sm font-sans font-medium text-ink-2 hover:text-ink transition-colors rounded"
+              >
                 Services
                 <svg className="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
@@ -63,29 +68,6 @@ export default function Header() {
               )}
             </div>
 
-            {/* Industries Dropdown */}
-            <div className="relative" onMouseEnter={() => setIndustriesOpen(true)} onMouseLeave={() => setIndustriesOpen(false)}>
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-sans font-medium text-ink-2 hover:text-ink transition-colors rounded">
-                Industries
-                <svg className="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {industriesOpen && (
-                <div className="absolute top-full left-0 w-56 bg-paper border border-paper-3 shadow-lg rounded-sm py-1 mt-0.5">
-                  {industries.map((i) => (
-                    <Link
-                      key={i.href}
-                      href={i.href}
-                      className="block px-4 py-2.5 text-sm font-sans text-ink-2 hover:text-ink hover:bg-paper-2 transition-colors"
-                    >
-                      {i.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
             <Link href="/offer" className="px-3 py-2 text-sm font-sans font-medium text-ink-2 hover:text-ink transition-colors rounded">
               How It Works
             </Link>
@@ -98,16 +80,16 @@ export default function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            {/* The specialty sits at the top level rather than inside the Industries
-                dropdown, because it is the practice rather than one vertical of eight. */}
+            {/* Insurance agents are the practice, so this is the only industry link in the
+                header. The other industry pages are reached from the home page and the footer. */}
             <Link
               href="/industries/insurance-agents"
               className="px-3 py-2 text-sm font-sans font-medium text-ink hover:text-accent transition-colors rounded"
             >
               For Insurance Agents
             </Link>
-            <Link href="/visibility-report" className="btn-primary text-sm px-5 py-2.5">
-              Visibility Report
+            <Link href="/market-check" className="btn-primary text-sm px-5 py-2.5">
+              Check My Market
             </Link>
           </div>
 
@@ -116,6 +98,7 @@ export default function Header() {
             className="lg:hidden p-2 text-ink-2 hover:text-ink"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? (
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -154,18 +137,6 @@ export default function Header() {
               </Link>
             ))}
 
-            <p className="section-label pt-4 pb-1">Industries</p>
-            {industries.map((i) => (
-              <Link
-                key={i.href}
-                href={i.href}
-                className="block py-2 text-sm font-sans text-ink-2 hover:text-ink"
-                onClick={() => setMobileOpen(false)}
-              >
-                {i.label}
-              </Link>
-            ))}
-
             <div className="pt-4 space-y-1 border-t border-paper-3 mt-2">
               <Link href="/offer" className="block py-2 text-sm font-sans font-medium text-ink-2 hover:text-ink" onClick={() => setMobileOpen(false)}>How It Works</Link>
               <Link href="/resources" className="block py-2 text-sm font-sans font-medium text-ink-2 hover:text-ink" onClick={() => setMobileOpen(false)}>Resources</Link>
@@ -173,8 +144,8 @@ export default function Header() {
             </div>
 
             <div className="pt-4 space-y-2">
-              <Link href="/visibility-report" className="btn-primary w-full text-center block" onClick={() => setMobileOpen(false)}>
-                Visibility Report
+              <Link href="/market-check" className="btn-primary w-full text-center block" onClick={() => setMobileOpen(false)}>
+                Check My Market
               </Link>
               <Link href="/scorecard" className="btn-secondary w-full text-center block" onClick={() => setMobileOpen(false)}>
                 Free Scorecard

@@ -1,12 +1,15 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import ClosingCta from "@/components/ClosingCta";
+import { orgRef, founderRef } from "@/lib/site";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "40-Point Local SEO Checklist for 2026",
   description:
     "The 40 local SEO factors that actually drive map pack rankings and local search visibility in 2026. Audit your business against this list.",
-  alternates: { canonical: "https://visibilitylocal.com/resources/local-seo-checklist" },
-};
+  path: "/resources/local-seo-checklist",
+  type: "article",
+});
 
 const faqs = [
   {
@@ -33,14 +36,10 @@ const schema = {
     {
       "@type": "Article",
       headline: "40-Point Local SEO Checklist for 2026",
-      datePublished: "2026-01-15",
+      datePublished: "2026-05-19",
       dateModified: "2026-08-28",
-      author: { "@type": "Person", name: "David Turner" },
-      publisher: {
-        "@type": "Organization",
-        name: "Visibility Local",
-        url: "https://visibilitylocal.com",
-      },
+      author: founderRef,
+      publisher: orgRef,
       url: "https://visibilitylocal.com/resources/local-seo-checklist",
       description:
         "The 40 local SEO factors that actually drive map pack rankings and local search visibility in 2026. Audit your business against this list.",
@@ -484,30 +483,7 @@ export default function LocalSEOChecklistPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-ink">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-2xl">
-            <p className="section-label mb-4">
-              Want us to run this audit for you?
-            </p>
-            <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
-              We will tell you exactly where you stand.
-            </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">
-                Get Your Visibility Report
-              </Link>
-              <Link href="/scorecard" className="btn-secondary text-base px-8 py-4">
-                Or grade your own listing, free
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ClosingCta label="Want us to run this audit for you?" heading="We will tell you exactly where you stand." />
     </>
   );
 }

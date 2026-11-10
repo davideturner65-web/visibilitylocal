@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Terms of Use",
-  description: "The terms for using the Visibility Local website, its free guides and scorecard, and the Visibility Report.",
-  alternates: { canonical: "https://visibilitylocal.com/terms" },
-};
+  description:
+    "The terms for using the Visibility Local website, its free guides, scorecard and market check.",
+  path: "/terms",
+});
 
 const sections = [
   {
@@ -12,16 +13,16 @@ const sections = [
     "body": "The guides and scorecard on this site are general information, provided as they are. They are not legal, compliance, or financial advice. Check licensing and advertising rules for your own profession and state before acting on them."
   },
   {
-    "heading": "The Visibility Report",
-    "body": "The Visibility Report costs $297 and includes a written report and a 30-minute call. The report is delivered within five business days of purchase. The full $297 is credited toward your setup cost if you go on to work with us. You keep the report either way."
+    "heading": "The market check",
+    "body": "The market check is free and carries no obligation. It is a snapshot of publicly visible information about your business at the time it is made, and search results change. It is general information, not a guarantee of any outcome."
   },
   {
     "heading": "No guaranteed rankings",
     "body": "We do not promise any particular ranking, lead count, or date by which an AI tool will name your business. Those outcomes depend on systems nobody outside those companies controls. Our delivery guarantee is described on the How It Works page and covers delivery, not rankings."
   },
   {
-    "heading": "One client per market",
-    "body": "We work with one client per market for as long as that client stays with us, so we may decline work when a market is already taken. Inquiries and purchases do not reserve a market until an engagement begins."
+    "heading": "Exclusivity",
+    "body": "We do not promise exclusivity in any city or line of business unless it is agreed in writing as part of a client's scope. An inquiry or a market check does not reserve a market."
   },
   {
     "heading": "Content on this site",
@@ -41,7 +42,7 @@ export default function TermsPage() {
   return (
     <section className="bg-paper py-20 px-6">
       <div className="max-w-3xl mx-auto">
-        <p className="section-label">Effective November 4, 2026</p>
+        <p className="section-label">Effective November 10, 2026</p>
         <h1 className="font-serif text-5xl text-ink mt-4 mb-6 leading-tight">Terms of Use</h1>
         <p className="font-sans text-base text-ink-2 leading-relaxed mb-10">
           These terms cover your use of this website. Monthly client work is also covered by the written scope agreed before it starts, and that scope controls if the two differ.

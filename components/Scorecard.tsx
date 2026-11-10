@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { CONTACT_EMAIL, FORM_ENDPOINT } from "@/lib/forms";
+import { track } from "@vercel/analytics";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 /**
  * Self-assessment an independent agent can run against their own listing in about ten minutes.
@@ -39,15 +40,15 @@ const CHECKS: Check[] = [
   {
     id: "domain",
     question: "Do you personally own your website domain?",
-    how: "Look up your domain on any WHOIS lookup, or check whether the renewal invoice comes to you. If your FMO set the site up, the registrant is often them.",
-    why: "If you do not own the registration, every bit of authority the site earns belongs to somebody else. Change FMOs and you start from zero. This outranks everything else on this list.",
+    how: "Look up your domain on any WHOIS lookup, or check whether the renewal invoice comes to you. If someone else set the site up for you, the registrant is often them.",
+    why: "If you do not own the registration, every bit of authority the site earns belongs to somebody else. Change providers and you may start from zero. This outranks everything else on this list.",
     weight: 3,
   },
   {
     id: "template",
     question: "Is your website meaningfully different from other agents' sites?",
     how: 'Copy a full sentence from your homepage, paste it into Google inside quotation marks, and see how many other agencies come back with the identical sentence.',
-    why: "Template sites handed out by an FMO share their copy across hundreds of agents. Google shows one of them and treats the rest as duplicates. If that search returns other agencies, you are one of the rest.",
+    why: "Template sites share their copy across hundreds of agents. Google shows one of them and treats the rest as duplicates. If that search returns other agencies, you are one of the rest.",
     weight: 3,
   },
   {
@@ -61,7 +62,7 @@ const CHECKS: Check[] = [
     id: "nap",
     question: "Do your name, address, and phone match across Yelp, Facebook, and Bing Places?",
     how: "Search your business name on each. Compare against your GBP, including whether you use Ste, Suite, or nothing at all.",
-    why: "Inconsistent listing data is a direct negative signal for local ranking, and it is the most common thing we find that nobody has ever looked at.",
+    why: "Inconsistent listing data is a direct negative signal for local ranking, and it is one of the most common problems that nobody has ever looked at.",
     weight: 2,
   },
   {
@@ -114,7 +115,7 @@ function band(pct: number) {
   if (pct >= 85) {
     return {
       label: "In good shape",
-      note: "Your fundamentals are genuinely in order, which puts you ahead of most independent agencies we look at. The remaining gains are in content and AI citation rather than in fixing what is broken. Honestly, you may not need to hire anyone.",
+      note: "Your fundamentals are genuinely in order, which puts you ahead of most independent agencies. The remaining gains are in content and AI citation rather than in fixing what is broken. Honestly, you may not need to hire anyone.",
     };
   }
   if (pct >= 60) {
@@ -135,9 +136,10 @@ function band(pct: number) {
   };
 }
 
-export default function Scorecard() {
+export default function Scorecard({ formEnabled }: { formEnabled: boolean }) {
   const [answers, setAnswers] = useState<Record<string, boolean | null>>({});
   const [expanded, setExpanded] = useState<string | null>(CHECKS[0].id);
+  const [planStatus, setPlanStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const answered = CHECKS.filter((c) => answers[c.id] !== undefined && answers[c.id] !== null);
   const score = CHECKS.reduce((sum, c) => sum + (answers[c.id] === true ? c.weight : 0), 0);
@@ -145,6 +147,30 @@ export default function Scorecard() {
   const pct = Math.round((score / MAX_SCORE) * 100);
   const result = band(pct);
   const failed = CHECKS.filter((c) => answers[c.id] === false).sort((a, b) => b.weight - a.weight);
+
+  // Sends the score and the missed items with the request, so the plan can be written without
+  // asking the agent to repeat anything. On failure the mailto link takes over.
+  async function requestPlan(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setPlanStatus("sending");
+    const email = new FormData(event.currentTarget).get("email");
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source: "Scorecard action plan",
+          email,
+          scorecard: `${score}/${MAX_SCORE}. Missed: ${failed.map((c) => c.id).join(", ") || "none"}`,
+        }),
+      });
+      if (!res.ok) throw new Error(`Request failed: ${res.status}`);
+      track("lead_submitted", { source: "Scorecard action plan" });
+      setPlanStatus("sent");
+    } catch {
+      setPlanStatus("error");
+    }
+  }
 
   return (
     <div>
@@ -269,37 +295,34 @@ export default function Scorecard() {
               We will send the action plan for the items you missed. One email, no sequence, and we
               will not add you to anything.
             </p>
-            {FORM_ENDPOINT ? (
-            <form
-              action={FORM_ENDPOINT}
-              method="POST"
-              className="flex flex-wrap gap-3"
-            >
-              <input type="hidden" name="_subject" value="Scorecard action plan request" />
-              <input type="hidden" name="scorecard_score" value={`${score}/${MAX_SCORE}`} />
-              <input type="hidden" name="scorecard_missed" value={failed.map((c) => c.id).join(", ")} />
-              <label htmlFor="scorecard-email" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="scorecard-email"
-                type="email"
-                name="email"
-                required
-                placeholder="you@youragency.com"
-                className="flex-1 min-w-[16rem] px-4 py-3 rounded-sm bg-paper text-ink font-sans text-sm border border-paper-3 focus:outline-none focus:border-accent"
-              />
-              <button type="submit" className="btn-primary text-sm px-6 py-3">
-                Send me the plan
-              </button>
-            </form>
-            ) : (
+            {!formEnabled || planStatus === "error" ? (
               <a
                 href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Scorecard action plan request")}&body=${encodeURIComponent(`My scorecard result: ${score}/${MAX_SCORE}\nItems missed: ${failed.map((c) => c.id).join(", ")}`)}`}
                 className="btn-primary text-sm px-6 py-3"
               >
                 Email us for the plan
               </a>
+            ) : planStatus === "sent" ? (
+              <p className="font-sans text-sm text-paper" role="status">
+                Sent. The plan will be in your inbox within two business days.
+              </p>
+            ) : (
+              <form onSubmit={requestPlan} className="flex flex-wrap gap-3">
+                <label htmlFor="scorecard-email" className="sr-only">
+                  Email address
+                </label>
+                <input
+                  id="scorecard-email"
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="you@youragency.com"
+                  className="flex-1 min-w-[16rem] px-4 py-3 rounded-sm bg-paper text-ink font-sans text-sm border border-paper-3 focus:outline-none focus:border-accent"
+                />
+                <button type="submit" disabled={planStatus === "sending"} className="btn-primary text-sm px-6 py-3">
+                  {planStatus === "sending" ? "Sending..." : "Send me the plan"}
+                </button>
+              </form>
             )}
           </div>
         </div>
@@ -313,10 +336,10 @@ export default function Scorecard() {
       )}
 
       <p className="mt-10 font-sans text-sm text-ink-3">
-        Would rather we did this properly, from the outside, with the AI transcripts and the map
-        grid?{" "}
-        <Link href="/visibility-report" className="text-accent hover:underline">
-          That is the Visibility Report
+        Would rather we checked it from the outside, with the map pack and the AI answers for your
+        town?{" "}
+        <Link href="/market-check" className="text-accent hover:underline">
+          That is the free market check
         </Link>
         .
       </p>

@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import ClosingCta from "@/components/ClosingCta";
+import { orgRef } from "@/lib/site";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Citation Building & NAP Consistency",
   description:
     "Citation building and NAP audit for local professionals. Consistent business listings across top directories drive map pack rankings and AI search visibility.",
-  alternates: { canonical: "https://visibilitylocal.com/services/citations" },
-};
+  path: "/services/citations",
+});
 
 const faqs = [
   {
@@ -19,7 +21,7 @@ const faqs = [
   },
   {
     q: "Does NAP inconsistency really affect rankings?",
-    a: "Yes, and it is one of the most common ranking suppressors we find. When Google encounters your business with different phone numbers, suite numbers formatted inconsistently, abbreviated street names in some places and spelled out in others, or old addresses from a previous location, it cannot confidently establish your business as a single entity. That uncertainty translates directly into lower prominence scores and lower map pack rankings.",
+    a: "Yes, and it is one of the most common ranking suppressors. When Google encounters your business with different phone numbers, suite numbers formatted inconsistently, abbreviated street names in some places and spelled out in others, or old addresses from a previous location, it cannot confidently establish your business as a single entity. That uncertainty translates directly into lower prominence scores and lower map pack rankings.",
   },
   {
     q: "Which citation directories matter most for my industry?",
@@ -33,11 +35,7 @@ const schema = {
     {
       "@type": "Service",
       name: "Citations and NAP Consistency",
-      provider: {
-        "@type": "LocalBusiness",
-        name: "Visibility Local",
-        url: "https://visibilitylocal.com",
-      },
+      provider: orgRef,
       areaServed: { "@type": "Country", name: "United States" },
       description:
         "Citation building and NAP consistency audit for local professionals. Correct and consistent business listings across authoritative directories drive map pack rankings and AI search visibility.",
@@ -148,8 +146,8 @@ export default function CitationsPage() {
             <p className="font-sans text-base text-ink-3 leading-relaxed mb-8 max-w-xl">
               Most established businesses have 15 to 40 NAP inconsistencies accumulated over years and never addressed. We audit, correct, and build out your citation profile across the directories that actually move local rankings and AI visibility.
             </p>
-            <Link href="/contact" className="btn-primary text-base px-7 py-3.5">
-              Check if your market is available
+            <Link href="/market-check" className="btn-primary text-base px-7 py-3.5">
+              Check my market
             </Link>
           </div>
         </div>
@@ -280,30 +278,7 @@ export default function CitationsPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-ink">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-2xl">
-            <p className="section-label mb-4">
-              One client per market
-            </p>
-            <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
-              Find out what your town actually sees.
-            </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">
-                Get Your Visibility Report
-              </Link>
-              <Link href="/scorecard" className="btn-secondary text-base px-8 py-4">
-                Or grade your own listing, free
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ClosingCta />
     </>
   );
 }

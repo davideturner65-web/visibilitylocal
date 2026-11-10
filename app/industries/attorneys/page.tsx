@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import ClosingCta from "@/components/ClosingCta";
+import { orgRef } from "@/lib/site";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Local SEO for Attorneys and Law Firms",
   description:
-    "Local SEO for attorneys and law firms. High-competition, high-value local search strategy targeting practice area searches. One firm per market.",
-  alternates: {
-    canonical: "https://visibilitylocal.com/industries/attorneys",
-  },
-};
+    "Local SEO for attorneys and law firms. High-competition, high-value local search strategy targeting practice area searches.",
+  path: "/industries/attorneys",
+});
 
 const faqs = [
               {
@@ -38,12 +38,7 @@ const schema = {
       name: "Local SEO for Attorneys and Law Firms",
       description:
         "Google Business Profile optimization, legal directory citation building, and practice area search strategy for attorneys and law firms.",
-      provider: {
-        "@type": "LocalBusiness",
-        name: "Visibility Local",
-        telephone: "(501) 554-2183",
-        email: "info@visibilitylocal.com",
-      },
+      provider: orgRef,
       areaServed: { "@type": "Country", name: "United States" },
       serviceType: "Local SEO",
       audience: {
@@ -346,23 +341,10 @@ export default function AttorneysPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-ink py-24 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
-          <p className="section-label text-accent">Get Started</p>
-          <h2 className="font-serif text-4xl text-paper mt-4 mb-6">
-            One law firm per market
-          </h2>
-          <p className="font-sans text-paper/80 text-lg mb-10">
-            We work with one law firm per geographic market. If your area is
-            open, we can begin with a GBP audit and a practice area keyword
-            analysis this week. Call (501) 554-2183 or send a message.
-          </p>
-          <Link href="/contact" className="btn-primary">
-            Check availability in your market
-          </Link>
-        </div>
-      </section>
+      <ClosingCta
+        heading="See how your firm shows up in your own market."
+        body="The market check is free. Tell us your business and your city, and you get a one-page snapshot back within two business days: your Google listing, who holds the map pack, and what ChatGPT and Perplexity say when asked for an attorney in your town. Then fifteen minutes on the phone if you want to go through it. If the answer is that you are in good shape, that is what you will hear."
+      />
     </>
   );
 }

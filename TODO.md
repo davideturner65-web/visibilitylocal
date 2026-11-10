@@ -2,45 +2,61 @@
 
 ## Blocking
 
-- [ ] **Connect a working contact form.** The Formspree ID the site shipped with returned
-      "Form not found", so submissions were failing. Create a form at formspree.io, put its URL
-      in `FORM_ENDPOINT` in `lib/forms.ts`, and send a real test. Until then the contact page and
-      scorecard offer email and phone instead.
+- [ ] **Turn the forms on.** The market check, contact and scorecard forms post to `/api/lead`,
+      which emails `info@visibilitylocal.com` through Resend. Create a Resend account, verify
+      `visibilitylocal.com` as a sending domain there, and add `RESEND_API_KEY` to the Vercel
+      project's environment variables, then redeploy. Until the key is set the pages show email
+      and phone links instead of a form. Send a real test from each of the three forms.
 
-- [ ] **Stripe Payment Link for the Visibility Report.** Create a $297 payment link and put it
-      in `STRIPE_PAYMENT_LINK` in `lib/payment.ts`. Until it is set, the report page falls back to
-      "Request the report" pointing at the /contact form, and you invoice by hand.
+- [ ] **Booking link.** Create a 15-minute "Market check" event in Cal.com, Calendly or a Google
+      Calendar appointment schedule, and paste its link into `BOOKING_URL` in `lib/site.ts`. The
+      calendar then appears straight after someone submits the market check form, and on the
+      contact page. Confirm the tool allows its page to be embedded in an iframe.
+
+- [ ] **Set the price.** Put the setup fee and the monthly fee into `SETUP_FEE` and
+      `MONTHLY_PRICE` in `lib/site.ts`. The offer page publishes them once both are set. Until
+      then it says the numbers are given on the call.
 
 - [ ] **Real figures in the Hillcrest case study.** `app/results/hillcrest-life-and-health/page.tsx`
       is built with loud placeholders and set to `noindex`. Fill in the starting condition,
-      Search Console impressions and clicks, GBP Insights, the before and after heat map, the
-      client quote (approved in writing by Lancaster Cook), and the timeline. Then remove the
-      `robots: { index: false }` and link it from the homepage, the insurance agents page and
-      the visibility report page.
-      Run `node tools/check-placeholders.mjs` to confirm nothing is left.
+      Search Console impressions and clicks, GBP performance figures, the heat map, the client
+      quote (approved in writing by Lancaster Cook), and the timeline. The Hillcrest repo's git
+      log dates the build; Search Console holds 16 months; GBP performance data only goes back
+      about six months, so export it now. Then remove `noindex: true`, add the page to
+      `app/sitemap.ts`, and link it from the homepage, the insurance agents page and the market
+      check page. Run `node tools/check-placeholders.mjs` to confirm nothing is left.
 
 ## Worth doing
 
-- [ ] **Sample excerpt on the Visibility Report page.** Take two or three pages from a real
-      report, redact the agency name and address, and add them back as a section. The GBP
-      category finding and the AI transcript are the most persuasive parts. A screenshot of the
-      map pack grid carries more weight than a paragraph describing one.
+- [ ] **Link the outside profiles.** Add the Visibility Local Google Business Profile and
+      LinkedIn URLs to `ORG_SAME_AS`, and David's LinkedIn to `FOUNDER_SAME_AS`, in `lib/site.ts`.
+      Both are empty, so the schema currently carries no `sameAs` at all.
 
-- [ ] **Link the outside profiles.** Add the Visibility Local Google Business Profile and LinkedIn
-      URLs to `sameAs` in the `app/page.tsx` schema. It currently points only at the site itself.
+- [ ] **Sample snapshot on the market check page.** Redact one real snapshot and show it. A
+      screenshot of the map pack and of an AI answer carries more weight than a description.
 
 - [ ] **Add a photo to the About page.**
 
-- [ ] **Turn on Web Analytics in the Vercel dashboard.** The code is in `app/layout.tsx`; no data
-      arrives until it is enabled for the project.
+- [ ] **Turn on Web Analytics in the Vercel dashboard.** The code is in `app/layout.tsx`, and the
+      forms send `lead_submitted` and `booking_link_click` events. No data arrives until
+      analytics is enabled for the project. Custom events may need a paid Vercel plan.
+
+- [ ] **Submit the sitemap in Google Search Console** and request indexing of the homepage,
+      `/market-check` and `/industries/insurance-agents`.
 
 - [ ] **Have a lawyer read `/privacy` and `/terms`.** They are a plain-language first draft. The
-      legal entity name, governing state and report refund policy still need adding.
+      legal entity name and governing state still need adding.
 
 - [ ] **Get a vector version of the logo** before anything is printed.
 
 - [ ] **Publish `/research`** once the Invisible Agent Index has data. The route exists and is
       noindex; add it to the nav when there is something to read.
+
+## When content changes
+
+- Bump the page's date in `app/sitemap.ts`. Dates there are set by hand on purpose.
+- When a guide is revised, update `dateModified` in its Article schema and the visible
+  "last reviewed" line together.
 
 ## Checks
 
@@ -50,3 +66,5 @@ Run before any deploy:
     node tools/check-placeholders.mjs
     node tools/check-links.mjs
     node tools/audit-copy.mjs
+    node tools/audit-schema.mjs
+    node tools/verify-sitemap.mjs

@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import ClosingCta from "@/components/ClosingCta";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Local SEO for Independent Insurance Agents | Visibility Local",
   description:
-    "Local SEO and AI search visibility for independent insurance agents. One agent per market, nationwide. Get found in the map pack, in ChatGPT, and in Google.",
-  alternates: { canonical: "https://visibilitylocal.com" },
-};
+    "Local SEO and AI search visibility for independent insurance agents, nationwide. Get found in the map pack, in ChatGPT, and in Google. No contract, and you own everything we build.",
+  path: "",
+});
 
 const faqs = [
   {
@@ -15,15 +16,15 @@ const faqs = [
   },
   {
     q: "How is Visibility Local different from a regular SEO agency?",
-    a: "Two things. First, we work with one client per market, so we're never splitting attention between you and a direct competitor. Second, the work is built for how local search runs now: the map pack, Google's AI Overviews, ChatGPT and Perplexity, not just the ten blue links.",
+    a: "Three things. First, independent insurance agents are the specialty, so the work already accounts for enrollment seasons, state Department of Insurance records, carrier and Medicare marketing rules, and the lines worth competing for. Second, the terms: no minimum contract, and the domain, the hosting and the site are in your name from the first day. Third, the work is built for how local search runs now: the map pack, Google's AI Overviews, ChatGPT and Perplexity, as well as the ordinary results.",
   },
   {
-    q: "Do you work with businesses nationwide?",
-    a: "Yes. The work is not geography-constrained on our end, so where we are has no bearing on the market you are in. The only limit is the one-per-market policy: if we already represent an agent in your city, we will tell you rather than take you both.",
+    q: "Do you work with agents nationwide?",
+    a: "Yes. Everything is done remotely, so where we are has no bearing on the market you are in. What matters is your city, your lines, and who currently holds the map pack there, and that is what the free market check looks at.",
   },
   {
-    q: "What does 'one client per market' mean?",
-    a: "It means we don't take a second insurance agent in Phoenix, a second mortgage broker in Austin, or a second CPA in Nashville while you're a client. You get exclusive local SEO representation in your market. We don't work both sides of the same competitive matchup.",
+    q: "Is there a contract?",
+    a: "No minimum term. You pay a one-time setup fee and a flat monthly fee, and you can cancel any month. The domain, the hosting account and the website are registered to you, so if you leave, you take all of it and nothing breaks.",
   },
   {
     q: "How long does it take to see results?",
@@ -31,32 +32,15 @@ const faqs = [
   },
 ];
 
+// The organization itself is declared once in app/layout.tsx.
 const schema = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": ["ProfessionalService", "LocalBusiness"],
-      name: "Visibility Local",
-      description:
-        "Local SEO and AI search visibility consulting for independent professionals nationwide. One client per market.",
-      url: "https://visibilitylocal.com",
-      logo: "https://visibilitylocal.com/logo.png",
-      telephone: "(501) 554-2183",
-      email: "info@visibilitylocal.com",
-      founder: { "@type": "Person", name: "David Turner" },
-      areaServed: { "@type": "Country", name: "United States" },
-      priceRange: "$$",
-      sameAs: ["https://visibilitylocal.com"],
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: faqs.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
-    },
-  ],
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 const services = [
@@ -98,15 +82,12 @@ const services = [
   },
 ];
 
-const industries = [
-  { label: "Insurance Agents", href: "/industries/insurance-agents", note: "Independent agents competing with captives" },
-  { label: "Mortgage Brokers", href: "/industries/mortgage-brokers", note: "Win purchase referrals on local search" },
-  { label: "CPA Firms", href: "/industries/cpa-firms", note: "Visibility beyond tax season" },
+// The three professions that trade referrals with insurance agents. The other industry pages
+// stay live and are linked from the footer, but the home page does not push them.
+const adjacent = [
   { label: "Financial Advisors", href: "/industries/financial-advisors", note: "Build trust before the first call" },
-  { label: "Real Estate", href: "/industries/real-estate", note: "Hyperlocal market authority" },
-  { label: "Attorneys", href: "/industries/attorneys", note: "Practice area and location targeting" },
-  { label: "Medical Practices", href: "/industries/medical-practices", note: "Insurance filters and proximity signals" },
-  { label: "Home Services", href: "/industries/home-services", note: "Service area pages that rank" },
+  { label: "CPA Firms", href: "/industries/cpa-firms", note: "Visibility beyond tax season" },
+  { label: "Mortgage Brokers", href: "/industries/mortgage-brokers", note: "Win purchase referrals on local search" },
 ];
 
 
@@ -131,16 +112,19 @@ export default function HomePage() {
               Every month, people in your town search for an insurance agent with nobody particular in mind. They read a few names off a map and call one. The agent they call usually does not have better carriers or better advice. He is just the one who turned up.
             </p>
             <p className="font-sans text-base text-ink-3 leading-relaxed mb-8 max-w-xl">
-              We work with independent insurance agents, nationwide, one agent per market. Not because exclusivity sounds good in a pitch, but because we cannot run the same playbook for two agents fighting over the same map pack.
+              We fix that for independent insurance agents, nationwide: your Google listing, your website, your citations, and what the AI tools say about you. No contract, and you own everything we build.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/visibility-report" className="btn-primary text-base px-7 py-3.5">
-                Get Your Visibility Report
+              <Link href="/market-check" className="btn-primary text-base px-7 py-3.5">
+                Check my market, free
               </Link>
-              <Link href="/industries/insurance-agents" className="btn-secondary text-base px-7 py-3.5">
-                Why agents specifically
+              <Link href="/offer" className="btn-secondary text-base px-7 py-3.5">
+                See what you get
               </Link>
             </div>
+            <p className="font-sans text-sm text-ink-3 mt-4 max-w-xl">
+              A one-page snapshot of how your agency shows up in your town, back within two business days. No cost and no obligation.
+            </p>
           </div>
         </div>
       </section>
@@ -150,16 +134,16 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             <div>
-              <p className="font-serif text-3xl text-accent">One per market</p>
-              <p className="font-sans text-sm text-ink-4 mt-1">Your competitor cannot hire us.</p>
+              <p className="font-serif text-3xl text-accent">Built for agents</p>
+              <p className="font-sans text-sm text-ink-4 mt-1">Independent insurance agents are the specialty.</p>
             </div>
             <div>
-              <p className="font-serif text-3xl text-accent">Three surfaces</p>
-              <p className="font-sans text-sm text-ink-4 mt-1">The map pack, AI assistants, organic search.</p>
+              <p className="font-serif text-3xl text-accent">No contract</p>
+              <p className="font-sans text-sm text-ink-4 mt-1">Month to month. Cancel any time.</p>
             </div>
             <div>
-              <p className="font-serif text-3xl text-accent">Agents first</p>
-              <p className="font-sans text-sm text-ink-4 mt-1">The specialty. The same system also serves other independent professionals.</p>
+              <p className="font-serif text-3xl text-accent">You own it all</p>
+              <p className="font-sans text-sm text-ink-4 mt-1">Domain, hosting and site, in your name from day one.</p>
             </div>
           </div>
         </div>
@@ -212,7 +196,7 @@ export default function HomePage() {
               </div>
               <h3 className="font-serif text-xl text-ink mb-2">The window is still open</h3>
               <p className="font-sans text-sm text-ink-2 leading-relaxed">
-                Most independent professionals have not started optimizing for AI search. The businesses who move now will be the default recommendations when the window closes. Your market may still be available.
+                Most independent professionals have not started optimizing for AI search. In most towns nobody has done this work yet, which makes it far easier to become the name the tools give than it will be once two or three local agents have.
               </p>
             </div>
           </div>
@@ -229,8 +213,8 @@ export default function HomePage() {
                 Every surface. Every signal.
               </h2>
             </div>
-            <Link href="/contact" className="btn-outline-accent self-start lg:self-auto whitespace-nowrap">
-              Check your market
+            <Link href="/market-check" className="btn-outline-accent self-start lg:self-auto whitespace-nowrap">
+              Check my market
             </Link>
           </div>
 
@@ -291,7 +275,7 @@ export default function HomePage() {
                 Local SEO for independent agents
               </h3>
               <p className="font-sans text-base leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.72)" }}>
-                Four problems show up in nearly every independent agency we look at. The FMO handed you a template site that is identical to four hundred other agents. Your Google listing is set to a category somebody picked at random. Your pipeline runs on referrals, which works right up until it does not. And your Medicare and ACA seasons compress most of the year&apos;s revenue into a few weeks, which is exactly when being invisible costs the most.
+                Four problems are common to independent agencies. The website is a shared template, close to identical to hundreds of other agents&apos; sites. The Google listing is set to a category somebody picked at random. The pipeline runs on referrals, which works right up until it does not. And Medicare and ACA seasons compress most of the year&apos;s revenue into a few weeks, which is exactly when being invisible costs the most.
               </p>
               <span className="font-sans text-sm font-medium text-accent">
                 What that looks like fixed &rarr;
@@ -300,15 +284,14 @@ export default function HomePage() {
           </Link>
 
           <div className="max-w-2xl mb-6">
-            <h3 className="font-serif text-2xl text-ink mb-2">The same system works elsewhere</h3>
+            <h3 className="font-serif text-2xl text-ink mb-2">And the professionals agents trade referrals with</h3>
             <p className="font-sans text-sm text-ink-2 leading-relaxed">
-              The mechanics are not specific to insurance. If you are an independent professional in one of these fields and your market is open, the work is the same.
+              The mechanics are not specific to insurance. The same work applies to the advisors, accountants and mortgage brokers an agent sends clients to and gets clients from.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            {industries
-              .filter((ind) => ind.href !== "/industries/insurance-agents")
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {adjacent
               .map((ind) => (
                 <Link
                   key={ind.href}
@@ -331,16 +314,16 @@ export default function HomePage() {
           <div className="max-w-2xl mb-12">
             <p className="section-label mb-4">Why Visibility Local</p>
             <h2 className="font-serif text-4xl lg:text-5xl text-ink">
-              No competitor conflicts. Built for AI search.
+              Nothing locks you in. Built for AI search.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
               <div className="divider-accent" />
-              <h3 className="font-serif text-2xl text-ink mb-3">One client per market</h3>
+              <h3 className="font-serif text-2xl text-ink mb-3">You can leave any month, and take everything</h3>
               <p className="font-sans text-sm text-ink-2 leading-relaxed">
-                Most agencies will happily take your money and then take your competitor&apos;s money too. We don&apos;t. When you&apos;re our client in a market, we don&apos;t work with anyone who competes with you in that market. The territory is yours.
+                Most marketing arrangements keep you by making it painful to go: a twelve-month contract, or a website that disappears when you stop paying. Here there is no minimum term, and the domain, the hosting and the site are registered to you from the first day. The only thing keeping you is whether the work is worth paying for.
               </p>
             </div>
             <div>
@@ -430,28 +413,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-ink">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-2xl">
-            <p className="section-label mb-4">Start with the diagnosis</p>
-            <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
-              Find out what your town actually sees.
-            </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.7)' }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody goes looking for an agent: your Google listing, the map pack, your citation data, your site, and what the AI tools say when asked for an agent in your city. Written report, plus a call to walk through it. If the honest answer is that you do not need us, that is what the call will say.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">
-                Get Your Visibility Report
-              </Link>
-              <Link href="/scorecard" className="btn-secondary text-base px-8 py-4">
-                Or grade your own listing, free
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ClosingCta />
     </>
   );
 }

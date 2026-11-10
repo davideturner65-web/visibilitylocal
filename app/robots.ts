@@ -1,13 +1,15 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
+// /_next/ is deliberately not disallowed: it holds the CSS and JavaScript Google needs in
+// order to render the pages.
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/_next/"],
+      disallow: ["/api/"],
     },
-    sitemap: "https://visibilitylocal.com/sitemap.xml",
-    host: "https://visibilitylocal.com",
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

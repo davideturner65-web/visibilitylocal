@@ -1,41 +1,22 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import ClosingCta from "@/components/ClosingCta";
+import { pageMetadata } from "@/lib/seo";
+import { founderRef } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About David Turner",
   description:
-    "David Turner is a local SEO and AI search visibility consultant. One client per market, nationwide.",
-  alternates: { canonical: "https://visibilitylocal.com/about" },
-};
+    "David Turner runs Visibility Local: local SEO and AI search visibility for independent insurance agents, nationwide.",
+  path: "/about",
+});
 
+// David Turner and the organization are declared once in app/layout.tsx.
 const schema = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      name: "David Turner",
-      jobTitle: "Local SEO & AI Search Visibility Consultant",
-      url: "https://visibilitylocal.com/about",
-      email: "info@visibilitylocal.com",
-      telephone: "(501) 554-2183",
-      worksFor: {
-        "@type": "ProfessionalService",
-        name: "Visibility Local",
-        url: "https://visibilitylocal.com",
-      },
-    },
-    {
-      "@type": "ProfessionalService",
-      name: "Visibility Local",
-      description:
-        "Local SEO and AI search visibility consulting for independent professionals. One client per market.",
-      url: "https://visibilitylocal.com",
-      telephone: "(501) 554-2183",
-      email: "info@visibilitylocal.com",
-      founder: { "@type": "Person", name: "David Turner" },
-      areaServed: { "@type": "Country", name: "United States" },
-    },
-  ],
+  "@type": "AboutPage",
+  url: "https://visibilitylocal.com/about",
+  name: "About David Turner",
+  mainEntity: founderRef,
 };
 
 export default function AboutPage() {
@@ -55,10 +36,7 @@ export default function AboutPage() {
               David Turner
             </h1>
             <p className="font-sans text-xl text-ink-2 leading-relaxed mb-4">
-              Local SEO and AI search visibility consultant. Working with independent professionals nationwide.
-            </p>
-            <p className="font-sans text-base text-ink-3 leading-relaxed">
-              One client per market.
+              Local SEO and AI search visibility consultant. Working with independent insurance agents nationwide.
             </p>
           </div>
         </div>
@@ -90,8 +68,8 @@ export default function AboutPage() {
             <div className="space-y-6">
               {/* Stat callout boxes */}
               <div className="bg-paper border border-paper-3 rounded-sm p-6">
-                <p className="font-serif text-3xl text-accent mb-1">One client</p>
-                <p className="font-sans text-sm text-ink-3">per market, per industry. Never both sides of a competitive matchup.</p>
+                <p className="font-serif text-3xl text-accent mb-1">Insurance first</p>
+                <p className="font-sans text-sm text-ink-3">Independent agents are the specialty. Not one vertical among twenty.</p>
               </div>
               <div className="bg-paper border border-paper-3 rounded-sm p-6">
                 <p className="font-serif text-3xl text-accent mb-1">Nationwide</p>
@@ -109,16 +87,16 @@ export default function AboutPage() {
             <p className="section-label mb-4">How It Works</p>
             <div className="divider-accent" />
             <h2 className="font-serif text-4xl text-ink mt-6 mb-5">
-              Exclusive. No surprises.
+              No contract. No surprises.
             </h2>
 
             <div className="space-y-6 mt-8">
               <div className="flex gap-6 items-start">
                 <div className="w-px bg-paper-3 self-stretch shrink-0" />
                 <div className="pb-6">
-                  <h3 className="font-serif text-xl text-ink mb-2">One client per market, per industry</h3>
+                  <h3 className="font-serif text-xl text-ink mb-2">Month to month, and the assets are yours</h3>
                   <p className="font-sans text-sm text-ink-2 leading-relaxed">
-                    One insurance agent per city. One mortgage broker per metro. Once we take you on, we will not sell the same work to the agent across town for as long as you are a client. That policy exists because the work only makes sense when we are on one side of a competitive matchup, not because it makes a better headline.
+                    There is no minimum term. The domain, the hosting account and the website are registered to you from the first day, so leaving never costs you the work that has been done. That is deliberate. It keeps the arrangement honest in both directions.
                   </p>
                 </div>
               </div>
@@ -126,9 +104,9 @@ export default function AboutPage() {
               <div className="flex gap-6 items-start">
                 <div className="w-px bg-paper-3 self-stretch shrink-0" />
                 <div>
-                  <h3 className="font-serif text-xl text-ink mb-2">Scope, deliverables and timeline, upfront</h3>
+                  <h3 className="font-serif text-xl text-ink mb-2">Scope, deliverables and price, upfront</h3>
                   <p className="font-sans text-sm text-ink-2 leading-relaxed">
-                    Every engagement starts with a clear scope. What gets done, what the deliverables look like, and when to expect results. No vague monthly retainers where you&apos;re paying for effort rather than outcomes.
+                    You know what gets built, what gets done each month, and what it costs before you agree to anything. The buildout has a sixty-day delivery guarantee. What nobody can honestly put a date on is a ranking or an AI mention, so we do not.
                   </p>
                 </div>
               </div>
@@ -171,29 +149,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-paper border-b border-paper-3">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-2xl">
-            <p className="section-label mb-4">Where to start</p>
-            <div className="divider-accent" />
-            <h2 className="font-serif text-4xl lg:text-5xl text-ink mt-6 mb-5">
-              Start with the diagnosis.
-            </h2>
-            <p className="font-sans text-base text-ink-2 leading-relaxed mb-8">
-              One agent per market, and once we take yours your competitor cannot hire us. The sensible first step is the Visibility Report: a written diagnostic of your listing, your citations, your map pack position and what the AI tools say about your city. It costs $297 and comes off your setup if we go on to work together.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/visibility-report" className="btn-primary text-base px-7 py-3.5">
-                Get Your Visibility Report
-              </Link>
-              <Link href="/industries/insurance-agents" className="btn-secondary text-base px-7 py-3.5">
-                Insurance Agent SEO
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ClosingCta />
     </>
   );
 }

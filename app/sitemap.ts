@@ -1,71 +1,57 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
-const BASE_URL = "https://visibilitylocal.com";
+// lastModified is a real date, changed by hand when a page's content changes. Stamping every
+// URL with the build time tells Google the whole site changed on every deploy, and it stops
+// trusting the field.
+const REPOSITIONED = "2026-11-10"; // offer, market check and sitewide copy changes
+const GUIDES_REVIEWED = "2026-08-28"; // matches dateModified in the guides' Article schema
+const LEGAL = "2026-11-10";
+
+type Entry = [path: string, lastModified: string, priority: number];
+
+// /research and /results/hillcrest-life-and-health are deliberately absent: both are noindex
+// until they have content, and listing a noindex page contradicts the sitemap.
+const entries: Entry[] = [
+  ["", REPOSITIONED, 1.0],
+  ["/market-check", REPOSITIONED, 0.95],
+  ["/industries/insurance-agents", REPOSITIONED, 0.95],
+  ["/offer", REPOSITIONED, 0.9],
+  ["/scorecard", REPOSITIONED, 0.9],
+  ["/contact", REPOSITIONED, 0.7],
+  ["/about", REPOSITIONED, 0.7],
+  ["/resources", REPOSITIONED, 0.8],
+
+  ["/services/google-business-profile", REPOSITIONED, 0.8],
+  ["/services/local-seo", REPOSITIONED, 0.8],
+  ["/services/ai-search-visibility", REPOSITIONED, 0.8],
+  ["/services/citations", REPOSITIONED, 0.8],
+  ["/services/content", REPOSITIONED, 0.8],
+  ["/services/reputation", REPOSITIONED, 0.8],
+
+  ["/resources/google-business-profile-setup", GUIDES_REVIEWED, 0.75],
+  ["/resources/local-seo-checklist", GUIDES_REVIEWED, 0.75],
+  ["/resources/ai-search-visibility", GUIDES_REVIEWED, 0.75],
+  ["/resources/citation-building", GUIDES_REVIEWED, 0.75],
+  ["/resources/insurance-agent-gbp", GUIDES_REVIEWED, 0.75],
+  ["/resources/schema-markup", GUIDES_REVIEWED, 0.75],
+
+  ["/industries/financial-advisors", REPOSITIONED, 0.6],
+  ["/industries/cpa-firms", REPOSITIONED, 0.6],
+  ["/industries/mortgage-brokers", REPOSITIONED, 0.6],
+  ["/industries/real-estate", REPOSITIONED, 0.4],
+  ["/industries/attorneys", REPOSITIONED, 0.4],
+  ["/industries/medical-practices", REPOSITIONED, 0.4],
+  ["/industries/home-services", REPOSITIONED, 0.4],
+
+  ["/privacy", LEGAL, 0.2],
+  ["/terms", LEGAL, 0.2],
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
-  // /research and /results/hillcrest-life-and-health are deliberately absent: both are
-  // noindex until they have content, and listing a noindex page contradicts the sitemap.
-  const staticPages = [
-    { url: BASE_URL, priority: 1.0, changeFrequency: "weekly" as const },
-    { url: `${BASE_URL}/visibility-report`, priority: 0.95, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/scorecard`, priority: 0.9, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/offer`, priority: 0.9, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/contact`, priority: 0.9, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/about`, priority: 0.7, changeFrequency: "monthly" as const },
-    { url: `${BASE_URL}/resources`, priority: 0.8, changeFrequency: "weekly" as const },
-    { url: `${BASE_URL}/privacy`, priority: 0.2, changeFrequency: "yearly" as const },
-    { url: `${BASE_URL}/terms`, priority: 0.2, changeFrequency: "yearly" as const },
-  ];
-
-  const servicePages = [
-    "google-business-profile",
-    "local-seo",
-    "ai-search-visibility",
-    "citations",
-    "content",
-    "reputation",
-  ].map((slug) => ({
-    url: `${BASE_URL}/services/${slug}`,
-    priority: 0.85,
-    changeFrequency: "monthly" as const,
+  return entries.map(([path, lastModified, priority]) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified,
+    priority,
   }));
-
-  const industryPages = [
-    "insurance-agents",
-    "mortgage-brokers",
-    "cpa-firms",
-    "financial-advisors",
-    "real-estate",
-    "attorneys",
-    "medical-practices",
-    "home-services",
-  ].map((slug) => ({
-    url: `${BASE_URL}/industries/${slug}`,
-    priority: 0.85,
-    changeFrequency: "monthly" as const,
-  }));
-
-  const resourcePages = [
-    "google-business-profile-setup",
-    "local-seo-checklist",
-    "ai-search-visibility",
-    "citation-building",
-    "insurance-agent-gbp",
-    "schema-markup",
-  ].map((slug) => ({
-    url: `${BASE_URL}/resources/${slug}`,
-    priority: 0.75,
-    changeFrequency: "monthly" as const,
-  }));
-
-  return [...staticPages, ...servicePages, ...industryPages, ...resourcePages].map(
-    (page) => ({
-      url: page.url,
-      lastModified: now,
-      changeFrequency: page.changeFrequency,
-      priority: page.priority,
-    })
-  );
 }

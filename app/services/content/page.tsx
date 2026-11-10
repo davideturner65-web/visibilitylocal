@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import ClosingCta from "@/components/ClosingCta";
+import { orgRef } from "@/lib/site";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Local Content Strategy",
   description:
     "Local content strategy for professionals who need to rank and be cited by AI tools. Service pages, guides, and location content written to win local search.",
-  alternates: { canonical: "https://visibilitylocal.com/services/content" },
-};
+  path: "/services/content",
+});
 
 const faqs = [
   {
@@ -33,11 +35,7 @@ const schema = {
     {
       "@type": "Service",
       name: "Local Content Strategy",
-      provider: {
-        "@type": "LocalBusiness",
-        name: "Visibility Local",
-        url: "https://visibilitylocal.com",
-      },
+      provider: orgRef,
       areaServed: { "@type": "Country", name: "United States" },
       description:
         "Local content strategy for professionals who need to rank in local search and be cited by AI tools. Service pages, location pages, FAQ content, and resource guides written with structured data and topical authority in mind.",
@@ -131,8 +129,8 @@ export default function ContentPage() {
             <p className="font-sans text-base text-ink-3 leading-relaxed mb-8 max-w-xl">
               We write content that targets real queries, answers specific questions directly, and compounds in value over time. Every piece is mapped to a ranking target and marked up with schema so AI tools can cite it without inference.
             </p>
-            <Link href="/contact" className="btn-primary text-base px-7 py-3.5">
-              Check if your market is available
+            <Link href="/market-check" className="btn-primary text-base px-7 py-3.5">
+              Check my market
             </Link>
           </div>
         </div>
@@ -242,30 +240,7 @@ export default function ContentPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-ink">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-2xl">
-            <p className="section-label mb-4">
-              One client per market
-            </p>
-            <h2 className="font-serif text-4xl lg:text-5xl text-paper mb-4">
-              Find out what your town actually sees.
-            </h2>
-            <p className="font-sans text-base leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
-              The Visibility Report is a full diagnostic of how your agency turns up when somebody in your town goes looking for an agent: your Google listing, the map pack, your citation data, your website, and what the AI tools actually say. Written up, plus a call to go through it. If the honest answer is that you do not need us, the call will say so.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/visibility-report" className="btn-primary text-base px-8 py-4">
-                Get Your Visibility Report
-              </Link>
-              <Link href="/scorecard" className="btn-secondary text-base px-8 py-4">
-                Or grade your own listing, free
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ClosingCta />
     </>
   );
 }

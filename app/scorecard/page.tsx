@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Scorecard from "@/components/Scorecard";
+import { leadFormEnabled } from "@/lib/lead";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Free Local Search Scorecard for Insurance Agents",
   description:
     "Twelve checks you can run against your own Google Business Profile and website in about ten minutes. Score it yourself, no email required to see the result.",
-  alternates: { canonical: "https://visibilitylocal.com/scorecard" },
-};
+  path: "/scorecard",
+});
 
 const schema = {
   "@context": "https://schema.org",
@@ -58,7 +59,7 @@ export default function ScorecardPage() {
 
       <section className="bg-paper-2 py-16 px-6">
         <div className="max-w-3xl mx-auto">
-          <Scorecard />
+          <Scorecard formEnabled={leadFormEnabled()} />
         </div>
       </section>
     </>
