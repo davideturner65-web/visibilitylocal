@@ -1,0 +1,28 @@
+name: Supabase keep-alive
+
+# A free-plan Supabase project pauses after a week without activity.
+# This makes one small read a day so that never happens. The publishable key
+# can't read any rows (row-level security), but the query still counts as activity.
+# The URL and key are repository secrets, not stored here.
+
+on:
+  schedule:
+    - cron: "17 16 * * *" # daily at 16:17 UTC (about 10am Chicago)
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Read one row
+        env:
+          SUPABASE_URL: ${{ secrets.KEEPALIVE_SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.KEEPALIVE_SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          curl -sS --fail --retry 3 --retry-delay 20 --retry-all-errors \
+            -o /dev/null -w "HTTP %{http_code}\n" \
+            "$SUPABASE_URL/rest/v1/markets?select=id&limit=1" \
+            -H "apikey: $SUPABASE_KEY"
